@@ -42,7 +42,7 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">Groovin</a></h1>
+      <h1 class="logo"><img src="assets/img/LogoJPT.png" alt="" class="img-fluid"></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -93,8 +93,8 @@
           <div class="carousel-item active" style="background-image: url('https://ptjpt.co.id/wp-content/uploads/2022/03/032421_Travoy.jpg');">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Grow Your Business</h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                <h2 class="animate__animated animate__fadeInDown"><a href="https://play.google.com/store/apps/details?id=com.jm.travoy&hl=id&gl=US">Travoy Mobile Apps 3.0</a></h2>
+                <p class="animate__animated animate__fadeInUp">Download segera Travoy Mobile Apps 3.0 sebagai asisten digital perjalanan Anda.</p>
                 <div>
                   <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
                 </div>
@@ -106,8 +106,8 @@
           <div class="carousel-item" style="background-image: url('https://ptjpt.co.id/wp-content/uploads/2019/05/depan1.png');">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                <h2 class="animate__animated animate__fadeInDown">PT Jasamarga Pandaan Tol</h2>
+                <p class="animate__animated animate__fadeInUp">Penyelenggara Jalan Tol Gempol-Pandaan.</p>
                 <div>
                   <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
                 </div>
