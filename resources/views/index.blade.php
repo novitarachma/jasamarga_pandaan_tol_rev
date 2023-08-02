@@ -83,7 +83,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
-      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div id="heroCarousel" data-bs-interval="3000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
         <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
@@ -93,10 +93,10 @@
           <div class="carousel-item active" style="background-image: url('https://ptjpt.co.id/wp-content/uploads/2022/03/032421_Travoy.jpg');">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown"><a href="https://play.google.com/store/apps/details?id=com.jm.travoy&hl=id&gl=US">Travoy Mobile Apps 3.0</a></h2>
+                <h2 class="animate__animated animate__fadeInDown"><a>Travoy Mobile Apps 3.0</a></h2>
                 <p class="animate__animated animate__fadeInUp">Download segera Travoy Mobile Apps 3.0 sebagai asisten digital perjalanan Anda.</p>
                 <div>
-                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                  <a href="https://play.google.com/store/apps/details?id=com.jm.travoy&hl=id&gl=US" target="_blank" class="btn-get-started animate__animated animate__fadeInUp scrollto">Download</a>
                 </div>
               </div>
             </div>
@@ -109,20 +109,33 @@
                 <h2 class="animate__animated animate__fadeInDown">PT Jasamarga Pandaan Tol</h2>
                 <p class="animate__animated animate__fadeInUp">Penyelenggara Jalan Tol Gempol-Pandaan.</p>
                 <div>
-                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                  <!-- <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a> -->
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Slide 3 -->
-          <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg);">
+          <div class="carousel-item" style="background-image: url('https://ptjpt.co.id/wp-content/uploads/2019/05/gerbang-Pandaan.png');">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                <h2 class="animate__animated animate__fadeInDown">Visi Kami</h2>
+                <p class="animate__animated animate__fadeInUp">Menjadi pengelola jalan tol yang Handal, Terpercaya, Inovatif, dan Berestetika</p>
                 <div>
-                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                  <!-- <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-item" style="background-image: url('https://ptjpt.co.id/wp-content/uploads/2019/05/lalin1.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Siap Melayani Anda</h2>
+                <p class="animate__animated animate__fadeInUp">Layanan Jalan Tol 24 Jam</p>
+                <div>
+                  <!-- <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a> -->
                 </div>
               </div>
             </div>
@@ -142,6 +155,23 @@
     </div>
   </section><!-- End Hero -->
 
+  <section id="tarif" class="tarif section-bg">
+  <div class="container">  
+  <div class="row no-gutters">
+    <div class="request-quote clearfix">
+	   
+		  <div class="description"><marquee align="”center”" direction="”right”" height="”100″" scrollamount="”3″" width="”10%”"> Top Up E-Money bisa dilakukan di Exit Gerbang Tol Pandaan dan Gempol | Arus lalu lintas Gempol - Pandaan aman &amp; lancar | Info Tol (0343) 5650729</marquee></div>
+		    <div class="readMore">
+			    <a href="https://ptjpt.co.id/?page_id=237" title="Tarif Tol Gempol - Pandaan">Tarif Tol Gempol - Pandaan</a>
+		    </div>
+        <!-- <div>
+          <a href="https://ptjpt.co.id/?page_id=237" target="_blank" class="btn-get-started animate__animated animate__fadeInUp scrollto">Tarif Tol Gempol - Pandaan</a>
+        </div> -->
+	  <!-- </div>   -->
+    </div>
+</div>
+  </section>
+  
   <main id="main">
 
     <!-- ======= About Section ======= -->
@@ -152,22 +182,25 @@
           <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div>
           <div class="col-xl-7 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch">
             <div class="content d-flex flex-column justify-content-center">
-              <h3>Voluptatem dignissimos provident quasi</h3>
+              <h3>PT Jasamarga Pandaan Tol</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              PT Jasamarga Pandaan Tol ikut berperan dalam pembangunan jalan tol di Indonesia dengan menyelenggarakan pembangunan jalan tol ruas Gempol - Pandaan
               </p>
               <div class="row">
                 <div class="col-md-6 icon-box">
                   <i class="bx bx-receipt"></i>
-                  <h4>Corporis voluptates sit</h4>
-                  <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                  <h4>Visi</h4>
+                  <p>Menjadi Pengelola Jalan Tol Yang Handal, Terpercaya, Inovatif dan Berestetika</p>
                 </div>
                 <div class="col-md-6 icon-box">
                   <i class="bx bx-cube-alt"></i>
-                  <h4>Ullamco laboris nisi</h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                  <h4>Misi</h4>
+                  <p>- Memberikan kontribusi pengembangan kawasan sekitar<br>
+                    - Melaksanakan pengelolaan perusahaan secara profesional<br>
+                    - Menunjang kelancaran distribusi barang dan jasa<br>
+                    - Meningkatkan pelayanan secara berkesinambungan untuk memenuhi kepuasan pelanggan</p>
                 </div>
-                <div class="col-md-6 icon-box">
+                <!-- <div class="col-md-6 icon-box">
                   <i class="bx bx-images"></i>
                   <h4>Labore consequatur</h4>
                   <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
@@ -176,7 +209,7 @@
                   <i class="bx bx-shield"></i>
                   <h4>Beatae veritatis</h4>
                   <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-                </div>
+                </div> -->
               </div>
             </div><!-- End .content-->
           </div>
@@ -185,7 +218,7 @@
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Counts Section ======= -->
+    <!-- ======= Counts Section ======= 
     <section id="counts" class="counts">
       <div class="container">
 
@@ -226,37 +259,38 @@
         </div>
 
       </div>
-    </section><!-- End Counts Section -->
+    </section> End Counts Section -->
 
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients section-bg">
       <div class="container">
-
+      <div class="section-title">
+          <h2>Mitra Kerja</h2>
+          <p></p>
+        </div>
         <div class="row">
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+            <a href="https://www.jasamarga.com/" target="_blank"><img src="https://ptjpt.co.id/wp-content/uploads/2017/01/logo-default-Copy.jpg" class="img-fluid" alt=""></a>
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+            <a href="https://www.wika.co.id/" target="_blank"><img src="https://ptjpt.co.id/wp-content/uploads/2017/01/wika.jpg" class="img-fluid" alt=""></a>
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+            <a href="https://adhi.co.id/" target="_blank"><img src="https://ptjpt.co.id/wp-content/uploads/2017/01/adhi.png" class="img-fluid" alt=""></a>
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+            <a href="http://mpb79.com/" target="_blank"><img src="https://ptjpt.co.id/wp-content/uploads/2018/01/multiphibetaaa.png" class="img-fluid" alt=""></a>
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
+            <a href="https://jmtm.co.id/" target="_blank"><img src="https://ptjpt.co.id/wp-content/uploads/2017/01/logo-default-Copy.jpg" class="img-fluid" alt=""></a>
           </div>
 
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-          </div>
+          
 
         </div>
 
@@ -269,26 +303,26 @@
 
         <div class="section-title">
           <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p></p>
         </div>
 
         <div class="row">
           <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon"><i class="bi bi-briefcase"></i></div>
-            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            <div class="icon"><i class="bi bi-building"></i></div>
+            <h4 class="title"><a href="">PEMBANGUNAN KONSTRUKSI JALAN TOL</a></h4>
+            <p class="description">PT Jasamarga Pandaan Tol ikut berperan dalam pembangunan jalan tol di Indonesia dengan menyelenggarakan pembangunan jalan tol ruas Gempol - Pandaan</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon"><i class="bi bi-card-checklist"></i></div>
-            <h4 class="title"><a href="">Dolor Sitema</a></h4>
-            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+            <div class="icon"><i class="bi bi-cone"></i></div>
+            <h4 class="title"><a href="">OPERASIONAL JALAN TOL</a></h4>
+            <p class="description">PT Jasamarga Pandaan Tol memiliki hak konsesi jalan tol ruas Gempol - Pandaan, selalu memelihara dan melaksanakan operasional jalan tol yang mencakup pelayanan transaksi dan pelayanan lalu lintas untuk menjaga keamanan, kelancaran dan keselamatan pengguna jalan tol.</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box">
             <div class="icon"><i class="bi bi-bar-chart"></i></div>
-            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            <h4 class="title"><a href="">PENGEMBANGAN USAHA LAIN</a></h4>
+            <p class="description">PT Jasamarga Pandaan Tol berupaya mengembangkan bisnis lain di bidang jalan tol yakni dengan menyediakan layanan iklan, dan penyewaan gedung kantor dengan tujuan mendukung bisnis utama.</p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box">
+          <!-- <div class="col-lg-4 col-md-6 icon-box">
             <div class="icon"><i class="bi bi-binoculars"></i></div>
             <h4 class="title"><a href="">Magni Dolores</a></h4>
             <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
@@ -302,14 +336,14 @@
             <div class="icon"><i class="bi bi-calendar4-week"></i></div>
             <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
             <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-          </div>
+          </div> -->
         </div>
 
       </div>
     </section><!-- End Services Section -->
 
     <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us">
+    <!-- <section id="why-us" class="why-us">
       <div class="container">
 
         <div class="section-title">
@@ -346,18 +380,18 @@
         </div>
 
       </div>
-    </section><!-- End Why Us Section -->
+    </section>End Why Us Section -->
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
 
         <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Berita</h2>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
@@ -366,130 +400,46 @@
               <li data-filter=".filter-web">Web</li>
             </ul>
           </div>
-        </div>
+        </div> -->
 
         <div class="row portfolio-container">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="col-lg-auto col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+              <img src="https://ptjpt.co.id/wp-content/uploads/2019/09/080619_Konferensi-Pers-370x290.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
+                <h4>KONFERENSI PERS PEMBERLAKUAN TARIF RUAS JALAN TOL GEMPOL – PANDAAN TAHAP II & JALAN TOL PANDAAN – MALANG</h4>
+                <p>August 7, 2019</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                  <a href="https://ptjpt.co.id/wp-content/uploads/2019/09/080619_Konferensi-Pers-370x290.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="col-lg-auto col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+              <img src="https://ptjpt.co.id/wp-content/uploads/2019/09/071919_Closing-Ceremony-Sukuk-Ijarah-370x290.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>Web 3</h4>
                 <p>Web</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="https://ptjpt.co.id/wp-content/uploads/2019/09/071919_Closing-Ceremony-Sukuk-Ijarah-370x290.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="col-lg-auto col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+              <img src="https://ptjpt.co.id/wp-content/uploads/2019/07/outbond3-370x290.png" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4>App 2</h4>
                 <p>App</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="https://ptjpt.co.id/wp-content/uploads/2019/07/outbond3-370x290.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
@@ -502,7 +452,7 @@
     </section><!-- End Portfolio Section -->
 
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
+    <!-- <section id="team" class="team">
       <div class="container">
 
         <div class="section-title">
@@ -587,10 +537,10 @@
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section>End Team Section -->
 
     <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
+    <!-- <section id="pricing" class="pricing">
       <div class="container">
 
         <div class="section-title">
@@ -654,10 +604,10 @@
         </div>
 
       </div>
-    </section><!-- End Pricing Section -->
+    </section>End Pricing Section -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
-    <section id="faq" class="faq section-bg">
+    <!-- <section id="faq" class="faq section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -716,7 +666,7 @@
         </div>
 
       </div>
-    </section><!-- End Frequently Asked Questions Section -->
+    </section>End Frequently Asked Questions Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">

@@ -11,7 +11,7 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: #08419e;
+  color: #000000;
 }
 
 a {
@@ -524,7 +524,7 @@ h6 {
   transition: 0.5s;
   line-height: 1;
   margin: 10px;
-  color: #fff;
+  color: black;
   animation-delay: 0.8s;
   text-transform: uppercase;
   border: 2px solid #e5e220;
@@ -622,7 +622,7 @@ section {
 }
 
 .about .image {
-  background: url("../img/about.jpg") center center no-repeat;
+  background: url("https://lh3.googleusercontent.com/p/AF1QipN_Xea_dzSRRV6ow0p9VIlmJ5ARaFnzdDObGDIf=s1360-w1360-h1020") center center no-repeat;
   background-size: cover;
   min-height: 400px;
 }
@@ -694,6 +694,10 @@ section {
   color: #777777;
 }
 
+.tarif {
+  padding: 15px 0px;
+  text-align: center;
+}
 /*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
@@ -784,6 +788,7 @@ section {
 .services .description {
   line-height: 24px;
   font-size: 14px;
+  color: #b0adc5;
 }
 
 /*--------------------------------------------------------------
@@ -909,7 +914,7 @@ section {
 }
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
-  font-size: 20px;
+  font-size: 18px;
   color: #fff;
   font-weight: 600;
 }
