@@ -4,8 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Groovin Bootstrap Template - Index</title>
+  <title>PT Jasamarga Pandaan Tol</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -15,6 +17,10 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -24,8 +30,11 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+
   <!-- Template Main CSS File -->
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/slider.css') }}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Groovin
@@ -72,7 +81,7 @@
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+          <li><a class="getstarted scrollto" href="#about">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -156,13 +165,13 @@
   </section><!-- End Hero -->
 
   <section id="tarif" class="tarif section-bg">
-  <div class="container">  
+  <div class="container">
   <div class="row no-gutters">
     <div class="request-quote clearfix">
-	   
+
 		  <div class="description"><marquee align="”center”" direction="”right”" height="”100″" scrollamount="”3″" width="”10%”"> Top Up E-Money bisa dilakukan di Exit Gerbang Tol Pandaan dan Gempol | Arus lalu lintas Gempol - Pandaan aman &amp; lancar | Info Tol (0343) 5650729</marquee></div>
 		    <div class="readMore">
-			    <a href="https://ptjpt.co.id/?page_id=237" title="Tarif Tol Gempol - Pandaan">Tarif Tol Gempol - Pandaan</a>
+			    <a href="https://ptjpt.co.id/?page_id=237" title="Tarif Tol Gempol - Pandaan"><p class="bold-900">Tol Gempol - Pandaan></p></a>
 		    </div>
         <!-- <div>
           <a href="https://ptjpt.co.id/?page_id=237" target="_blank" class="btn-get-started animate__animated animate__fadeInUp scrollto">Tarif Tol Gempol - Pandaan</a>
@@ -171,7 +180,7 @@
     </div>
 </div>
   </section>
-  
+
   <main id="main">
 
     <!-- ======= About Section ======= -->
@@ -218,7 +227,7 @@
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Counts Section ======= 
+    <!-- ======= Counts Section =======
     <section id="counts" class="counts">
       <div class="container">
 
@@ -290,7 +299,7 @@
             <a href="https://jmtm.co.id/" target="_blank"><img src="https://ptjpt.co.id/wp-content/uploads/2017/01/logo-default-Copy.jpg" class="img-fluid" alt=""></a>
           </div>
 
-          
+
 
         </div>
 
@@ -387,6 +396,10 @@
       <div class="container">
 
         <div class="section-title">
+        <!-- <div id="portfolioCarousel" data-bs-interval="3000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+            <div class="carousel-inner" role="listbox"> -->
+
           <h2>Berita</h2>
           <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
@@ -401,10 +414,70 @@
             </ul>
           </div>
         </div> -->
+        <!-- <div class="col-lg-auto col-md-6 portfolio-item filter-app">
+        <div class="slider">
+            <div class="image-box">
+            <img src="https://ptjpt.co.id/wp-content/uploads/2019/09/080619_Konferensi-Pers-370x290.png" class="img-fluid" alt="">
+            </div>
+            <button class="btn" onclick="prev()">Previous</button>
+            <button class="btn" onclick="prev()">Next</button>
+       </div>
+        </div> -->
+<!-- Carousel wrapper -->
+<div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"></li>
+    <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1"></li>
+    <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2"></li>
+  </ol>
 
-        <div class="row portfolio-container">
+  <!-- Inner -->
+  <div class="carousel-inner">
+    <!-- Single item -->
+    <div class="carousel-item active">
+      <img src="https://ptjpt.co.id/wp-content/uploads/2019/09/080619_Konferensi-Pers-370x290.png" class="d-block w-100" alt="..."/>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </div>
 
-          <div class="col-lg-auto col-md-6 portfolio-item filter-app">
+    <!-- Single item -->
+    <div class="carousel-item">
+      <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).webp" class="d-block w-100" alt="..."/>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+
+    <!-- Single item -->
+    <div class="carousel-item">
+      <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).webp" class="d-block w-100" alt="..."/>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Inner -->
+
+  <!-- Controls -->
+  <a class="carousel-control-prev" href="#carouselBasicExample" role="button" data-mdb-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselBasicExample" role="button" data-mdb-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+<!-- Carousel wrapper -->
+
+        <!-- <div class="row portfolio-container">
+
+          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="https://ptjpt.co.id/wp-content/uploads/2019/09/080619_Konferensi-Pers-370x290.png" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -418,7 +491,7 @@
             </div>
           </div>
 
-          <div class="col-lg-auto col-md-6 portfolio-item filter-web">
+          <div class="col-lg-3 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="https://ptjpt.co.id/wp-content/uploads/2019/09/071919_Closing-Ceremony-Sukuk-Ijarah-370x290.png" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -432,7 +505,7 @@
             </div>
           </div>
 
-          <div class="col-lg-auto col-md-6 portfolio-item filter-app">
+          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="https://ptjpt.co.id/wp-content/uploads/2019/07/outbond3-370x290.png" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -446,8 +519,37 @@
             </div>
           </div>
 
+          <div class="col-lg-3 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="https://ptjpt.co.id/wp-content/uploads/2019/05/052319_Site-Visit-Bank-Sindikasi.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Web 3</h4>
+                <p>Web</p>
+                <div class="portfolio-links & btm-sliders">
+                  <a href="https://ptjpt.co.id/wp-content/uploads/2019/05/052319_Site-Visit-Bank-Sindikasi.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div> -->
+      <!-- <body>
+        <div class="content">
+            <div class="images">
+                <img src="https://ptjpt.co.id/wp-content/uploads/2019/05/052319_Site-Visit-Bank-Sindikasi.png" class="img-fluid" alt="">
 
+            </div>
+            <div class="btm-sliders">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        </div>
+      </body> -->
       </div>
     </section><!-- End Portfolio Section -->
 
@@ -674,7 +776,7 @@
 
         <div class="section-title">
           <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Silahkan menghubungi kami</p>
         </div>
 
         <div class="row contact-info">
@@ -683,7 +785,8 @@
             <div class="contact-address">
               <i class="bi bi-geo-alt"></i>
               <h3>Address</h3>
-              <address>A108 Adam Street, NY 535022, USA</address>
+              <p><a href="https://goo.gl/maps/Mcd6MVgkfW3uG6Mz8" target="_blank">Tengah, Karang Jati, Kec. Pandaan,
+                Pasuruan, Jawa Timur 67156</a></p>
             </div>
           </div>
 
@@ -691,7 +794,7 @@
             <div class="contact-phone">
               <i class="bi bi-phone"></i>
               <h3>Phone Number</h3>
-              <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
+              <p><a href="tel:+155895548855">(0343) 5650729</a></p>
             </div>
           </div>
 
@@ -699,13 +802,33 @@
             <div class="contact-email">
               <i class="bi bi-envelope"></i>
               <h3>Email</h3>
-              <p><a href="mailto:info@example.com">info@example.com</a></p>
+              <p><a href="mailto:info@example.com">jasamarga.pandaantol@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="contact-IG">
+                <i class="bi bi-instagram"></i>
+                <h3>Instagram</h3>
+                <p><a href="https://www.instagram.com/official.jpt/">Jasamarga Pandaan Tol</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="contact-FB">
+                <i class="bi bi-facebook"></i>
+                <h3>Facebook</h3>
+                <p><a href="https://www.instagram.com/official.jpt/">Jasamarga Pandaan Tol</a></p>
             </div>
           </div>
 
         </div>
 
-        <div class="form">
+
+    </div>
+    <div>
+
+        <!-- <div class="form">
           <form action="forms/contact.php" method="post" role="form" class="php-email-form">
             <div class="row">
               <div class="col-md-6 form-group">
@@ -728,7 +851,7 @@
             </div>
             <div class="text-center"><button type="submit">Send Message</button></div>
           </form>
-        </div>
+        </div> -->
 
       </div>
     </section><!-- End Contact Section -->
@@ -743,19 +866,21 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="footer-info">
-              <h3>Groovin</h3>
+              <h3><img src="assets/img/LogoJPT.png" alt="" class="img-fluid"></h3>
               <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
+              Kali Tengah, Karang Jati, Kec. Pandaan,
+              Pasuruan, Jawa Timur 67156 <br>
+                <br>
+                <strong>Phone:</strong> (0343) 5650727<br>
+                <strong>Email:</strong> jasamarga.pandaantol@gmail.com<br>
               </p>
               <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> -->
+                <a href="https://www.facebook.com/official.jpt/" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/official.jpt/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://twitter.com/tolpanmal?lang=id" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>
+                <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a> -->
               </div>
             </div>
           </div>
@@ -774,8 +899,8 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Jasa E-Tol</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Rescue</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
@@ -783,8 +908,8 @@
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <h4>Tentang Kami</h4>
+            <p>Terima Kasih sudah berkunjung</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
@@ -797,19 +922,30 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Groovin</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>PT Jasamarga Pandaan Tol</span></strong>. <br>All Rights Reserved</br>
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/groovin-free-bootstrap-theme/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <strong>IT PT Jasamarga Pandaan Tol</strong></a>
       </div>
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div>
+  <input type="checkbox" id="check"> <label class="chat-btn" for="check">
+            <i class="fa fa-commenting-o comment"></i> <i class="fa fa-close close">
+            </i> </label> <div class="wrapper"> <div class="header"> <h6>Let's Chat - Online</h6>
+        </div> <div class="text-center p-2"> <span>Please fill out the form to start chat!</span>
+        </div> <div class="chat-form"> <input type="text" class="form-control" placeholder="Name">
+    <input type="text" class="form-control" placeholder="Email">
+        <textarea class="form-control" placeholder="Your Text Message">
+        </textarea> <button class="btn btn-success btn-block">Submit</button>
+  </div> -->
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -819,9 +955,10 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
+
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="assets/js/slider.js"></script>
 </body>
 
 </html>

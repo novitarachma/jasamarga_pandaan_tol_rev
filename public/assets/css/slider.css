@@ -1,0 +1,31 @@
+
+body
+{
+    align-items: center;
+    text-align: center;
+}
+
+.slider{
+    margin: 50px auto;
+}
+
+.image-box img{
+    width: 600px;
+    height: 400px;
+}
+
+.btn
+{
+    border: none;
+    outline: none;
+    background: #8888;
+    padding: 10px 30px;
+    font-size: 20px;
+    color: #e3d50e;
+    cursor: pointer;
+    margin: 10px auto;
+}
+
+.btn:hover{
+    background: #e4d90f;
+}
