@@ -25,3 +25,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/berita', function () {
     return view('user/berita');
 });
+
+Route::get('/galeri', function () {
+    return view('user/galeri');
+});

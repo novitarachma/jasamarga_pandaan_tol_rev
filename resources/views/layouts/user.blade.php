@@ -36,7 +36,8 @@
   <!-- Template Main CSS File -->
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/css/slider.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" />
+  <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/galeri.css') }}" rel="stylesheet">
 
 
 
@@ -60,7 +61,7 @@
           <li><a class="nav-link scrollto active" href="{{ route('home') }}">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">Berita</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -81,6 +82,7 @@
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="#galeri">Galeri</a></li>
           <li>
             <!-- <a class="getstarted scrollto" href="#about">Get Started</a> -->
             <ul class="navbar-nav ms-auto">
