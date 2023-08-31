@@ -351,7 +351,7 @@
             <div class="contact-address">
             <i class="bi bi-geo-alt"></i>
             <h3>Address</h3>
-            <p><a href="https://goo.gl/maps/Mcd6MVgkfW3uG6Mz8" target="_blank">Tengah, Karang Jati, Kec. Pandaan,
+            <p><a href="https://goo.gl/maps/Mcd6MVgkfW3uG6Mz8" target="_blank">Kali Tengah, Karang Jati, Kec. Pandaan,
                 Pasuruan, Jawa Timur 67156</a></p>
             </div>
         </div>

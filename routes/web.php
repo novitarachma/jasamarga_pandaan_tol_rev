@@ -29,3 +29,15 @@ Route::get('/berita', function () {
 Route::get('/galeri', function () {
     return view('user/galeri');
 });
+ 
+Route::get('/detail', function () {
+    return view('user/detail-berita');
+});
+
+Route::get('/profile', function () {
+    return view('user/user-profile');
+});
+
+Route::get('/visimisi', function () {
+    return view('profil_perusahaan/visimisi');
+});
