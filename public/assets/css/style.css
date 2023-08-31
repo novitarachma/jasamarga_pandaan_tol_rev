@@ -963,7 +963,7 @@ section {
 
 .portfolio .portfolio-wrap .portfolio-links a {
   color: #fff;
-  margin: 0 10px 0 0;
+  margin: 4 10px 0 0;
   font-size: 28px;
   display: inline-block;
   transition: 0.3s;
@@ -1013,11 +1013,11 @@ section {
 # Portfolio Details
 --------------------------------------------------------------*/
 .portfolio-details {
-  padding-top: 40px;
+  padding-top: 80px;
 }
 
 .portfolio-details .portfolio-details-slider img {
-  width: 100%;
+  width: 80%;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination {
@@ -1026,8 +1026,8 @@ section {
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
+  width: 24px;
+  height: 24px;
   background-color: #fff;
   opacity: 1;
   border: 1px solid #e5e220;
@@ -1038,21 +1038,21 @@ section {
 }
 
 .portfolio-details .portfolio-info {
-  padding: 30px;
-  box-shadow: 0px 0 30px rgba(42, 42, 42, 0.08);
+  padding: 15px;
+  box-shadow: 0px 0 20px rgba(42, 42, 42, 0.08);
 }
 
 .portfolio-details .portfolio-info h3 {
   font-size: 22px;
   font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 0.1px solid #eee;
 }
 
 .portfolio-details .portfolio-info ul {
   list-style: none;
-  padding: 0;
+  padding: 10;
   font-size: 15px;
 }
 
@@ -1061,7 +1061,7 @@ section {
 }
 
 .portfolio-details .portfolio-description {
-  padding-top: 30px;
+  padding-top: -10px;
 }
 
 .portfolio-details .portfolio-description h2 {
@@ -1071,7 +1071,7 @@ section {
 }
 
 .portfolio-details .portfolio-description p {
-  padding: 0;
+  padding: 10;
 }
 
 /*--------------------------------------------------------------

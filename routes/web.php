@@ -25,3 +25,15 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/berita', function () {
     return view('user/berita');
 });
+
+Route::get('/detail', function () {
+    return view('user/detail-berita');
+});
+
+Route::get('/profile', function () {
+    return view('user/user-profile');
+});
+
+Route::get('/visimisi', function () {
+    return view('profil_perusahaan/visimisi');
+});
