@@ -26,6 +26,10 @@ Route::get('/berita', function () {
     return view('user/berita');
 });
 
+Route::get('/galeri', function () {
+    return view('user/galeri');
+});
+ 
 Route::get('/detail', function () {
     return view('user/detail-berita');
 });
