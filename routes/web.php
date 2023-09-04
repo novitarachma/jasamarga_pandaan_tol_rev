@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 Auth::routes();
 
@@ -25,3 +25,11 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/berita', function () {
     return view('user/berita');
 });
+
+Route::get('admin-page', function() {
+    return view('home');
+})->middleware('role:admin')->name('admin.page');
+
+Route::get('user-page', function() {
+    return view('index');
+})->middleware('role:user')->name('user.page');

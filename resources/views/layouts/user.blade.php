@@ -83,7 +83,7 @@
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li>
             <!-- <a class="getstarted scrollto" href="#about">Get Started</a> -->
-            <ul class="navbar-nav ms-auto">
+            <ul>
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -98,12 +98,12 @@
                                 </li>
                             @endif -->
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                            <li class="dropdown">
+                                <a id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->nama }} <i class="bi bi-chevron-down"></i>
                                 </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <ul>
+                                <li>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -113,7 +113,8 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                </div>
+                                </li>
+                                </ul>
                             </li>
                         @endguest
                     </ul>
