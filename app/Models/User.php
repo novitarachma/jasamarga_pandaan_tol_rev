@@ -57,17 +57,17 @@ class User extends Authenticatable
         $this->attributes['email_verified_at'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
 
-    public function setPasswordAttribute($input)
-    {
-        if ($input) {
-            $this->attributes['password'] = app('hash')->needsRehash($input) ? Hash::make($input) : $input;
-        }
-    }
+    // public function setPasswordAttribute($input)
+    // {
+    //     if ($input) {
+    //         $this->attributes['password'] = app('hash')->needsRehash($input) ? Hash::make($input) : $input;
+    //     }
+    // }
 
-    public function sendPasswordResetNotification($token)
-    {
-        $this->notify(new ResetPassword($token));
-    }
+    // public function sendPasswordResetNotification($token)
+    // {
+    //     $this->notify(new ResetPassword($token));
+    // }
 
     protected function serializeDate(DateTimeInterface $date)
     {
