@@ -1,0 +1,132 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap");
+:root {
+  --blue: #79A9F5;
+  --indigo: #C45F90;
+  --purple: #A16AE8;
+  --pink: #FC8BC0;
+  --red: #F85C70;
+  --orange: #FF8882;
+  --yellow: #FAD02C;
+  --green: #A3C14A;
+  --teal: #20c997;
+  --cyan: #47D8E0;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #FAD02C;
+  --secondary: #6c757d;
+  --success: #A3C14A;
+  --info: #47D8E0;
+  --warning: #FF8882;
+  --danger: #F85C70;
+  --light: #f8f9fa;
+  --dark: #0000;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: "Ubuntu", sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+/* about */
+.about-wrapper {
+    margin-left: 70px;
+    position: relative;
+
+    .content {
+        background-color: #fff;
+        border-radius: card-border-radius;
+        padding: 30px;
+        position: relative;
+    }
+
+    .after {
+        position: absolute;
+        top: 10%;
+        left: -60px;
+        background: #FAD02C;
+        width: 200px;
+        height: 80%;
+        color: #fff;
+        border-radius: card-border-radius;
+        h1 {
+            transform: rotate(-90deg);
+            position: absolute;
+            top: 43%;
+            left: -45px;
+            font-size: 35px;
+        }
+    }
+
+}
+visi {
+    padding: 80px 0;
+  }
+
+  .visi-bg {
+    background-color: #7c7a7a;
+  }
+
+  .visi-title {
+    text-align: left;
+    padding-bottom: 30px;
+  }
+  .misi-title {
+    text-align:center;
+    padding-bottom: 30px;
+  }
+
+  .visititle {
+      text-align: left;
+      padding-bottom: 30px;
+  }
+
+
+  .visi-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    color: #a1a102;
+  }
+  .misi-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    color: #a1a102;
+  }
+
+  .visi-title p {
+    margin-bottom: 0;
+  }
+
+.img-wrapper {
+    position: relative;
+
+    .after {
+        position: absolute;
+        top: 10%;
+        left: -30px;
+        width: 100px;
+        height: 80%;
+        border-radius: card-border-radius;
+        background: #FAD02C;
+    }
+
+    .after.right {
+        left: auto;
+        right: -30px;
+    }
+
+    img {
+        position: relative;
+        width: 90%;
+        border-radius: card-border-radius;
+    }
+
+}
