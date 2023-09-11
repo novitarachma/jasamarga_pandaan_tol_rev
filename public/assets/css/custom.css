@@ -144,7 +144,7 @@ body{
     position: relative;
 }
 
-.login-dark form {
+/* .login-dark form {
     max-width: 320px;
     width: 90%;
     background-color: rgba(0, 0, 0, 0.7);
@@ -156,16 +156,16 @@ body{
     left: 50%;
     color: #fff;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
-}
+} */
 
-.login-dark .illustration {
+.illustration {
     text-align: center;
-    padding: 15px 0 20px;
-    font-size: 100px;
+    padding: 0px 0 0px;
+    font-size: 80px;
     color: #2980ef;
 }
 
-.login-dark form .form-control {
+/* .login-dark form .form-control {
     background: none;
     border: none;
     border-bottom: 1px solid #f6f8fa;
@@ -173,9 +173,9 @@ body{
     box-shadow: none;
     outline: none;
     color: inherit;
-}
+} */
 
-.login-dark form .form-control::-webkit-input-placeholder{
+/* .login-dark form .form-control::-webkit-input-placeholder{
     color:whitesmoke;
 }
 
@@ -188,7 +188,7 @@ body{
     margin-top: 26px;
     text-shadow: none;
     outline: none;
-}
+} */
 
 .login-dark form .btn-primary:hover,
 .login-dark form .btn-primary:active {
