@@ -40,6 +40,9 @@
   <link href="{{ asset('assets/css/galeri.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" />
   <link href="{{ asset('assets/css/profile.css') }}" rel="stylesheet" />
+  <link href="{{ asset('assets/css/struktur-organisasi.css') }}" rel="stylesheet" />
+  <link href="{{ asset('assets/css/susunan.css') }}" rel="stylesheet" />
+  <link href="{{ asset('assets/css/direksi.css') }}" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
 

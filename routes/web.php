@@ -41,3 +41,19 @@ Route::get('/profile', function () {
 Route::get('/visimisi', function () {
     return view('profil_perusahaan/visimisi');
 });
+
+Route::get('/struktur-organisasi', function () {
+    return view('profil_perusahaan/struktur-organisasi');
+});
+
+Route::get('/susunan-dewan-komisaris', function () {
+    return view('profil_perusahaan/susunan-dewan-komisaris');
+});
+
+Route::get('/susunan-direksi', function () {
+    return view('profil_perusahaan/susunan-direksi');
+});
+
+Route::get('/link', function () {
+    return view('profil_perusahaan/link');
+});
