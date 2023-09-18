@@ -37,3 +37,7 @@ Route::get('/profile', function () {
 Route::get('/visimisi', function () {
     return view('profil_perusahaan/visimisi');
 });
+
+Route::get('/pustaka', function () {
+    return view('profil_perusahaan/pustaka');
+});
