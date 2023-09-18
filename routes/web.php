@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,6 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -25,6 +22,14 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/berita', function () {
     return view('user/berita');
 });
+
+Route::get('admin-page', function() {
+    return view('home');
+})->middleware('role:admin')->name('admin.page');
+
+Route::get('user-page', function() {
+    return view('index');
+})->middleware('role:user')->name('user.page');
 
 Route::get('/galeri', function () {
     return view('user/galeri');
@@ -42,6 +47,7 @@ Route::get('/visimisi', function () {
     return view('profil_perusahaan/visimisi');
 });
 
+
 Route::get('/struktur-organisasi', function () {
     return view('profil_perusahaan/struktur-organisasi');
 });
@@ -57,3 +63,13 @@ Route::get('/susunan-direksi', function () {
 Route::get('/link', function () {
     return view('profil_perusahaan/link');
 });
+
+Route::get('/pustaka', function () {
+    return view('profil_perusahaan/pustaka');
+});
+
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
