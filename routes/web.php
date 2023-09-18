@@ -47,6 +47,10 @@ Route::get('/visimisi', function () {
     return view('profil_perusahaan/visimisi');
 });
 
+Route::get('/pustaka', function () {
+    return view('profil_perusahaan/pustaka');
+});
+
 Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
 Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
