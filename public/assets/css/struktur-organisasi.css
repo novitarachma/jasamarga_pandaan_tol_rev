@@ -1,0 +1,12 @@
+.img
+{
+    float: left;
+    width: 30%;
+}
+
+.struktur 
+{
+   border: 2px solid rgb(32, 31, 31);
+   padding: 30px;
+   margin: 30px
+}
