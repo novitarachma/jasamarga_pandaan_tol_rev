@@ -83,7 +83,7 @@
 
 		<div class="description"><strong><marquee align="”center”" direction="”right”" height="”100″" scrollamount="”3″" width="”10%”"> Top Up E-Money bisa dilakukan di Exit Gerbang Tol Pandaan dan Gempol | Arus lalu lintas Gempol - Pandaan aman &amp; lancar | Info Tol (0343) 5650729</marquee></strong></div>
 		<div class="readMore">
-			<a style="text-decoration:none" href="https://ptjpt.co.id/?page_id=237" title="Tarif Tol Gempol - Pandaan" class="btn-get-started animate__animated animate__fadeInUp scrollto"><strong><p class="bold-900">Tol Gempol - Pandaan</p></strong></a>
+			<a style="text-decoration:none" href="/tarif" title="Tarif Tol Gempol - Pandaan" class="btn-get-started animate__animated animate__fadeInUp scrollto"><strong><p class="bold-900">Tarif Tol Gempol - Pandaan</p></strong></a>
 		</div>
         <!-- <div>
         <a href="https://ptjpt.co.id/?page_id=237" target="_blank" class="btn-get-started animate__animated animate__fadeInUp scrollto">Tarif Tol Gempol - Pandaan</a>
@@ -331,7 +331,7 @@
                     </a>
                 </div>
             </div>
-            <a href="" ><button>Artikel Lainnya</button></a>
+            <a href="/detail" ><button>Artikel Lainnya</button></a>
         </div>
     </section>
     <!-- End Portfolio Sectio -->
