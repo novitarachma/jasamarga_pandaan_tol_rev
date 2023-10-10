@@ -4,21 +4,27 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>PT Jasamarga Pandaan Tol</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <meta content="colorlib.com" name="author">
 
   <!-- Favicons -->
   <link href="{{ asset('assets/img/logo-jpt.png') }}" rel="icon">
   <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Poppins:700" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
@@ -35,11 +41,20 @@
 
 
   <!-- Template Main CSS File -->
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/owl-carousel.css">
+
+    <link rel="stylesheet" href="assets/css/tooplate-artxibition.css">
+
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/css/slider.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" />
   <link href="{{ asset('assets/css/profile.css') }}" rel="stylesheet" />
   <link href="{{ asset('assets/css/visi.css') }}" rel="stylesheet" />
+  <link href="{{ asset('assets/css/tarif.css') }}" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
 
@@ -63,33 +78,74 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="{{ route('home') }}">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">News</a></li>
+          <li><a class="nav-link scrollto " href="/detail">Berita</a></li>
           <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <li><a href="/profile">Profil Anda</a></li>
+              <li><a href="#">Anggota</a></li>
+              <li><a href="#">Reset Password</a></li>
+              <li><a href="#">LogOut</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Dokumen Perusahaan</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>FINANCE</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
+                  <li><a href="#">Surat Keputusan Direksi</a></li>
+                  <li><a href="#">Prosedur</a></li>
+                  <li><a href="#">Formulir</a></li>
                 </ul>
-              </li> -->
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              </li>
+              <li class="dropdown"><a href="#"><span>GA & Business Development</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Surat Keputusan Direksi</a></li>
+                  <li><a href="#">Prosedur</a></li>
+                  <li><a href="#">Formulir</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>HR & Legal</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Surat Keputusan Direksi</a></li>
+                  <li><a href="#">Prosedur</a></li>
+                  <li><a href="#">Formulir</a></li>
+                  <li><a href="#">Pakta Integritas</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Maintenance</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Surat Keputusan Direksi</a></li>
+                  <li><a href="#">Prosedur</a></li>
+                  <li><a href="#">Formulir</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Toll Collection Management</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Surat Keputusan Direksi</a></li>
+                  <li><a href="#">Prosedur</a></li>
+                  <li><a href="#">Instruksi Kerja</a></li>
+                  <li><a href="#">Formulir</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Traffic Management</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Surat Keputusan Direksi</a></li>
+                  <li><a href="#">Prosedur</a></li>
+                  <li><a href="#">Instruksi Kerja</a></li>
+                  <li><a href="#">Formulir</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Profil Perusahaan</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="/visimisi">Visi, Misi dan Tata Nilai</a></li>
+              <li><a href="#">Struktur Organisasi</a></li>
+              <li><a href="#">SUSUNAN DEWAN KOMISARIS</a></li>
+              <li><a href="#">SUSUNAN DIREKSI</a></li>
+              <li><a href="/pustaka">PUSTAKA</a></li>
+              <li><a href="#">LINK</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
@@ -241,15 +297,36 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
-
+  </head>
   <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/slider.js"></script>
+    <script src="assets/js/tarif/choice.js"></script>
+    <script src="assets/js/tarif/custom.js"></script>
+    <script src="assets/js/tarif/flatpick.js"></script>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
 
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script>
+    <script src="assets/js/mixitup.js"></script>
+    <script src="assets/js/accordions.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
 </body>
 
 </html>
