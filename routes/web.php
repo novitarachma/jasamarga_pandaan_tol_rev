@@ -41,3 +41,11 @@ Route::get('/visimisi', function () {
 Route::get('/pustaka', function () {
     return view('profil_perusahaan/pustaka');
 });
+
+Route::get('/tarif', function () {
+    return view('user/tariftol');
+});
+
+Route::get('/about', function () {
+    return view('user/aboutUs');
+});
