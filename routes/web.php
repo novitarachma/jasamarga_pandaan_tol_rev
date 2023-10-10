@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 
 /*
@@ -34,7 +34,7 @@ Route::get('user-page', function() {
 Route::get('/galeri', function () {
     return view('user/galeri');
 });
- 
+
 Route::get('/detail', function () {
     return view('user/detail-berita');
 });
@@ -66,6 +66,15 @@ Route::get('/link', function () {
 
 Route::get('/pustaka', function () {
     return view('profil_perusahaan/pustaka');
+});
+
+
+Route::get('/tarif', function () {
+    return view('user/tariftol');
+});
+
+Route::get('/about', function () {
+    return view('user/aboutUs');
 });
 
 Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
