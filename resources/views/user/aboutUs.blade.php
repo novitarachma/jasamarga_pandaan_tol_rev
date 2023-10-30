@@ -16,7 +16,7 @@
             <div class="content d-flex flex-column justify-content-center">
                 <h3>PT Jasamarga Pandaan Tol</h3>
             <p>
-                PT Jasamarga Pandaan Tol ikut berperan dalam pembangunan jalan tol di Indonesia dengan menyelenggarakan pembangunan jalan tol ruas Gempol - Pandaan
+                PT Jasamarga Pandaan Tol ikut berperan dalam pembangunan jalan tol di Indonesia dengan menyelenggarakan pembangunan jalan tol ruas Gempol - Pandaan,
             </p>
             <div class="row">
                 <div class="col-md-6 icon-box">

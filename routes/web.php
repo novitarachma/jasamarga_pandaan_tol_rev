@@ -77,6 +77,14 @@ Route::get('/about', function () {
     return view('user/aboutUs');
 });
 
+Route::get('/service', function () {
+    return view('user/service');
+});
+
+Route::get('/contact', function () {
+    return view('user/contact');
+});
+
 Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
 Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
