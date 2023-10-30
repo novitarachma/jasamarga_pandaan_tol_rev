@@ -67,18 +67,12 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top d-flex align-items-center">
         <div class="container d-flex align-items-center justify-content-between">
-
             <h1 class="logo"><img src="assets/img/LogoJPT.png" alt="" class="img-fluid"></h1>
-
-
-      <h1 class="logo"><img src="assets/img/LogoJPT.png" alt="" class="img-fluid"></h1>
-
-
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="{{ route('home') }}">Home</a></li>
           <li><a class="nav-link scrollto" href="/about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="/service">Services</a></li>
           <li><a class="nav-link scrollto " href="/detail">Berita</a></li>
           <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -147,7 +141,7 @@
               <li><a href="#">LINK</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li>
@@ -170,7 +164,7 @@
                                 <ul>
                                     <li>
                                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                            document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
 
@@ -200,7 +194,7 @@
 
     <div class="chat-box">
         <div class="chat-box-header">
-            ChatBot
+            ChatBox
             <span class="chat-box-toggle"><i class="material-icons">close</i></span>
         </div>
         <div class="chat-box-body">
@@ -275,120 +269,15 @@
                         </form>
 
                     </div>
-                    =======
-                    @endguest
+
+
                     </ul>
                     </li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                     </nav><!-- .navbar -->
-                    >>>>>>> login
-
                 </div>
-                </header><!-- End Header -->
-                <main>
-                    @yield('content')
-                </main>
-                <div id="chat-circle" class="btn btn-raised">
-                    <div id="chat-overlay"></div>
-                    <i class="material-icons">speaker_phone</i>
                 </div>
-
-                <<<<<<< HEAD <div class="container">
-                    <div class="copyright">
-                        &copy; Copyright <strong><span>PT Jasamarga Pandaan Tol</span></strong>. <br>All Rights
-                        Reserved</br>
-                    </div>
-                    <div class="credits">
-                        Designed by <strong>IT PT Jasamarga Pandaan Tol</strong></a>
-                    </div>
-                    =======
-                    <div class="chat-box">
-                        <div class="chat-box-header">
-                            ChatBot
-                            <span class="chat-box-toggle"><i class="material-icons">close</i></span>
-                        </div>
-                        <div class="chat-box-body">
-                            <div class="chat-box-overlay">
-                            </div>
-                            <div class="chat-logs">
-
-                            </div>
-                            <!--chat-log -->
-                        </div>
-                        <div class="chat-input">
-                            <form>
-                                <input type="text" id="chat-input" placeholder="Send a message..." />
-                                <button type="submit" class="chat-submit" id="chat-submit"><i
-                                        class="material-icons">send</i></button>
-                            </form>
-                        </div>
-                        >>>>>>> login
-                    </div>
-                    <!-- ======= Footer ======= -->
-                    <footer id="footer">
-                        <div class="footer-top">
-                            <div class="container">
-                                <div class="row">
-
-                                    <div class="col-lg-3 col-md-6">
-                                        <div class="footer-info">
-                                            <h3><img src="assets/img/LogoJPT.png" alt="" class="img-fluid"></h3>
-                                            <p>
-                                                Kali Tengah, Karang Jati, Kec. Pandaan,
-                                                Pasuruan, Jawa Timur 67156 <br>
-                                                <br>
-                                                <strong>Phone:</strong> (0343) 5650727<br>
-                                                <strong>Email:</strong> jasamarga.pandaantol@gmail.com<br>
-                                            </p>
-                                            <div class="social-links mt-3">
-                                                <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> -->
-                                                <a href="https://www.facebook.com/official.jpt/" target="_blank"
-                                                    class="facebook"><i class="bx bxl-facebook"></i></a>
-                                                <a href="https://www.instagram.com/official.jpt/" target="_blank"
-                                                    class="instagram"><i class="bx bxl-instagram"></i></a>
-                                                <a href="https://twitter.com/tolpanmal?lang=id" target="_blank"
-                                                    class="twitter"><i class="bi bi-twitter"></i></a>
-                                                <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a> -->
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <<<<<<< HEAD=======<div class="col-lg-2 col-md-6 footer-links">
-                                        <h4>Useful Links</h4>
-                                        <ul>
-                                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a>
-                                            </li>
-                                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                                        </ul>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6 footer-links">
-                                    <h4>Our Services</h4>
-                                    <ul>
-                                        <li><i class="bx bx-chevron-right"></i> <a href="#">Jasa E-Tol</a></li>
-                                        <li><i class="bx bx-chevron-right"></i> <a href="#">Rescue</a></li>
-                                        <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                                        <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="col-lg-4 col-md-6 footer-newsletter">
-                                    <h4>Tentang Kami</h4>
-                                    <p>Terima Kasih sudah berkunjung</p>
-                                    <form action="" method="post">
-                                        <input type="email" name="email"><input type="submit" value="Subscribe">
-                                    </form>
-
-                                </div>
-
-                            </div>
-                        </div>
             </div>
 
             <div class="container">
@@ -419,7 +308,7 @@
         <textarea class="form-control" placeholder="Your Text Message">
         </textarea> <button class="btn btn-success btn-block">Submit</button>
   </div> -->
-    >>>>>>> login
+
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -429,7 +318,6 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
 
-
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -438,8 +326,8 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  </head>
   <!-- Template Main JS File -->
+    <script src="assets/js/chatbox.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/slider.js"></script>
     <script src="assets/js/tarif/choice.js"></script>

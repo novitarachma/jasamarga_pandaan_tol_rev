@@ -103,8 +103,4 @@
         </div>
     </section>
 <!-- End Hero -->
-
-<!-- ======= Portfolio Section ======= -->
-
-<!-- End Portfolio Section -->
 @endsection

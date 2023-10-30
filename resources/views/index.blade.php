@@ -201,90 +201,11 @@
     <div class="container">
 
         <div class="section-title">
-        <!-- <div id="portfolioCarousel" data-bs-interval="3000" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-            <div class="carousel-inner" role="listbox"> -->
 
         <h2>Berita</h2>
         <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
-
-        <!-- <div class="row">
-        <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-card">Card</li>
-            <li data-filter=".filter-web">Web</li>
-            </ul>
-        </div>
-        </div>
-        <div class="col-lg-auto col-md-6 portfolio-item filter-app">
-        <div class="slider">
-            <div class="image-box">
-            <img src="https://ptjpt.co.id/wp-content/uploads/2019/09/080619_Konferensi-Pers-370x290.png" class="img-fluid" alt="">
-            </div>
-            <button class="btn" onclick="prev()">Previous</button>
-            <button class="btn" onclick="prev()">Next</button>
-    </div>
-        </div> -->
         <div class="row portfolio-container">
-
-        <!-- <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-            <img src="https://ptjpt.co.id/wp-content/uploads/2019/09/080619_Konferensi-Pers-370x290.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <h4>KONFERENSI PERS PEMBERLAKUAN TARIF RUAS JALAN TOL GEMPOL – PANDAAN TAHAP II & JALAN TOL PANDAAN – MALANG</h4>
-                <p>August 7, 2019</p>
-                <div class="portfolio-links">
-                <a href="https://ptjpt.co.id/wp-content/uploads/2019/09/080619_Konferensi-Pers-370x290.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-            </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-            <img src="https://ptjpt.co.id/wp-content/uploads/2019/09/071919_Closing-Ceremony-Sukuk-Ijarah-370x290.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                <a href="https://ptjpt.co.id/wp-content/uploads/2019/09/071919_Closing-Ceremony-Sukuk-Ijarah-370x290.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-            </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-            <img src="https://ptjpt.co.id/wp-content/uploads/2019/07/outbond3-370x290.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                <a href="https://ptjpt.co.id/wp-content/uploads/2019/07/outbond3-370x290.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
-    <body>
-            <div class="btm-sliders">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        </div>
-        <div>
-            <center><a href="" class="btn-get-started animate__animated animate__fadeInUp scrollto">More View</a></center>
-        </div> -->
     </div>
     <div class="konten" id="artikel">
         <div class="content-container">

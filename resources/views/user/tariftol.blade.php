@@ -88,7 +88,7 @@
                                         </div>
                                     </div>
                                     </div>
-                                  
+
 
                                 </div>
                             </div>
@@ -97,6 +97,9 @@
                 </div>
             </div>
         </div>
+        <div id="map"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_qHKYFum4g_Y8e7sgqS3T26Fjz1IxBpg&libraries=places"></script>
+        <script src="maps.js"></script>
     </div>
 </div>
 </section>

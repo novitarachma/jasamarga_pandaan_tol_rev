@@ -43,12 +43,7 @@
           </div>
 
         </div>
-        <div>
-
-        </div>
 
       </div>
-    </section><!-- End Portfolio Details Section -->
-
-  </main><!-- End #main -->
+</section><!-- End Portfolio Details Section -->
 @endsection
