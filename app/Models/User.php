@@ -47,6 +47,16 @@ class User extends Authenticatable
         'deleted_at',
     ];
 
+    public function userDetail()
+    {
+    	return $this->hasOne(UserDetail::class);
+    }
+
+    public function karyawan()
+    {
+    	return $this->hasOne(Karyawan::class);
+    }
+
     public function getEmailVerifiedAtAttribute($value)
     {
         return $value ? Carbon::createFromFormat('Y-m-d H:i:s', $value)->format(config('panel.date_format') . ' ' . config('panel.time_format')) : null;
@@ -56,18 +66,6 @@ class User extends Authenticatable
     {
         $this->attributes['email_verified_at'] = $value ? Carbon::createFromFormat(config('panel.date_format') . ' ' . config('panel.time_format'), $value)->format('Y-m-d H:i:s') : null;
     }
-
-    // public function setPasswordAttribute($input)
-    // {
-    //     if ($input) {
-    //         $this->attributes['password'] = app('hash')->needsRehash($input) ? Hash::make($input) : $input;
-    //     }
-    // }
-
-    // public function sendPasswordResetNotification($token)
-    // {
-    //     $this->notify(new ResetPassword($token));
-    // }
 
     protected function serializeDate(DateTimeInterface $date)
     {
