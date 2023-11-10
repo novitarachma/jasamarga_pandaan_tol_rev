@@ -52,6 +52,7 @@
     <link href="{{ asset('assets/css/profile.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/visi.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/tarif.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/tarif.css') }}" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- tambahan code untk css -->
@@ -323,16 +324,8 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="assets/js/chatbox.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/slider.js"></script>
     <script src="assets/js/tarif/choice.js"></script>
@@ -340,7 +333,8 @@
     <script src="assets/js/tarif/flatpick.js"></script>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'>
+    </script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
 
     <!-- jQuery -->
@@ -364,7 +358,6 @@
 
     <!-- tambahan code utk js -->
     @yield('script')
-
 </body>
 
 </html>
