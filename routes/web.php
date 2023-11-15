@@ -85,6 +85,18 @@ Route::get('/contact', function () {
     return view('user/contact');
 });
 
+Route::get('/database', function () {
+    return view('monitoring_lereng/database');
+});
+
+Route::get('/finance_sk_direksi', function () {
+    return view('dokumen_perusahaan/finance_sk_direksi');
+});
+
+Route::get('/finance', function () {
+    return view('dokumen_karyawan/finance');
+});
+
 Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
 Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');

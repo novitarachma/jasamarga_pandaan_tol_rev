@@ -1,5 +1,7 @@
 @extends('layouts.user')
-
+@section('css')
+<link href="{{ asset('assets/css/tarif.css') }}" rel="stylesheet" />
+@endsection
 @section('content')
 <section id="portfolio-details" class="portfolio-details">
 <div class="container p-0">

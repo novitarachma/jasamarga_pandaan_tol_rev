@@ -2,7 +2,7 @@
 @section('content')
 <section id="portfolio-details" class="portfolio-details">
     <div class="container">
-        <div class="misi-title">
+        <div class="section-title">
             <h2></h2>
             <h2>PUSTAKA</h2>
             <hr></hr>

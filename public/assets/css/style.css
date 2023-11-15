@@ -71,7 +71,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgb(255, 255, 255);
   transition: all 0.5s;
   z-index: 997;
   height: 80px;
@@ -131,7 +131,7 @@ h6 {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.829);
+  color: #206fe5;
   white-space: nowrap;
   transition: 0.3s;
   text-transform: uppercase;
@@ -169,7 +169,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 
 .navbar .getstarted,
@@ -596,12 +596,6 @@ section {
   text-align: center;
   padding-bottom: 30px;
 }
-
-.title {
-    text-align: left;
-    padding-bottom: 30px;
-}
-
 
 .section-title h2 {
   font-size: 32px;

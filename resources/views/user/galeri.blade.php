@@ -1,5 +1,7 @@
 @extends('layouts.user')
-
+@section('css')
+<link href="{{ asset('assets/css/galeri.css') }}" rel="stylesheet">
+@endsection
 @section('content')
 <!-- ======= Galeri Section ======= -->
 <section id="galeri" class="galeri">
