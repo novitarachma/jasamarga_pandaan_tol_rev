@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Karyawan extends Model
 {
@@ -11,7 +13,7 @@ class Karyawan extends Model
     use SoftDeletes;
     use Notifiable;
 
-    protected $table = "karyawan";
+    protected $table = "karyawans";
 
     protected $fillable = [
         'user_id',

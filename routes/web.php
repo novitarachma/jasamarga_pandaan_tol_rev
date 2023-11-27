@@ -27,7 +27,7 @@ Route::get('/berita', function () {
 });
 
 Route::get('admin-page', function() {
-    return view('home');
+    return view('admin/index');
 })->middleware('role:admin')->name('admin.page');
 
 Route::get('user-page', function() {
@@ -46,10 +46,13 @@ Route::get('/profile', function () {
     return view('user/user-profile');
 });
 
+Route::get('/SetProfile', function () {
+    return view('user/Profile-page');
+});
+
 Route::get('/visimisi', function () {
     return view('profil_perusahaan/visimisi');
 });
-
 
 Route::get('/struktur-organisasi', function () {
     return view('profil_perusahaan/struktur-organisasi');
