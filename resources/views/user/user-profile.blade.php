@@ -37,54 +37,6 @@
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="account" role="tabpanel">
 
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-actions float-right">
-                                <div class="dropdown show">
-                                    <a href="#" data-toggle="dropdown" data-display="static">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal align-middle">
-                                            <circle cx="12" cy="12" r="1"></circle>
-                                            <circle cx="19" cy="12" r="1"></circle>
-                                            <circle cx="5" cy="12" r="1"></circle>
-                                        </svg>
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <h5 class="card-title mb-0">User Profile</h5>
-                        </div>
-                        <div class="card-body">
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <div class="form-group">
-                                            <label for="inputUsername">Nama</label>
-                                            <input type="text" class="form-control" id="inputUsername" placeholder="Username">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputUsername">Biografi Anda</label>
-                                            <textarea rows="2" class="form-control" id="inputBio" placeholder="Tell something about yourself"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="text-center">
-                                            <img alt="Andrew Jones" src="https://bootdey.com/img/Content/avatar/avatar1.png" class="rounded-circle img-responsive mt-2" width="128" height="128">
-                                            <div class="mt-2">
-                                                <span class="btn btn-primary"><i class="fa fa-upload"></i></span>
-                                            </div>
-                                            <small>Disarankan menggunakan gambar format .jpg, dengan ukuran 128px by 128px</small>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button type="submit" class="btn btn-primary">Simpan</button>
-                            </form>
-
                         </div>
                     </div>
 
@@ -113,12 +65,8 @@
                             <form>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="inputFirstName">First name</label>
+                                        <label for="inputFirstName">Name</label>
                                         <input type="text" class="form-control" id="inputFirstName" placeholder="First name">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputLastName">Last name</label>
-                                        <input type="text" class="form-control" id="inputLastName" placeholder="Last name">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -128,10 +76,6 @@
                                 <div class="form-group">
                                     <label for="inputAddress">Address</label>
                                     <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputAddress2">Address 2</label>
-                                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
