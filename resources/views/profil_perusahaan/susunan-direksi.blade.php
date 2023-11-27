@@ -1,4 +1,7 @@
 @extends('layouts.user')
+@section('css')
+<link href="{{ asset('assets/css/direksi.css') }}" rel="stylesheet" />
+@endsection
 @section('content')
 <section id="susunan-dewan-komisaris" class="susunan-dewan-komisaris">
     <div class="container">

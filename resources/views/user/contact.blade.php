@@ -5,6 +5,7 @@
     <div class="container">
 
         <div class="section-title">
+        <h2>   </h2>
         <h2>Contact</h2>
         <p>Silahkan menghubungi kami</p>
         </div>

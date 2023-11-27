@@ -1,4 +1,7 @@
 @extends('layouts.user')
+@section('css')
+<link href="{{ asset('assets/css/visi.css') }}" rel="stylesheet" />
+@endsection
 @section('content')
 <section id="portfolio-details" class="portfolio-details">
     <div class="container">
