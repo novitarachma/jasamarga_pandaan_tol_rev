@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\GaleriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,8 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/galeri', [GaleriController::class,'index']);
+
 
 Route::get('/berita', function () {
     return view('user/berita');
@@ -31,9 +34,9 @@ Route::get('user-page', function() {
     return view('index');
 })->middleware('role:user')->name('user.page');
 
-Route::get('/galeri', function () {
-    return view('user/galeri');
-});
+// Route::get('/galeri', function () {
+//     return view('user/galeri');
+// });
 
 Route::get('/detail', function () {
     return view('user/detail-berita');
