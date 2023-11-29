@@ -11,7 +11,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/logo-jpt.png" rel="icon">
+    <link href="{{ asset('assets/img/logo-jpt.png') }}" rel="icon">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 

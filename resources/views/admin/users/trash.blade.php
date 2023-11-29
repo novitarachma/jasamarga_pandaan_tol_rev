@@ -2,20 +2,19 @@
 
 @section('style')
 <!-- DataTables -->
-<link rel="stylesheet" href="{{ asset('theme/adminlte') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet"
-    href="{{ asset('theme/adminlte') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 @endsection
 
 @section('title')
 <div class="col-sm-6">
-    <h1>Data User</h1>
+    <h1>Trash User</h1>
 </div>
 <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
         <li class="breadcrumb-item"><a href="#">User</a></li>
-        <li class="breadcrumb-item active">Create User</li>
+        <li class="breadcrumb-item active">Trash User</li>
     </ol>
 </div>
 @endsection
@@ -27,24 +26,10 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">User Table</h3>
+                    <h3 class="card-title">Trash User Table</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <a class="btn btn-success" href="{{ route('user.create') }}">Add User</a>
-                    <a class="btn btn-danger" href="{{ route('trash') }}">Trash</a>
-                    <br><br>
-
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @elseif (session('error'))
-                    <div class="alert alert-danger" role="alert">
-                        {{ session('error') }}
-                    </div>
-                    @endif
-
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -56,25 +41,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($datas as $key=>$value)
+                            @foreach($user as $key=>$value)
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $value->name }}</td>
-                                <td>{{ $value->username }}</td>
+                                <td>{{ $value->nip }}</td>
                                 <td>
                                     @foreach($value->roles as $key => $item)
                                     <span class="badge bg-info">{{ $item->name }}</span>
                                     @endforeach
                                 </td>
                                 <td>
-                                    <form onsubmit="return confirm('Move data to trash?')"
-                                        action="{{ route('user.destroy',['user'=>$value->id]) }}" method="POST">
-                                        <a class="btn btn-info"
-                                            href="{{ route('change-password',$value->id) }}">Password</a>
-                                        <a class="btn btn-primary" href="{{ route('user.edit',$value->id) }}">Edit</a>
+                                    <form method="POST" action="{{route('restore', [$value->id])}}" class="d-inline">
+                                        @csrf
+                                        <input type="submit" value="Restore" class="btn btn-success" />
+                                    </form>
+                                    <form method="POST" action="{{route('deletePermanent', [$value->id])}}"
+                                        class="d-inline" onsubmit="return confirm('Delete this data permanently ?')">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        <input type="submit" value="Delete" class="btn btn-danger">
                                     </form>
                                 </td>
                             </tr>

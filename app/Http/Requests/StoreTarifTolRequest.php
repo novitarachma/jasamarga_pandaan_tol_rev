@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ImportFileRequest extends FormRequest
+class StoreTarifTolRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,13 @@ class ImportFileRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'label' => 'required',
-            'file' => 'required|mimes:csv,xls,xlsx',
+            'asal' => 'required',
+            'tujuan' => 'required',
+            'gol1' => 'required',
+            'gol2' => 'required',
+            'gol3' => 'required',
+            'gol4' => 'required',
+            'gol5' => 'required',
         ];
     }
 }

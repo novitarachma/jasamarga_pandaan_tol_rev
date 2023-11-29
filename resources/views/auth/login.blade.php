@@ -18,12 +18,12 @@
                     <form method="POST" action="{{ route('login') }}" class="signin-form">
                         @csrf
                         <div class="form-group">
-                            <input id="email" type="text" name="email"
-                                class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                value="{{ old('email', null) }}" placeholder="Username" required>
-                            @if($errors->has('email'))
+                            <input id="username" type="text" name="username"
+                                class="form-control {{ $errors->has('username') ? ' is-invalid' : '' }}"
+                                value="{{ old('username', null) }}" placeholder="Username" required>
+                            @if($errors->has('username'))
                             <div class="invalid-feedback">
-                                {{ $errors->first('email') }}
+                                {{ $errors->first('username') }}
                             </div>
                             @endif
                         </div>

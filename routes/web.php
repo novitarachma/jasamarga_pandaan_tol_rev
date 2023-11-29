@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\GaleriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -103,8 +102,19 @@ Route::get('/finance', function () {
     return view('dokumen_karyawan/finance');
 });
 
-Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
-Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
-Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
-Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['role:admin']], function () {
+    Route::resource('user', UserController::class);
+    Route::resource('tarif', TarifTolController::class);
+    Route::controller(UserController::class)->group(function () {
+        Route::get('trash', 'trash')->name('trash');
+        Route::post('{id}/restore', 'restore')->name('restore');
+        Route::delete('{id}/delete-permanent', 'deletePermanent')->name('deletePermanent');
+        Route::get('{id}/change-password', 'changePassword')->name('change-password');
+        Route::put('{id}/update-password', 'updatePassword')->name('update-password');
 
+    });
+    Route::controller(UploadController::class)->group(function () {
+        Route::get('upload', 'upload')->name('upload');
+        Route::post('file-upload', 'fileUpload')->name('fileUpload');
+    });
+});
