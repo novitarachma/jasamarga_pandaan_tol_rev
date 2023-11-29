@@ -4,12 +4,12 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreUserRequest extends FormRequest
+class ChangePasswordRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
-    public function authorize(): bool
+    public function authorize()
     {
         return true;
     }
@@ -19,14 +19,10 @@ class StoreUserRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
      */
-    public function rules(): array
+    public function rules()
     {
         return [
-            'name' => 'required',
-            'email' => 'required|unique:users',
-            'username' => 'required',
-            'password' => 'min:5|required_with:password_confirmation|same:password_confirmation',
-            'password_confirmation' => 'min:5'
+            'new_password' => 'required|min:5|confirmed',
         ];
     }
 }
