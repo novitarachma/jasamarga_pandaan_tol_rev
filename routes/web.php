@@ -33,10 +33,6 @@ Route::get('user-page', function() {
     return view('index');
 })->middleware('role:user')->name('user.page');
 
-// Route::get('/galeri', function () {
-//     return view('user/galeri');
-// });
-
 Route::get('/detail', function () {
     return view('user/detail-berita');
 });
