@@ -71,13 +71,13 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgb(255, 255, 255);
   transition: all 0.5s;
   z-index: 997;
   height: 80px;
 }
 
-#header .logo {
+.navbar logo {
   font-size: 28px;
   margin: 0;
   padding: 0;
@@ -87,12 +87,14 @@ h6 {
   text-transform: uppercase;
 }
 
-#header .logo a {
+.navbar logo a {
   color: #fff;
 }
 
-#header .logo img {
-  max-height: 40px;
+.navbar img {
+  max-height: 50px;
+  position: relative;
+  left: 50%;
 }
 
 /*--------------------------------------------------------------
@@ -102,7 +104,7 @@ h6 {
 * Desktop Navigation
 */
 .navbar {
-  padding: 0;
+  padding: 10;
 }
 
 .navbar ul {
@@ -119,7 +121,7 @@ h6 {
 
 .navbar>ul>li {
   white-space: nowrap;
-  padding: 10px 0 10px 22px;
+  padding: 5px 0 5px 15px;
 }
 
 .navbar a,
@@ -131,7 +133,7 @@ h6 {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.829);
+  color: #206fe5;
   white-space: nowrap;
   transition: 0.3s;
   text-transform: uppercase;
@@ -169,7 +171,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 
 .navbar .getstarted,
@@ -596,12 +598,6 @@ section {
   text-align: center;
   padding-bottom: 30px;
 }
-
-.title {
-    text-align: left;
-    padding-bottom: 30px;
-}
-
 
 .section-title h2 {
   font-size: 32px;

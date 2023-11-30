@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Belajar Laravel</title>
+    <title>PT Jasamarga Pandaan Tol</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{{ asset('assets/img/logo-jpt.png') }}" rel="icon">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -21,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
@@ -32,28 +37,38 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="../../index3.html" class="nav-link">Home</a>
+                    <a href="index3.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
                 </li>
             </ul>
 
-            <!-- SEARCH FORM -->
-            <form class="form-inline ml-3">
-                <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                        aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-navbar" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
+                <!-- Navbar Search -->
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <div class="navbar-search-block">
+                        <form class="form-inline">
+                            <div class="input-group input-group-sm">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                                    aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-navbar" type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+
                 <!-- Messages Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -64,7 +79,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="{{ asset('theme/adminlte') }}/dist/img/user1-128x128.jpg" alt="User Avatar"
+                                <img src="dist/img/user1-128x128.jpg" alt="User Avatar"
                                     class="img-size-50 mr-3 img-circle">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -81,7 +96,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="{{ asset('theme/adminlte') }}/dist/img/user8-128x128.jpg" alt="User Avatar"
+                                <img src="dist/img/user8-128x128.jpg" alt="User Avatar"
                                     class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -98,7 +113,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="{{ asset('theme/adminlte') }}/dist/img/user3-128x128.jpg" alt="User Avatar"
+                                <img src="dist/img/user3-128x128.jpg" alt="User Avatar"
                                     class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -142,6 +157,11 @@
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
@@ -197,7 +217,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ url('barang') }}" class="nav-link">
+                            <a href="{{ route('user.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>User</p>
                             </a>
@@ -205,36 +225,36 @@
 
                         <li class="nav-item">
                             <a href="{{ url('keranjang') }}" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon fas fa-book"></i>
                                 <p>Dokumen</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="{{ url('invoice') }}" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon fas fa-newspaper"> </i>
                                 <p>Berita</p>
                             </a>
                         </li>
 
                         <!-- @hasanyrole('superadmin')
-                        <li class="nav-item">
-                            <a href="{{ url('kategori') }}" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>Kategori</p>
-                            </a>
+                        <li class=" nav-item">
+                                    <a href="{{ url('kategori') }}" class="nav-link">
+                                        <i class="nav-icon fas fa-th"></i>
+                                        <p>Kategori</p>
+                                    </a>
                         </li>
                         @endhasanyrole -->
 
                         <li class="nav-item">
                             <a href="{{ url('message') }}" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon fas fa-image"></i>
                                 <p>Galeri</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ url('bandara') }}" class="nav-link">
+                            <a href="{{ route('tarif.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-road"></i>
                                 <p>Tarif Tol</p>
                             </a>
@@ -242,8 +262,15 @@
 
                         <li class="nav-item">
                             <a href="{{ url('penerbangan') }}" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                                <i class="nav-icon fas fa-envelope"></i>
                                 <p>Pesan</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('upload') }}" class="nav-link">
+                                <i class="nav-icon fas fa-road"></i>
+                                <p>Upload File</p>
                             </a>
                         </li>
 
@@ -288,7 +315,7 @@
                                 @csrf
                                 <a href="javascript:{}" onclick="document.getElementById('logout').submit();"
                                     class='nav-link'>
-                                    <i class="nav-icon fas fa-th"></i>
+                                    <i class="nav-icon fas fa-door-closed"></i>
                                     <p>Logout</p>
                                 </a>
                             </form>
@@ -315,11 +342,7 @@
             <section class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>@yield('title')</h1>
-                        </div>
-                        <div class="col-sm-6">
-                        </div>
+                        @yield('title')
                     </div>
                 </div>
             </section>

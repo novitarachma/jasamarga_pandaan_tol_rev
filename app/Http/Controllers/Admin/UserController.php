@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -15,8 +15,12 @@ use DB;
 use Hash;
 use Illuminate\Support\Arr;
 use App\Services\FileUploadService;
+use App\Services\TrashService;
+use App\Services\ChangePasswordService;
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Http\Requests\ImportFileRequest;
+use App\Http\Requests\ChangePasswordRequest;
 use Illuminate\Http\JsonResponse;
 
 class UserController extends Controller
@@ -48,28 +52,12 @@ class UserController extends Controller
      
     public function store(StoreUserRequest $request, FileUploadService $fileUploadService)
     {
-        
-        if ($request->hasFile('photo')) {
-            $photo = $request->file('photo');
-            $photoPath = $fileUploadService->uploadImage($photo);
-        } else{
-            $photoPath = null;
-        }
-        
-        if ($request->hasFile('photo_cover')) {
-            $photoCover = $request->file('photo_cover');
-            $photoCoverPath = $fileUploadService->uploadImage($photoCover);
-        } else{
-            $photoCoverPath = null;
-        }
-        
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
-        $input['photo'] = $photoPath;
-        $input['photo_cover'] = $photoCoverPath;
         
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
+        
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect(route('user.index'))->with('success', 'User Berhasil Ditambahkan');
@@ -99,38 +87,11 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreUserRequest $request, FileUploadService $fileUploadService, User $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
         
-        if($user->photo && file_exists(storage_path('./app/public/image'. $user->photo))){
-            Storage::delete(['public/image/', $user->photo]);
-        }
-        
-        if ($request->hasFile('photo')) {
-            $photo = $request->file('photo');
-            $photoPath = $fileUploadService->uploadImage($photo);
-        } else{
-            $photoPath = null;
-        }
-        
-        if($user->photo_cover && file_exists(storage_path('./app/public/'. $user->photo_cover))){
-            Storage::delete(['public/', $user->photo_cover]);
-        }
-
-        if ($request->hasFile('photo_cover')) {
-            $photoCover = $request->file('photo_cover');
-            $photoCoverPath = $fileUploadService->uploadImage($photoCover);
-        } else{
-            $photoCoverPath = null;
-        }
-        
-        $input = $request->all();
-        $input['password'] = Hash::make($input['password']);
-        $input['photo'] = $photoPath;
-        $input['photo_cover'] = $photoCoverPath;
-        
-        $user->update($input);
-        $user->assignRole($request->input('roles'));
+        $user->update($request->all());
+        $user->syncRoles($request->input('roles'));
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect()->route('user.index')->with('success', 'User Berhasil Ditambahkan');
@@ -155,54 +116,38 @@ class UserController extends Controller
 
     public function trash()
     {
-        $user = User::onlyTrashed()->paginate(10);
+        $user = User::onlyTrashed()->paginate();
         return view('admin.users.trash', ['user' => $user]);
     }
 
-    public function restore($id)
+    public function restore($id, TrashService $trashService)
     {
         $user = User::withTrashed()->findOrFail($id);
-        if($user->trashed()){
-            
-            $user->restore();
-            
-            return redirect()->route('trash')->with('status', 'Data successfully restored');
-        
-        } else {
-        
-            return redirect()->route('trash')->with('status', 'Data is not in trash');
-        }
-       
+        return $trashService->restore($user);
     }
     
-    public function deletePermanent($id)
+    public function deletePermanent($id, TrashService $trashService)
     {
         $user = User::withTrashed()->findOrFail($id);
-        if(!$user->trashed())
-        {
-            return redirect()->route('trash')->with('status', 'Data is noting trash!');
-        } else {
-            $user->forceDelete();
-            return redirect()->route('trash')->with('status', 'Data permanently deleted!');
-        }
+        return $trashService->delete($user);
     }
 
-    // Import file excel
-    public function import_user(ImportFileRequest $request, FileUploadService $fileUploadService)
-	{
-		if ($request->hasFile('file')) {
-            $file = $request->file('file');
-            $filePath = $fileUploadService->uploadFile($file);
-        }
-        
-		// import data
-		Excel::import(new UserImport, storage_path('./app/public/'.$filePath));
- 
-		// notifikasi dengan session
-		Session::flash('sukses','Data User Berhasil Diimport!');
- 
-		// alihkan halaman kembali
-		return redirect()->route('admin.users.index');
-	}
+    public function changePassword($id)
+    {
+        $user = User::where('id', $id)->first();
+        return view('admin.users.change-password', compact('user'));
+    }
 
+    public function updatePassword(ChangePasswordRequest $request, $id)
+    {
+        $input = $request->all();
+        
+        $user = User::where('id', $id);
+        #Update the new Password
+        $user->update([
+            'password' => Hash::make($input['new_password'])
+        ]);
+
+        return redirect()->route('user.index')->with("status", "Password changed successfully!");
+    }
 }

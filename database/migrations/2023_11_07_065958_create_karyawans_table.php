@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('karyawans', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->string('nip');
             $table->string('foto');
             $table->string('jabatan');
             $table->unsignedBigInteger('divisi_id');

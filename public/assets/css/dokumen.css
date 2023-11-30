@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+  }
+
+  /* Style the search field */
+  .example input[type=text] {
+    padding: 5px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: center;
+    width: 30%;
+    background: #fdfdfd;
+    border-radius: 10px 10px 10px 10px;
+  }
+  
+  /* Style the submit button */
+  .example button {
+    float: center;
+    width: 10%;
+    padding: 5px;
+    background: #615b5b;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+    border-radius: 10px 10px 10px 10px;
+  }
+  
+  .example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  .example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

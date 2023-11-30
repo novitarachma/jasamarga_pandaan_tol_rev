@@ -11,7 +11,7 @@ class ImportFileRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,6 +22,7 @@ class ImportFileRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'label' => 'required',
             'file' => 'required|mimes:csv,xls,xlsx',
         ];
     }
