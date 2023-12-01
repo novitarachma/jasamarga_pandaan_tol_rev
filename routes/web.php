@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-// use App\Http\Controllers\Auth\ForgotPasswordController;
-// use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UploadController;
 
 /*
@@ -49,19 +47,25 @@ Route::get('/visimisi', function () {
     return view('profil_perusahaan/visimisi');
 });
 
-Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['role:admin']], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['role:admin']],
+function () {
     Route::resource('user', UserController::class);
     Route::resource('tarif', TarifTolController::class);
+    Route::resource('galeri', GaleriController::class);
     Route::controller(UserController::class)->group(function () {
-        Route::get('trash', 'trash')->name('trash');
-        Route::post('{id}/restore', 'restore')->name('restore');
-        Route::delete('{id}/delete-permanent', 'deletePermanent')->name('deletePermanent');
+        Route::get('trash-user', 'trash')->name('trash-user');
+        Route::post('{id}/restore', 'restore')->name('restore-user');
+        Route::delete('{id}/delete-permanent', 'deletePermanent')->name('deletePermanentUser');
         Route::get('{id}/change-password', 'changePassword')->name('change-password');
         Route::put('{id}/update-password', 'updatePassword')->name('update-password');
-
     });
     Route::controller(UploadController::class)->group(function () {
         Route::get('upload', 'upload')->name('upload');
         Route::post('file-upload', 'fileUpload')->name('fileUpload');
+    });
+    Route::controller(TarifTolController::class)->group( function () {
+        Route::get('trash-tarif', 'trash')->name('trash-tarif');
+        Route::post('{id}/restore', 'restore')->name('restore-tarif');
+        Route::delete('{id}/delete-permanent', 'deletePermanent')->name('deletePermanentTarif');
     });
 });
