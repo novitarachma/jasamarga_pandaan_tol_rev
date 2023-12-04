@@ -6,7 +6,7 @@
 
 @section('title')
 <div class="col-sm-6">
-    <h1>Add User</h1>
+    <h1>Edit User</h1>
 </div>
 <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
@@ -31,16 +31,6 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            @if ($errors->any())
-            <div class="alert alert-danger">
-                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
             <form method="POST" action="{{ route('user.update', $user->id) }}" id="myForm"
                 enctype="multipart/form-data">
                 @method('PUT')
@@ -49,25 +39,30 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Nama</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}"
-                                placeholder="Enter name">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
+                                name="name" value="{{ $user->name }}" placeholder="Enter name">
+                            @error('name')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" name="username"
-                                value="{{ $user->username }}" placeholder="Enter Username">
+                            <input type="text" class="form-control @error('username') is-invalid @enderror"
+                                id="username" name="username" value="{{ $user->username }}"
+                                placeholder="Enter Username">
+                            @error('username')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password"
-                                placeholder="Enter password">
-                        </div> -->
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}"
-                                placeholder="Enter email">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
+                                name="email" value="{{ $user->email }}" placeholder="Enter email">
+                            @error('email')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="roles">Roles</label>
@@ -78,11 +73,6 @@
                                 @endforeach
                             </select>
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="password_confirmation">Confirm Password</label>
-                            <input type="password" class="form-control" id="password_confirmation"
-                                name="password_confirmation" placeholder="Enter confirm password">
-                        </div> -->
                     </div>
                 </div>
                 <!-- /.row -->

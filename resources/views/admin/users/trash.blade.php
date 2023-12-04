@@ -2,8 +2,9 @@
 
 @section('style')
 <!-- DataTables -->
-<link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="{{ asset('theme/adminlte') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet"
+    href="{{ asset('theme/adminlte') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 @endsection
 
 @section('title')
@@ -35,7 +36,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Name</th>
-                                <th>NIP</th>
+                                <th>Username</th>
                                 <th>Role</th>
                                 <th style="width: 220px;">Action</th>
                             </tr>
@@ -45,18 +46,19 @@
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $value->name }}</td>
-                                <td>{{ $value->nip }}</td>
+                                <td>{{ $value->username }}</td>
                                 <td>
                                     @foreach($value->roles as $key => $item)
                                     <span class="badge bg-info">{{ $item->name }}</span>
                                     @endforeach
                                 </td>
                                 <td>
-                                    <form method="POST" action="{{route('restore', [$value->id])}}" class="d-inline">
+                                    <form method="POST" action="{{route('restore-user', [$value->id])}}"
+                                        class="d-inline">
                                         @csrf
                                         <input type="submit" value="Restore" class="btn btn-success" />
                                     </form>
-                                    <form method="POST" action="{{route('deletePermanent', [$value->id])}}"
+                                    <form method="POST" action="{{route('deletePermanentUser', [$value->id])}}"
                                         class="d-inline" onsubmit="return confirm('Delete this data permanently ?')">
                                         @csrf
                                         @method('DELETE')
@@ -67,6 +69,11 @@
                             @endforeach()
                         </tbody>
                     </table>
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="{{ route('user.index') }}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.card-body -->
             </div>
