@@ -7,29 +7,29 @@ use Illuminate\Support\Str;
 
 class TrashService
 {
-    public function restore($user)
+    public function restore($data, $root)
     {
-        if($user->trashed()){
+        if($data->trashed()){
             
-            $user->restore();
+            $data->restore();
             
-            return redirect()->route('trash')->with('status', 'Data successfully restored');
+            return redirect()->route('trash'.$root)->with('status', 'Data successfully restored');
         
         } else {
-        
-            return redirect()->route('trash')->with('status', 'Data is not in trash');
+
+            return redirect()->route('trash'.$root)->with('error', 'Data is not in trash');
         }
        
     }
     
-    public function delete($user)
+    public function delete($data, $root)
     {
-        if(!$user->trashed())
+        if(!$data->trashed())
         {
-            return redirect()->route('trash')->with('status', 'Data is noting trash!');
+            return redirect()->route('trash'.$root)->with('error', 'Data is noting trash!');
         } else {
-            $user->forceDelete();
-            return redirect()->route('trash')->with('status', 'Data permanently deleted!');
+            $data->forceDelete();
+            return redirect()->route('trash'.$root)->with('status', 'Data permanently deleted!');
         }
     }
 }
