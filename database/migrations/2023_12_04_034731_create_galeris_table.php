@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('foto');
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('tahun_id')->references('id')->on('tahun_tols')->onDelete('cascade');
+            $table->foreign('tahun_id')->references('id')->on('tahuns')->onDelete('cascade');
         });
     }
 
