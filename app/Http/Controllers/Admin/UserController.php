@@ -101,29 +101,31 @@ class UserController extends Controller
         return redirect()->route('user.index')->with('success', 'User Berhasil Dihapus');
     }
 
-    public function massDestroy(Request $request)
+    public function trash()
     {
-        User::whereIn('id', $request->get('selected'))->delete();
-
-        return response("Selected post(s) deleted successfully.", 200);
-    }
-
-    public function trash(User $user)
-    {
-        $user->onlyTrashed()->paginate();
+        $user = User::onlyTrashed()->paginate();
         return view('admin.users.trash', compact('user'));
     }
 
-    public function restore($id, User $user, TrashService $trashService)
+    public function restore($id, TrashService $trashService)
     {
-        $user->withTrashed()->findOrFail($id);
-        return $trashService->restore($user);
+        $user = User::withTrashed()->findOrFail($id);
+        $root = '-user';
+        return $trashService->restore($user, $root);
     }
     
-    public function deletePermanent($id, User $user, TrashService $trashService)
+    public function deletePermanent($id, TrashService $trashService)
     {
-        $user->withTrashed()->findOrFail($id);
-        return $trashService->delete($user);
+        $user = User::withTrashed()->findOrFail($id);
+        $root = '-user';
+        return $trashService->delete($user, $root);
+    }
+    
+    public function deleteAllPermanent(TrashService $trashService)
+    {
+        $user = User::withTrashed();
+        $root = '-user';
+        return $trashService->delete($user, $root);
     }
 
     public function changePassword($id, User $user)

@@ -13,7 +13,7 @@
 </div>
 <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.page') }}">Home</a></li>
         <li class="breadcrumb-item active">Data User</li>
     </ol>
 </div>
@@ -34,9 +34,9 @@
                     <a class="btn btn-danger" href="{{ route('trash-user') }}">Trash</a>
                     <br><br>
 
-                    @if (session('status'))
+                    @if (session('success'))
                     <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
+                        {{ session('success') }}
                     </div>
                     @elseif (session('error'))
                     <div class="alert alert-danger" role="alert">

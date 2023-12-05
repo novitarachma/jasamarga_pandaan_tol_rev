@@ -10,8 +10,8 @@
 </div>
 <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">User</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.page') }}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('user.index') }}">User</a></li>
         <li class="breadcrumb-item active">Change Password User</li>
     </ol>
 </div>

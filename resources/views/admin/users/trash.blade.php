@@ -13,8 +13,8 @@
 </div>
 <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">User</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.page') }}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('user.index') }}">User</a></li>
         <li class="breadcrumb-item active">Trash User</li>
     </ol>
 </div>
@@ -31,6 +31,17 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
+                    <a class="btn btn-danger" href="{{ route('delete-permanent-all-user') }}">Trash</a>
+                    <br>
+                    @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                    @elseif (session('error'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('error') }}
+                    </div>
+                    @endif
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -58,7 +69,7 @@
                                         @csrf
                                         <input type="submit" value="Restore" class="btn btn-success" />
                                     </form>
-                                    <form method="POST" action="{{route('deletePermanentUser', [$value->id])}}"
+                                    <form method="POST" action="{{route('delete-permanent-user', [$value->id])}}"
                                         class="d-inline" onsubmit="return confirm('Delete this data permanently ?')">
                                         @csrf
                                         @method('DELETE')
