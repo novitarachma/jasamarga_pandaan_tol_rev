@@ -46,7 +46,7 @@
                     <div class="col-md">
                         <div class="form-group">
                             <label for="roles">Tujuan Table</label>
-                            <select class="form-control select2bs4" style="width: 100%;" id="roles" name="roles">
+                            <select class="form-control custom-select" style="width: 100%;" id="roles" name="roles">
                                 @foreach($label as $v)
                                 <option value="{{ $v }}" selected="selected">{{ $v }}</option>
                                 @endforeach

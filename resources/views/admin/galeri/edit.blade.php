@@ -63,7 +63,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="tahun">Tahun</label>
-                            <select class="form-control select2bs4" style="width: 100%;" id="tahun" name="tahun"
+                            <select class="form-control custom-select" style="width: 100%;" id="tahun" name="tahun"
                                 value="{{ $galeri->tahun->name }}">
                                 @foreach($tahun as $th)
                                 <option value="{{ $th->id }}" selected="selected">{{ $th->name }}</option>
@@ -86,5 +86,10 @@
 @endsection
 
 @section('script')
-
+<script src="{{ asset('theme/adminlte') }}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script>
+$(function() {
+    bsCustomFileInput.init();
+});
+</script>
 @endsection
