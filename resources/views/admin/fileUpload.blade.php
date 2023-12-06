@@ -55,13 +55,12 @@
                     </div>
                     <div class="col-md">
                         <div class="form-group">
-                            <label for="exampleInputFile">File input</label>
+                            <label for="file">File input</label>
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" name="file"
-                                        class="custom-file-input @error('file') is-invalid @enderror"
-                                        id="exampleInputFile">
-                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                        class="custom-file-input @error('file') is-invalid @enderror" id="file">
+                                    <label class="custom-file-label" for="file">Choose file</label>
                                     @error('file')
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -84,5 +83,10 @@
 @endsection
 
 @section('script')
-
+<script src="{{ asset('theme/adminlte') }}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script>
+$(function() {
+    bsCustomFileInput.init();
+});
+</script>
 @endsection
