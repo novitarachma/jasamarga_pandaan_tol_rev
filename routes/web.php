@@ -5,10 +5,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use Illuminate\Support\Facades\User;
 use App\Http\Controllers\User\GaleriController;
-use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\User\BeritaController;
 use App\Http\Controllers\TarifTolController;
-use App\Http\Controllers\DokumenController;
-use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\User\DokumenController;
+use App\Http\Controllers\User\KaryawanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,15 +24,12 @@ use App\Http\Controllers\KaryawanController;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/galeri', [GaleriController::class,'index']);
-Route::get('/berita', [BeritaController::class,'index']);
+Route::get('/galeri', [GaleriController::class,'index'])->name('galeri');
+Route::get('/berita', [BeritaController::class,'index'])->name('berita');
+Route::get('{id}/detail-berita', [BeritaController::class,'show'])->name('detail-berita');
 Route::get('/tarif', [TarifTolController::class,'index']);
-Route::get('/finance_sk_direksi', [DokumenController::class,'index']);
-Route::get('/finance', [KaryawanController::class,'index']);
-
-// Route::get('/berita', function () {
-//     return view('user/berita');
-// });
+Route::get('/perusahaan', [DokumenController::class,'index'])->name('perusahaan');
+Route::get('/karyawan', [KaryawanController::class,'index'])->name('karyawan');
 
 Route::get('admin-page', function() {
     return view('admin/index');
@@ -42,13 +39,9 @@ Route::get('user-page', function() {
     return view('index');
 })->middleware('role:user')->name('user.page');
 
-// Route::get('/galeri', function () {
-//     return view('user/galeri');
+// Route::get('/detail', function () {
+//     return view('user/detail-berita');
 // });
-
-Route::get('/detail', function () {
-    return view('user/detail-berita');
-});
 
 Route::get('/profile', function () {
     return view('user/user-profile');
@@ -82,11 +75,6 @@ Route::get('/pustaka', function () {
     return view('profil_perusahaan/pustaka');
 });
 
-
-// Route::get('/tarif', function () {
-//     return view('user/tariftol');
-// });
-
 Route::get('/about', function () {
     return view('user/aboutUs');
 });
@@ -102,14 +90,6 @@ Route::get('/contact', function () {
 Route::get('/database', function () {
     return view('monitoring_lereng/database');
 });
-
-// Route::get('/finance_sk_direksi', function () {
-//     return view('dokumen_perusahaan/finance_sk_direksi');
-// });
-
-// Route::get('/finance', function () {
-//     return view('dokumen_karyawan/finance');
-// });
 
 Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
 Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');

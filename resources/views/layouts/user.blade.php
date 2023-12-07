@@ -65,68 +65,67 @@
           <li><a class="nav-link scrollto" href="{{ route('home') }}">Home</a></li>
           <li><a class="nav-link scrollto" href="/about">About</a></li>
           <li><a class="nav-link scrollto" href="/service">Services</a></li>
-          <li><a class="nav-link scrollto" href="/detail">Berita</a></li>
-          <li><a class="nav-link scrollto" href="/galeri">Galeri</a></li>
+          <li><a class="nav-link scrollto" href="{{ route('berita') }}">Berita</a></li>
+          <li><a class="nav-link scrollto" href="{{ route('galeri') }}">Galeri</a></li>
           <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
           <li class="dropdown"><a href="#"><span>Dokumen </span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-            <li class="dropdown"><a href="#"><span>Dokumen Perusahaan</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a href="{{ route('perusahaan') }}"><span>Dokumen Perusahaan</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li class="dropdown"><a href="#"><span>FINANCE</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Surat Keputusan Direksi</a></li>
-                  <li><a href="#">Prosedur</a></li>
-                  <li><a href="#">Formulir</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Surat Keputusan Direksi</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Prosedur</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Formulir</a></li>
                 </ul>
               </li>
               <li class="dropdown"><a href="#"><span>GA & Business Development</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Surat Keputusan Direksi</a></li>
-                  <li><a href="#">Prosedur</a></li>
-                  <li><a href="#">Formulir</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Surat Keputusan Direksi</a></li>
+                  <li><a href="{{ route('perusahaan') }}#">Prosedur</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Formulir</a></li>
                 </ul>
               </li>
               <li class="dropdown"><a href="#"><span>HR & Legal</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Surat Keputusan Direksi</a></li>
-                  <li><a href="#">Prosedur</a></li>
-                  <li><a href="#">Formulir</a></li>
-                  <li><a href="#">Pakta Integritas</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Surat Keputusan Direksi</a></li>
+                  <li><a href="{{ route('perusahaan') }}#">Prosedur</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Formulir</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Pakta Integritas</a></li>
                 </ul>
               </li>
               <li class="dropdown"><a href="#"><span>Maintenance</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Surat Keputusan Direksi</a></li>
-                  <li><a href="#">Prosedur</a></li>
-                  <li><a href="#">Formulir</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Surat Keputusan Direksi</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Prosedur</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Formulir</a></li>
                 </ul>
               </li>
               <li class="dropdown"><a href="#"><span>Toll Collection Management</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Surat Keputusan Direksi</a></li>
-                  <li><a href="#">Prosedur</a></li>
-                  <li><a href="#">Instruksi Kerja</a></li>
-                  <li><a href="#">Formulir</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Surat Keputusan Direksi</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Prosedur</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Instruksi Kerja</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Formulir</a></li>
                 </ul>
               </li>
               <li class="dropdown"><a href="#"><span>Traffic Management</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Surat Keputusan Direksi</a></li>
-                  <li><a href="#">Prosedur</a></li>
-                  <li><a href="#">Instruksi Kerja</a></li>
-                  <li><a href="#">Formulir</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Surat Keputusan Direksi</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Prosedur</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Instruksi Kerja</a></li>
+                  <li><a href="{{ route('perusahaan') }}">Formulir</a></li>
                 </ul>
               </li>
             </ul>
           </li>
-          <li class="dropdown"><a href="#"><span>Dokumen Karyawan</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="{{ route('karyawan') }}"><span>Dokumen Karyawan</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">DIREKSI</a></li>
-              <li><a href="#">HC & GA</a></li>
-              <li><a href="#">MAINTENANCE</a></li>
-              <li><a href="#">FINANCE</a></li>
-              <li><a href="#">TOLL COLLECTION MANAGEMENT</a></li>
-              <li><a href="#">TRAFFIC MANAGEMENT</a></li>
+              <li><a href="{{ route('karyawan') }}">HC & GA</a></li>
+              <li><a href="{{ route('karyawan') }}">MAINTENANCE</a></li>
+              <li><a href="{{ route('karyawan') }}">FINANCE</a></li>
+              <li><a href="{{ route('karyawan') }}">TOLL COLLECTION MANAGEMENT</a></li>
+              <li><a href="{{ route('karyawan') }}">TRAFFIC MANAGEMENT</a></li>
             </ul>
           </li>
         </ul>
@@ -271,17 +270,11 @@
                         <form action="" method="post">
                             <input type="email" name="email"><input type="submit" value="Subscribe">
                         </form>
-
                     </div>
-
-
-                    </ul>
-                    </li>
-                    </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                     </nav><!-- .navbar -->
                 </div>
-                </div>
+              </div>
             </div>
 
             <div class="container">
