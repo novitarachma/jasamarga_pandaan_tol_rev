@@ -7,6 +7,7 @@ use App\Http\Controllers\User\BeritaController;
 use App\Http\Controllers\User\TarifTolController;
 use App\Http\Controllers\User\DokumenController;
 use App\Http\Controllers\User\KaryawanController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/galeri', [GaleriController::class,'index'])->name('galeri');
 Route::get('/berita', [BeritaController::class,'index'])->name('berita');
 Route::get('{id}/detail-berita', [BeritaController::class,'show'])->name('detail-berita');
