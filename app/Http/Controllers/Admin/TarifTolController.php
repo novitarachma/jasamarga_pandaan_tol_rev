@@ -4,15 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\TarifTol;
-use Illuminate\Support\Facades\Auth;
+use App\Models\AsalTol;
+use App\Models\TujuanTol;
+use App\Models\GolonganTol;
 use Session;
-use App\Imports\TarifTolImport;
-use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Storage;
-use App\Services\FileUploadService;
 use App\Services\TrashService;
 use App\Http\Requests\StoreTarifTolRequest;
+use App\Http\Requests\UpdateTarifTolRequest;
 use App\Http\Requests\ImportFileRequest;
 
 class TarifTolController extends Controller
@@ -23,8 +22,11 @@ class TarifTolController extends Controller
     public function index()
     {
         $datas = TarifTol::all();
+        $asal = AsalTol::all();
+        $tujuan = TujuanTol::all();
+        $golongan = GolonganTol::all();
         return view('admin.tarif.index', compact(
-            'datas'
+            'datas', 'asal', 'tujuan', 'golongan'
         ));
     }
 
@@ -33,17 +35,37 @@ class TarifTolController extends Controller
      */
     public function create()
     {
-        return view('admin.tarif.create');
+        $asal = AsalTol::all();
+        $tujuan = TujuanTol::all();
+        $golongan = GolonganTol::all();
+        return view('admin.tarif.create', compact(
+            'asal', 'tujuan', 'golongan'
+        ));
     }
 
     /**
      * Store a newly created resource in storage.
      */
      
-    public function store(StoreTarifTolRequest $request, TarifTol $tarif)
+    public function store(StoreTarifTolRequest $request, TarifTol $tarif, AsalTol $asal, TujuanTol $tujuan,
+    GolonganTol $golongan)
     {
         $input = $request->all();
-        $tarif->create($input);
+
+        $tarif['harga'] = $input['harga'];
+        $tarif->save();
+
+        $asal['id'] = $input['asal'];
+        $tarif->asal()->associate($asal);
+        $tarif->save();
+        
+        $tujuan['id'] = $input['tujuan'];
+        $tarif->tujuan()->associate($tujuan);
+        $tarif->save();
+
+        $golongan['id'] = $input['golongan'];
+        $tarif->golongan()->associate($golongan);
+        $tarif->save();
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect()->route('admin.tarif.index')->with('success', 'Tarif Berhasil Ditambahkan');
@@ -52,28 +74,27 @@ class TarifTolController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id, TarifTol $tarif)
     {
-        $tarif = TarifTol::where('id', $id)->first();
+        $tarif->where('id', $id)->first();
         return view('admin.tarif.detail', compact('tarif'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id, TarifTol $tarif)
     {
-        $tarif = TarifTol::where('id', $id)->first();
+        $tarif->where('id', $id)->first();
         return view('admin.tarif.edit', compact('tarif'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreTarifTolRequest $request, TarifTol $tarif)
+    public function update(UpdateTarifTolRequest $request, TarifTol $tarif)
     {
-        $input = $request->all();
-        $tarif->update($input);
+        $tarif->update($request->all());
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect()->route('admin.tarif.index')->with('success', 'Tarif Berhasil Ditambahkan');
@@ -91,19 +112,33 @@ class TarifTolController extends Controller
 
     public function trash()
     {
-        $tarif = TarifTol::onlyTrashed()->paginate(10);
-        return view('admin.tarif.trash', ['tarif' => $tarif]);
+        $tarif = TarifTol::onlyTrashed()->paginate();
+        $asal = AsalTol::onlyTrashed()->paginate();
+        $tujuan = TujuanTol::onlyTrashed()->paginate();
+        $golongan = GolonganTol::onlyTrashed()->paginate();
+        return view('admin.tarif.trash', compact(
+            'tarif', 'asal', 'tujuan', 'golongan'
+        ));
     }
 
     public function restore($id, TrashService $trashService)
     {
         $tarif = TarifTol::withTrashed()->findOrFail($id);
-        return $trashService->restore($tarif);
+        $root = '-tarif';
+        return $trashService->restore($tarif, $root);
     }
     
     public function deletePermanent($id, TrashService $trashService)
     {
         $tarif = TarifTol::withTrashed()->findOrFail($id);
-        return $trashService->delete($tarif);
+        $root = '-tarif';
+        return $trashService->delete($tarif, $root);
+    }
+
+    public function deleteAllPermanent(TrashService $trashService)
+    {
+        $tarif = TarifTol::withTrashed();
+        $root = '-tarif';
+        return $trashService->delete($tarif, $root);
     }
 }

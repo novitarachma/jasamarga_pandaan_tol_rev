@@ -46,7 +46,7 @@
                     <div class="col-md">
                         <div class="form-group">
                             <label for="roles">Tujuan Table</label>
-                            <select class="form-control select2bs4" style="width: 100%;" id="roles" name="roles">
+                            <select class="form-control custom-select" style="width: 100%;" id="roles" name="roles">
                                 @foreach($label as $v)
                                 <option value="{{ $v }}" selected="selected">{{ $v }}</option>
                                 @endforeach
@@ -55,11 +55,15 @@
                     </div>
                     <div class="col-md">
                         <div class="form-group">
-                            <label for="exampleInputFile">File input</label>
+                            <label for="file">File input</label>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input type="file" name="file" class="custom-file-input" id="exampleInputFile">
-                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                    <input type="file" name="file"
+                                        class="custom-file-input @error('file') is-invalid @enderror" id="file">
+                                    <label class="custom-file-label" for="file">Choose file</label>
+                                    @error('file')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -79,5 +83,10 @@
 @endsection
 
 @section('script')
-
+<script src="{{ asset('theme/adminlte') }}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script>
+$(function() {
+    bsCustomFileInput.init();
+});
+</script>
 @endsection

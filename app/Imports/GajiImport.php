@@ -24,7 +24,7 @@ class GajiImport implements ToModel, WithHeadingRow
     {
         $user = $this->users->where('nip', $row['nip'])->first();
         return new Gaji([
-            'user_id' => $user->id ?? NULL,
+            'user_id' => $user->id ?? null,
             'link' => $row['link'],
         ]);
     }

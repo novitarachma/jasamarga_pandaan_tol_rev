@@ -6,13 +6,13 @@
 
 @section('title')
 <div class="col-sm-6">
-    <h1>Add User</h1>
+    <h1>Change Password User</h1>
 </div>
 <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">User</a></li>
-        <li class="breadcrumb-item active">Edit User</li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.page') }}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('user.index') }}">User</a></li>
+        <li class="breadcrumb-item active">Change Password User</li>
     </ol>
 </div>
 @endsection
@@ -21,7 +21,7 @@
 <div class="container-fluid">
     <div class="card card-default">
         <div class="card-header">
-            <h3 class="card-title">Edit User</h3>
+            <h3 class="card-title">Change Password User</h3>
 
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -37,14 +37,6 @@
                 @csrf
                 <div class="row">
                     <div class="col-md-6">
-                        <!-- <div class="form-group">
-                            <label for="oldPassowrd">Password Lama</label>
-                            <input type="password" class="form-control @error('old_password') is-invalid @enderror"
-                                id="oldPassword" name="old_password" placeholder="New Password">
-                            @error('old_password')
-                            <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div> -->
                         <div class="form-group">
                             <label for="newPassword">New Password</label>
                             <input type="password" class="form-control @error('new_password') is-invalid @enderror"
