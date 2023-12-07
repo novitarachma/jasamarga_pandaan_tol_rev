@@ -3,7 +3,7 @@
 @section('content')
 <!-- ======= Hero Section ======= -->
 <section id="hero">
-    <!-- <br><br><br> -->
+    <br><br><br>
     <div class="hero-container">
         <div id="heroCarousel" data-bs-interval="3000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
@@ -97,7 +97,7 @@
                             Gempol - Pandaan aman &amp; lancar | Info Tol (0343) 5650729</marquee>
                     </strong></div>
                 <div class="readMore">
-                    <a style="text-decoration:none" href="/tarif" title="Tarif Tol Gempol - Pandaan"
+                    <a style="text-decoration:none" href="{{ route('tarif') }}" title="Tarif Tol Gempol - Pandaan"
                         class="btn-get-started animate__animated animate__fadeInUp scrollto"><strong>
                             <p class="bold-900">Tarif Tol Gempol - Pandaan</p>
                         </strong></a>

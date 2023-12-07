@@ -44,12 +44,11 @@
     <!-- <link href="{{ asset('assets/css/slider.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
     @yield('css')
 
     <style>
-    #navbar {
+    nav {
         background-image: url("{{ asset('assets/img/putih-tekstur.jpg') }}");
     }
     </style>
@@ -59,6 +58,7 @@
 </head>
 
 <body>
+    <!-- <header> -->
     <nav id="navbar" class="navbar">
         <h1 class="logo"><img src="assets/img/LogoJPT.png" alt="" class="img-fluid"></h1>
         <ul>
@@ -68,6 +68,7 @@
             <li><a class="nav-link scrollto" href="{{ route('berita') }}">Berita</a></li>
             <li><a class="nav-link scrollto" href="{{ route('galeri') }}">Galeri</a></li>
             <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+            @hasanyrole('user')
             <li class="dropdown"><a href="#"><span>Dokumen </span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                     <li class="dropdown"><a href="{{ route('perusahaan') }}"><span>Dokumen Perusahaan</span> <i
@@ -138,7 +139,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
+            @endhasanyrole
             <li class="dropdown"><a href="#"><span>Profil Perusahaan</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                     <li><a href="/visimisi">Visi, Misi dan Tata Nilai</a></li>
@@ -187,6 +188,7 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
+    <!-- </header> -->
     <main>
         @yield('content')
     </main>
