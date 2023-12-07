@@ -21,13 +21,15 @@
     <div class="konten" id="artikel">
         <div class="content-container">
             <div class="card">
-                <img src="https://ptjpt.co.id/wp-content/uploads/2018/01/PEMBENTUKAN-TIM-AUDIT-INTERNAL-370x290.png" alt="">
+            @foreach ($post as $item)
+                <img src="{{ asset('./storage/'.$item->foto) }}" alt="">
                 <div class="card-body">
-                    <h2>SK PEMBENTUKAN TIM AUDIT INTERNAL</h2>
+                    <h2>{{ $item->judul }}</h2>
                 </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary" position="center">Download</button>
                 </div>
+            @endforeach
             </div>
         
     </section>
