@@ -11,15 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tarif_tols', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('asal');
-            $table->string('tujuan');
-            $table->integer('gol1');
-            $table->integer('gol2');
-            $table->integer('gol3');
-            $table->integer('gol4');
-            $table->integer('gol5');
+        Schema::create('asal_tols', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tarif_tols');
+        Schema::dropIfExists('asal_tols');
     }
 };

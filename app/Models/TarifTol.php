@@ -16,12 +16,24 @@ class TarifTol extends Model
     public $table = 'tarif_tols';
 
     protected $fillable = [
-        'asal',
-        'tujuan',
-        'gol1',
-        'gol2',
-        'gol3',
-        'gol4',
-        'gol5',
+        'asal_id',
+        'tujuan_id',
+        'golongan_id',
+        'harga',
     ];
+
+    public function asal()
+    {
+    	return $this->belongsTo(AsalTol::class);
+    }
+
+    public function tujuan()
+    {
+    	return $this->belongsTo(TujuanTol::class);
+    }
+
+    public function golongan()
+    {
+    	return $this->belongsTo(GolonganTol::class);
+    }
 }

@@ -3,25 +3,41 @@
 namespace App\Imports;
 
 use App\Models\TarifTol;
+use App\Models\AsalTol;
+use App\Models\TujuanTol;
+use App\Models\GolonganTol;
+use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\Importable;
 
-class TarifTolImport implements ToModel
+class TarifTolImport implements ToModel, WithHeadingRow
 {
-    /**
-    * @param array $row
-    *
-    * @return \Illuminate\Database\Eloquent\Model|null
-    */
+    use Importable;
+    
+    protected $asals;
+    protected $tujuans;
+    protected $golongans;
+    
+    public function __construct()
+    {
+        //QUERY UNTUK MENGAMBIL SELURUH DATA USER
+        $this->asals = AsalTol::select('id', 'name')->get();
+        $this->tujuans = TujuanTol::select('id', 'name')->get();
+        $this->golongans = GolonganTol::select('id', 'name')->get();
+    }
+    
     public function model(array $row)
     {
+        $asal = $this->asals->where('name', $row['asal'])->first();
+        $tujuan = $this->tujuans->where('name', $row['tujuan'])->first();
+        $golongan = $this->golongans->where('name', $row['golongan'])->first();
+        
         return new TarifTol([
-            'asal' => $row[1],
-            'tujuan' => $row[2],
-            'gol1' => $row[3],
-            'gol2' => $row[4],
-            'gol3' => $row[5],
-            'gol4' => $row[6],
-            'gol5' => $row[7],
+            'asal_id' => $asal->id ?? null,
+            'tujuan_id' => $tujuan->id ?? null,
+            'golongan_id' => $golongan->id ?? null,
+            'harga' => $row['harga'],
         ]);
     }
 }

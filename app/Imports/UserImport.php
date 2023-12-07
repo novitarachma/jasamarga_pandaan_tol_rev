@@ -3,6 +3,8 @@
 namespace App\Imports;
 
 use App\Models\User;
+use App\Models\Karyawan;
+use App\Models\UserDetail;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Illuminate\Support\Facades\Hash;
@@ -26,6 +28,10 @@ class UserImport implements ToCollection
             ]);
 
             Karyawan::create([
+                'user_id' => $user->id,
+            ]);
+
+            UserDetail::create([
                 'user_id' => $user->id,
             ])
         }

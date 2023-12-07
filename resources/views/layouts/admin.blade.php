@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PT Jasamarga Pandaan Tol</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
@@ -23,10 +24,10 @@
     <!-- tambahan code untk css -->
     @yield('css')
     <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700">
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-fixed">
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
@@ -37,11 +38,11 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
+                    <a href="{{ route('admin.page') }}" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
+                <!-- <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
-                </li>
+                </li> -->
             </ul>
 
             <!-- Right navbar links -->
@@ -198,22 +199,11 @@
                with font-awesome or any other icon font library -->
                         <!-- menu ini hanya akan muncul ketika pengguna sudah melakukan login -->
                         @if(auth()->check())
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.page') }}" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Dashboard
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
+                                <p>Dashboard</p>
                             </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="../../index.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v1</p>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
 
                         <li class="nav-item">
@@ -224,30 +214,21 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ url('keranjang') }}" class="nav-link">
+                            <a href="{{ route('dokumen.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>Dokumen</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ url('invoice') }}" class="nav-link">
+                            <a href="{{ route('berita.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-newspaper"> </i>
                                 <p>Berita</p>
                             </a>
                         </li>
 
-                        <!-- @hasanyrole('superadmin')
-                        <li class=" nav-item">
-                                    <a href="{{ url('kategori') }}" class="nav-link">
-                                        <i class="nav-icon fas fa-th"></i>
-                                        <p>Kategori</p>
-                                    </a>
-                        </li>
-                        @endhasanyrole -->
-
                         <li class="nav-item">
-                            <a href="{{ url('message') }}" class="nav-link">
+                            <a href="{{ route('galeri.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-image"></i>
                                 <p>Galeri</p>
                             </a>
@@ -272,40 +253,6 @@
                                 <i class="nav-icon fas fa-road"></i>
                                 <p>Upload File</p>
                             </a>
-                        </li>
-
-
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Roles & Permission
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ url('role') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Roles</p>
-                                    </a>
-                                </li>
-
-
-                                <li class="nav-item">
-                                    <a href="{{ url('permissions') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Permission</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="{{ url('user_role') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>User Role</p>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         @endif
 
@@ -356,7 +303,7 @@
             <div class="float-right d-none d-sm-block">
                 <b>Version</b> 3.0.5
             </div>
-            <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+            <strong>Copyright &copy; 2024 PT Jasamarga Pandaan Tol.</strong> All rights
             reserved.
         </footer>
 
