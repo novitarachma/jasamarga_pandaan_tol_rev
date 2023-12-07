@@ -37,7 +37,7 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                     <a class="btn btn-danger" href="{{ route('delete-permanent-all-galeri') }}">Delete All Galeri</a>
-                    <br>
+                    <br><br>
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
@@ -73,7 +73,7 @@
                                         @csrf
                                         <input type="submit" value="Restore" class="btn btn-success" />
                                     </form>
-                                    <form method="POST" action="{{route('deletePermanentgaleri', [$value->id])}}"
+                                    <form method="POST" action="{{route('delete-permanent-galeri', [$value->id])}}"
                                         class="d-inline" onsubmit="return confirm('Delete this data permanently ?')">
                                         @csrf
                                         @method('DELETE')

@@ -9,7 +9,7 @@ use Session;
 use App\Services\TrashService;
 use App\Http\Requests\StoreDataRequest;
 
-class DivisiDocController extends Controller
+class DivisiController extends Controller
 {
     /**
      * Display a listing of the resource.

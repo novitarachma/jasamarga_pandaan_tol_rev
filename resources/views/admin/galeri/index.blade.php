@@ -67,7 +67,7 @@
                                 <td>{{ $value->tahun->name }}</td>
                                 <td>{{ $value->judul }}</td>
                                 <td>
-                                    <img style="width: 50px; overflow: hidden" class="rounded-circle"
+                                    <img style="width: 50px; overflow: hidden" class="rounded"
                                         src="{{ asset('./storage/'. $value->foto) }}" alt="">
                                 </td>
                                 <td>

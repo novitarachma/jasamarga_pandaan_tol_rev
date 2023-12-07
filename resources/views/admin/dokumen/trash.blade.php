@@ -37,7 +37,7 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                     <a class="btn btn-danger" href="{{ route('delete-permanent-all-dokumen') }}">Delete All Dokumen</a>
-                    <br>
+                    <br><br>
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
@@ -75,7 +75,7 @@
                                         @csrf
                                         <input type="submit" value="Restore" class="btn btn-success" />
                                     </form>
-                                    <form method="POST" action="{{route('deletePermanentgaleri', [$value->id])}}"
+                                    <form method="POST" action="{{route('delete-permanent-dokumen', [$value->id])}}"
                                         class="d-inline" onsubmit="return confirm('Delete this data permanently ?')">
                                         @csrf
                                         @method('DELETE')
@@ -100,7 +100,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Trash Tahun Table</h3>
+                    <h3 class="card-title">Trash Divisi Table</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                             <i class="fas fa-minus"></i>
@@ -109,7 +109,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <a class="btn btn-danger" href="{{ route('delete-permanent-all-tahun') }}">Delete All Tahun</a>
+                    <a class="btn btn-danger" href="{{ route('delete-permanent-all-divisi') }}">Delete All Divisi</a>
                     <br><br>
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
@@ -129,17 +129,77 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($tahun as $key=>$value)
+                            @foreach($divisi as $key=>$value)
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $value->name }}</td>
                                 <td>
-                                    <form method="POST" action="{{route('restore-tahun', [$value->id])}}"
+                                    <form method="POST" action="{{route('restore-divisi', [$value->id])}}"
                                         class="d-inline">
                                         @csrf
                                         <input type="submit" value="Restore" class="btn btn-success" />
                                     </form>
-                                    <form method="POST" action="{{route('delete-permanent-tahun', [$value->id])}}"
+                                    <form method="POST" action="{{route('delete-permanent-divisi', [$value->id])}}"
+                                        class="d-inline" onsubmit="return confirm('Delete this data permanently ?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="submit" value="Delete" class="btn btn-danger">
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach()
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Trash Kategori Table</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <a class="btn btn-danger" href="{{ route('delete-permanent-all-kategori') }}">Delete All
+                        Kategori</a>
+                    <br><br>
+                    @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                    @elseif (session('error'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('error') }}
+                    </div>
+                    @endif
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">No</th>
+                                <th>Nama</th>
+                                <th style="width: 220px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($kategori as $key=>$value)
+                            <tr>
+                                <td>{{ $key+1 }}</td>
+                                <td>{{ $value->name }}</td>
+                                <td>
+                                    <form method="POST" action="{{route('restore-kategori', [$value->id])}}"
+                                        class="d-inline">
+                                        @csrf
+                                        <input type="submit" value="Restore" class="btn btn-success" />
+                                    </form>
+                                    <form method="POST" action="{{route('delete-permanent-kategori', [$value->id])}}"
                                         class="d-inline" onsubmit="return confirm('Delete this data permanently ?')">
                                         @csrf
                                         @method('DELETE')
