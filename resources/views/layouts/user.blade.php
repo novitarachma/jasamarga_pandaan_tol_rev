@@ -39,17 +39,22 @@
 
 
 
-  <!-- Template Main CSS File -->
-  <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-  <!-- <link href="{{ asset('assets/css/slider.css') }}" rel="stylesheet"> -->
-  <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Template Main CSS File -->
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <!-- <link href="{{ asset('assets/css/slider.css') }}" rel="stylesheet"> -->
+    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
-  @yield('css')
+    @yield('css')
+
+    <style>
+    header {
+        background-image: url("{{ asset('assets/img/putih-tekstur.jpg') }}");
+    }
+    </style>
 
 
-   
 
 </head>
 
@@ -131,62 +136,57 @@
         </ul>
       </li>
           <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="/profile">Profil Anda</a></li>
-              <li><a href="#">Anggota</a></li>
-              <li><a href="#">Reset Password</a></li>
-              <li><a href="#">LogOut</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="#"><span>Profil Perusahaan</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="/visimisi">Visi, Misi dan Tata Nilai</a></li>
-              <li><a href="/struktur-organisasi">Struktur Organisasi</a></li>
-              <li><a href="/susunan-dewan-komisaris">SUSUNAN DEWAN KOMISARIS</a></li>
-              <li><a href="/susunan-direksi">SUSUNAN DIREKSI</a></li>
-              <li><a href="/pustaka">PUSTAKA</a></li>
-              <li><a href="/link">LINK</a></li>
-            </ul>
-          </li>
-            <!-- <a class="getstarted scrollto" href="#about">Get Started</a> -->
-            <ul class="navbar-nav ms-auto">
+                <li class="dropdown"><a href="#"><span>Profil Perusahaan</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="/visimisi">Visi, Misi dan Tata Nilai</a></li>
+                        <li><a href="/struktur-organisasi">Struktur Organisasi</a></li>
+                        <li><a href="/susunan-dewan-komisaris">Susunan Dewan Komisaris</a></li>
+                        <li><a href="/susunan-direksi">Susunan Direksi</a></li>
+                        <li><a href="/pustaka">Pustaka</a></li>
+                        <li><a href="/link">Link</a></li>
+                    </ul>
+                </li>
+                <!-- <a class="getstarted scrollto" href="#about">Get Started</a> -->
+                <li>
+                    <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link scrollto" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @endif
+                        @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link scrollto" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @endif
 
-                            @else
-                            <li class="dropdown">
-                                <a id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->nama }} <i class="bi bi-chevron-down"></i>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        @else
+                        <li class="dropdown">
+                            <a id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul>
+                                <li><a href="/profile">Profil Anda</a></li>
+                                <li><a href="#">Anggota</a></li>
+                                <li><a href="#">Reset Password</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                            class="d-none">
-                                            @csrf
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                            @endguest
-                        </ul>
-                    </li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
+                                        {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                        @endguest
+                    </ul>
+                </li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
 
         </div>
-    </header><!-- End Header -->
+    </header>
     <main>
         @yield('content')
     </main>
@@ -274,22 +274,22 @@
                     <i class="bi bi-list mobile-nav-toggle"></i>
                     </nav><!-- .navbar -->
                 </div>
-              </div>
             </div>
+        </div>
 
-            <div class="container">
-                <div class="copyright">
-                    &copy; Copyright <strong><span>PT Jasamarga Pandaan Tol</span></strong>. <br>All Rights
-                    Reserved</br>
-                </div>
-                <div class="credits">
-                    <!-- All the links in the footer should remain intact. -->
-                    <!-- You can delete the links only if you purchased the pro version. -->
-                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/groovin-free-bootstrap-theme/ -->
-                    Designed by <strong>IT PT Jasamarga Pandaan Tol</strong></a>
-                </div>
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>PT Jasamarga Pandaan Tol</span></strong>. <br>All Rights
+                Reserved</br>
             </div>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/groovin-free-bootstrap-theme/ -->
+                Designed by <strong>IT PT Jasamarga Pandaan Tol</strong></a>
+            </div>
+        </div>
     </footer><!-- End Footer -->
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
@@ -315,15 +315,15 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
+    <!-- Template Main JS File -->
     <script src="assets/js/chatbox.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/slider.js"></script>
@@ -332,7 +332,8 @@
     <script src="assets/js/tarif/flatpick.js"></script>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'>
+    </script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
 
     <!-- jQuery -->
