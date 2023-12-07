@@ -3,7 +3,7 @@
 @section('content')
 <!-- ======= Hero Section ======= -->
 <section id="hero">
-    <br><br><br>
+    <!-- <br><br><br> -->
     <div class="hero-container">
         <div id="heroCarousel" data-bs-interval="3000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
@@ -178,9 +178,11 @@
                         src="https://ptjpt.co.id/wp-content/uploads/2018/01/multiphibetaaa.png" class="img-fluid"
                         alt=""></a>
             </div>
-        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <a href="https://jmtm.co.id/" target="_blank"><img src="https://ptjpt.co.id/wp-content/uploads/2017/01/logo-default-Copy.jpg" class="img-fluid" alt=""></a>
-        </div>
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                <a href="https://jmtm.co.id/" target="_blank"><img
+                        src="https://ptjpt.co.id/wp-content/uploads/2017/01/logo-default-Copy.jpg" class="img-fluid"
+                        alt=""></a>
+            </div>
         </div>
 
     </div>
@@ -225,33 +227,32 @@
 <!-- ======= Portfolio Section ======= -->
 <section id="portfolio" class="portfolio">
     <div class="container">
-
         <div class="section-title">
-
             <h2>Berita</h2>
-            <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
-        <div class="row portfolio-container">
+        <div class="konten" id="artikel">
+            <div class="content-container">
+                @foreach ($ber as $item)
+                <div class="card">
+                    <img src="{{ asset('./storage/'.$item->foto) }}" alt="artikel">
+                    <div class="card-body">
+                        <h3>{{ $item->judul }}</h3>
+                        <p>{{ substr($item['paragraf1'], 0, 200) }}...</p>
+                    </div>
+                    <div class="card-footer">
+                        <p>{{ $item->tanggal }}</p>
+                        <a href="{{ route('detail-berita',$item->id) }}">
+                            <p>Read more</p>
+                        </a>
 
-    </div>
-    <div class="konten" id="artikel">
-        <div class="content-container">
-        @foreach ($ber as $item)
-            <div class="card">
-                <img src="{{ asset('./storage/'.$item->foto) }}" alt="artikel">
-                <div class="card-body">
-                    <h3>{{ $item->judul }}</h3>
-                    <p>{{ substr($item['paragraf1'], 0, 200) }}...</p>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <p>{{ $item->tanggal }}</p>
-                    <a href="{{ route('detail-berita',$item->id) }}">
-                        <p>Read more</p>
-                    </a>
-        @endforeach
-            <a href="{{route('berita')}}" ><button>Artikel Lainnya</button></a>
+                @endforeach
+                <a href="{{route('berita')}}"><button>Artikel Lainnya</button></a>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact">
