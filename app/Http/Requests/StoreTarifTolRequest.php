@@ -24,11 +24,8 @@ class StoreTarifTolRequest extends FormRequest
         return [
             'asal' => 'required',
             'tujuan' => 'required',
-            'gol1' => 'required',
-            'gol2' => 'required',
-            'gol3' => 'required',
-            'gol4' => 'required',
-            'gol5' => 'required',
+            'golongan' => 'required',
+            'harga' => 'required',
         ];
     }
 }

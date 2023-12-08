@@ -16,8 +16,13 @@ class Galeri extends Model
     protected $table = "galeris";
 
     protected $fillable = [
+        'tahun_id',
         'judul',
-        'tahun',
         'foto'
     ];
+
+    public function tahun()
+    {
+    	return $this->belongsTo(Tahun::class);
+    }
 }
