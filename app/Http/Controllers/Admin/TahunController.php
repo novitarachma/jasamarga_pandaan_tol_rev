@@ -9,7 +9,7 @@ use Session;
 use App\Services\TrashService;
 use App\Http\Requests\StoreDataRequest;
 
-class AsalController extends Controller
+class TahunController extends Controller
 {
     /**
      * Display a listing of the resource.

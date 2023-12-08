@@ -12,60 +12,18 @@
         </div>
     <ul class="controls">
         <li class="buttons active" data-filter="all">All</li>
-        <li class="buttons" data-filter="2019">Tahun 2019</li>
-        <li class="buttons" data-filter="2020">Tahun 2020</li>
-        <li class="buttons" data-filter="2021">Tahun 2021</li>
-        <li class="buttons" data-filter="2022">Tahun 2022</li>
-        <li class="buttons" data-filter="2023">Tahun 2023</li>
-        <li class="buttons" data-filter="2023">Tahun 2024</li>
+        @foreach ($tahun as $item)
+        <li class="buttons" data-filter="{{ $item->name }}">Tahun {{ $item->name }}</li>
+        @endforeach
     </ul>
         <div class="gallery-content">
         @foreach ($post as $item)
-        
-        @if($item->tahun == '2019')
           <div class="g-card">
-            <a href="https://statik.tempo.co/data/2015/06/12/id_409054/409054_620.jpg" class="image 2019">
-                <img src="https://statik.tempo.co/data/2015/06/12/id_409054/409054_620.jpg" alt="Net Error" />
+            <a href="{{ asset('./storage/'.$item->foto) }}" class="{{ $item->tahun->name }}">
+                <img src="{{ asset('./storage/'.$item->foto) }}" alt="Net Error" />
                 <h3>{{ $item->judul }}</h3>
             </a>
           </div>       
-        @elseif($item->tahun == '2020')
-          <div class="g-card">
-            <a href="https://statik.tempo.co/data/2015/06/12/id_409054/409054_620.jpg" class="image 2020">
-                <img src="https://statik.tempo.co/data/2015/06/12/id_409054/409054_620.jpg" alt="Net Error" />
-                <h3>{{ $item->judul }}</h3>
-            </a>
-          </div>
-        @elseif($item->tahun == '2021')
-          <div class="g-card">
-            <a href="https://statik.tempo.co/data/2015/06/12/id_409054/409054_620.jpg" class="image 2021">
-                <img src="https://statik.tempo.co/data/2015/06/12/id_409054/409054_620.jpg" alt="Net Error" />
-                <h3>{{ $item->judul }}</h3>
-            </a>
-          </div>
-        @elseif($item->tahun == '2022')
-          <div class="g-card">
-            <a href="https://statik.tempo.co/data/2015/06/12/id_409054/409054_620.jpg" class="image 2022">
-                <img src="https://statik.tempo.co/data/2015/06/12/id_409054/409054_620.jpg" alt="Net Error" />
-                <h3>{{ $item->judul }}</h3>
-            </a>
-          </div>
-        @elseif($item->tahun == '2023')
-          <div class="g-card">
-            <a href="https://statik.tempo.co/data/2015/06/12/id_409054/409054_620.jpg" class="image 2023">
-                <img src="https://statik.tempo.co/data/2015/06/12/id_409054/409054_620.jpg" alt="Net Error" />
-                <h3>{{ $item->judul }}</h3>
-            </a>
-          </div>
-        @elseif($item->tahun == '2024')
-          <div class="g-card">
-            <a href="https://statik.tempo.co/data/2015/06/12/id_409054/409054_620.jpg" class="image 2024">
-                <img src="https://statik.tempo.co/data/2015/06/12/id_409054/409054_620.jpg" alt="Net Error" />
-                <h3>{{ $item->judul }}</h3>
-            </a>
-          </div>
-        @endif
-
         @endforeach
         </div>
 
