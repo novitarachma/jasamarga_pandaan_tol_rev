@@ -28,6 +28,9 @@
     <link rel='stylesheet'
         href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="{{ asset('assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
@@ -43,6 +46,7 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <!-- <link href="{{ asset('assets/css/slider.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" />
+
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
@@ -65,10 +69,6 @@
             <ul>
                 <li><a class="nav-link scrollto" href="{{ route('home') }}">Home</a></li>
                 <li><a class="nav-link scrollto" href="/about">About</a></li>
-                <li><a class="nav-link scrollto" href="/service">Services</a></li>
-                <li><a class="nav-link scrollto" href="/detail">Berita</a></li>
-                <li><a class="nav-link scrollto" href="/galeri">Galeri</a></li>
-                <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
                 <li class="dropdown"><a href="#"><span>Dokumen </span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li class="dropdown"><a href="#"><span>Dokumen Perusahaan</span> <i
@@ -150,6 +150,10 @@
                         <li><a href="/link">Link</a></li>
                     </ul>
                 </li>
+                <li><a class="nav-link scrollto" href="/service">Services</a></li>
+                <li><a class="nav-link scrollto" href="/detail">Berita</a></li>
+                <li><a class="nav-link scrollto" href="/galeri">Galeri</a></li>
+                <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
                 <!-- <a class="getstarted scrollto" href="#about">Get Started</a> -->
                 <li>
                     <ul class="navbar-nav ms-auto">
@@ -339,6 +343,7 @@
     <script src="assets/js/slider.js"></script>
     <script src="assets/js/tarif/choice.js"></script>
     <script src="assets/js/tarif/custom.js"></script>
+
     <script src="assets/js/tarif/flatpick.js"></script>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
@@ -364,6 +369,7 @@
 
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
+    <script src="assets/js/setprofile.js"></script>
 
     @yield('script')
 </body>

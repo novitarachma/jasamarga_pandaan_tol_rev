@@ -37,11 +37,11 @@ Route::get('/detail', function () {
     return view('user/detail-berita');
 });
 
-Route::get('/profile', function () {
+Route::get('/SetProfile', function () {
     return view('user/user-profile');
 });
 
-Route::get('/SetProfile', function () {
+Route::get('/profile', function () {
     return view('user/Profile-page');
 });
 
