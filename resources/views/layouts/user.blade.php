@@ -28,6 +28,9 @@
     <link rel='stylesheet'
         href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="{{ asset('assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
@@ -43,6 +46,7 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <!-- <link href="{{ asset('assets/css/slider.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" />
+
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
     @yield('css')
@@ -58,6 +62,122 @@
 </head>
 
 <body>
+
+    <header id="header" class="fixed-top">
+        <nav id=" navbar" class="navbar">
+            <h1 class="logo"><img src="assets/img/LogoJPT.png" alt="" class="img-fluid"></h1>
+            <ul>
+                <li><a class="nav-link scrollto" href="{{ route('home') }}">Home</a></li>
+                <li><a class="nav-link scrollto" href="/about">About</a></li>
+                <li class="dropdown"><a href="#"><span>Dokumen </span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li class="dropdown"><a href="#"><span>Dokumen Perusahaan</span> <i
+                                    class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li class="dropdown"><a href="#"><span>FINANCE</span> <i
+                                            class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="#">Surat Keputusan Direksi</a></li>
+                                        <li><a href="#">Prosedur</a></li>
+                                        <li><a href="#">Formulir</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#"><span>GA & Business Development</span> <i
+                                            class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="#">Surat Keputusan Direksi</a></li>
+                                        <li><a href="#">Prosedur</a></li>
+                                        <li><a href="#">Formulir</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#"><span>HR & Legal</span> <i
+                                            class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="#">Surat Keputusan Direksi</a></li>
+                                        <li><a href="#">Prosedur</a></li>
+                                        <li><a href="#">Formulir</a></li>
+                                        <li><a href="#">Pakta Integritas</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#"><span>Maintenance</span> <i
+                                            class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="#">Surat Keputusan Direksi</a></li>
+                                        <li><a href="#">Prosedur</a></li>
+                                        <li><a href="#">Formulir</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#"><span>Toll Collection Management</span> <i
+                                            class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="#">Surat Keputusan Direksi</a></li>
+                                        <li><a href="#">Prosedur</a></li>
+                                        <li><a href="#">Instruksi Kerja</a></li>
+                                        <li><a href="#">Formulir</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#"><span>Traffic Management</span> <i
+                                            class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="#">Surat Keputusan Direksi</a></li>
+                                        <li><a href="#">Prosedur</a></li>
+                                        <li><a href="#">Instruksi Kerja</a></li>
+                                        <li><a href="#">Formulir</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>Dokumen Karyawan</span> <i
+                                    class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="#">DIREKSI</a></li>
+                                <li><a href="#">HC & GA</a></li>
+                                <li><a href="#">MAINTENANCE</a></li>
+                                <li><a href="#">FINANCE</a></li>
+                                <li><a href="#">TOLL COLLECTION MANAGEMENT</a></li>
+                                <li><a href="#">TRAFFIC MANAGEMENT</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>Profil Perusahaan</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="/visimisi">Visi, Misi dan Tata Nilai</a></li>
+                        <li><a href="/struktur-organisasi">Struktur Organisasi</a></li>
+                        <li><a href="/susunan-dewan-komisaris">Susunan Dewan Komisaris</a></li>
+                        <li><a href="/susunan-direksi">Susunan Direksi</a></li>
+                        <li><a href="/pustaka">Pustaka</a></li>
+                        <li><a href="/link">Link</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav-link scrollto" href="/service">Services</a></li>
+                <li><a class="nav-link scrollto" href="/detail">Berita</a></li>
+                <li><a class="nav-link scrollto" href="/galeri">Galeri</a></li>
+                <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+                <!-- <a class="getstarted scrollto" href="#about">Get Started</a> -->
+                <li>
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                        @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link scrollto" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @endif
+
+                        @else
+                        <li class="dropdown">
+                            <a id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul>
+                                <li><a href="/profile">Profil Anda</a></li>
+                                <li><a href="#">Anggota</a></li>
+                                <li><a href="#">Reset Password</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+
     <!-- <header> -->
     <nav id="navbar" class="navbar">
         <h1 class="logo"><img src="assets/img/LogoJPT.png" alt="" class="img-fluid"></h1>
@@ -173,6 +293,7 @@
                             <li><a href="#">Reset Password</a></li>
                             <li>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+
                                             document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
@@ -331,6 +452,7 @@
     <script src="assets/js/slider.js"></script>
     <script src="assets/js/tarif/choice.js"></script>
     <script src="assets/js/tarif/custom.js"></script>
+
     <script src="assets/js/tarif/flatpick.js"></script>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
@@ -356,6 +478,7 @@
 
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
+    <script src="assets/js/setprofile.js"></script>
 
     @yield('script')
 </body>
