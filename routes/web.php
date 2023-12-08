@@ -37,11 +37,18 @@ Route::get('user-page', function() {
     return view('index');
 })->middleware('role:user')->name('user.page');
 
-Route::get('/profile', function () {
-    return view('user/user-profile');
+Route::get('/detail', function () {
+    return view('user/detail-berita');
 });
 
 Route::get('/SetProfile', function () {
+
+Route::get('/profile', function () {
+
+    return view('user/user-profile');
+});
+
+Route::get('/profile', function () {
     return view('user/Profile-page');
 });
 
@@ -110,6 +117,9 @@ function () {
         Route::get('upload', 'upload')->name('upload');
         Route::post('file-upload', 'fileUpload')->name('fileUpload');
     });
+
+});
+=======
     Route::controller(TarifTolController::class)->group( function () {
         Route::get('trash-tarif', 'trash')->name('trash-tarif');
         Route::post('{id}/restore-tarif', 'restore')->name('restore-tarif');
@@ -172,3 +182,4 @@ function () {
         Route::delete('delete-permanent-all-berita', 'deleteAllPermanent')->name('delete-permanent-all-berita');
     });
 });
+

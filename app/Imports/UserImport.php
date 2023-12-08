@@ -4,7 +4,10 @@ namespace App\Imports;
 
 use App\Models\User;
 use App\Models\Karyawan;
+ development
+
 use App\Models\UserDetail;
+ development
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Illuminate\Support\Facades\Hash;
@@ -31,9 +34,12 @@ class UserImport implements ToCollection
                 'user_id' => $user->id,
             ]);
 
+
+
             UserDetail::create([
                 'user_id' => $user->id,
             ])
+
         }
     }
 }
