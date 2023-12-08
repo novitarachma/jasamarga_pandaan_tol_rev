@@ -5,10 +5,11 @@
 @section('content')
 <!-- ======= Galeri Section ======= -->
 <section id="galeri" class="galeri">
+    <br><br>
     <div class="container">
-    <div class="section-title">
-        <h2>Galeri</h2>
-        <p></p>
+        <div class="section-title">
+            <h2>Galeri</h2>
+            <p></p>
         </div>
     <ul class="controls">
         <li class="buttons active" data-filter="all">All</li>
@@ -28,43 +29,42 @@
         </div>
 
         <!-- jquery cdn link  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<!-- magnific popup js cdn link  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <!-- magnific popup js cdn link  -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js">
+        </script>
 
-<script>
+        <script>
+        $(document).ready(function() {
 
-$(document).ready(function(){
+            $('.buttons').click(function() {
 
-    $('.buttons').click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
 
-        $(this).addClass('active').siblings().removeClass('active');
+                var filter = $(this).attr('data-filter')
 
-        var filter = $(this).attr('data-filter')
+                if (filter == 'all') {
+                    $('.image').show(400);
+                } else {
+                    $('.image').not('.' + filter).hide(200);
+                    $('.image').filter('.' + filter).show(400);
+                }
 
-        if(filter == 'all'){
-            $('.image').show(400);
-        }else{
-            $('.image').not('.'+filter).hide(200);
-            $('.image').filter('.'+filter).show(400);
-        }
+            });
 
-    });
+            $('.gallery-content').magnificPopup({
 
-    $('.gallery-content').magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
 
-        delegate:'a',
-        type:'image',
-        gallery:{
-            enabled:true
-        }
+            });
 
-    });
-
-});
-
-</script>
-      </section>
-    <!-- End Galeri Section -->
+        });
+        </script>
+</section>
+<!-- End Galeri Section -->
 @endsection

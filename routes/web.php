@@ -2,11 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\User;
-use App\Http\Controllers\User\GaleriController;
-use App\Http\Controllers\User\BeritaController;
-use App\Http\Controllers\User\TarifTolController;
-use App\Http\Controllers\User\DokumenController;
-use App\Http\Controllers\User\KaryawanController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,12 +19,15 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/galeri', [GaleriController::class,'index'])->name('galeri');
-Route::get('/berita', [BeritaController::class,'index'])->name('berita');
-Route::get('{id}/detail-berita', [BeritaController::class,'show'])->name('detail-berita');
-Route::get('/tarif', [TarifTolController::class,'index']);
-Route::get('/perusahaan', [DokumenController::class,'index'])->name('perusahaan');
-Route::get('/karyawan', [KaryawanController::class,'index'])->name('karyawan');
+
+Route::group(['namespace' => 'App\Http\Controllers\User'], function () {
+    Route::get('tarif', 'TarifTolController@index')->name('tarif');
+    Route::get('{id}/detail-berita', 'BeritaController@show')->name('detail-berita');
+    Route::get('galeri', 'GaleriController@index')->name('galeri');
+    Route::get('berita', 'BeritaController@index')->name('berita');
+        Route::get('/perusahaan', 'DokumenController@index')->name('perusahaan');
+        Route::get('/karyawan', 'KaryawanController@index')->name('karyawan');
+});
 
 Route::get('admin-page', function() {
     return view('admin/index');
