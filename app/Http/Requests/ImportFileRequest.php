@@ -23,6 +23,8 @@ class ImportFileRequest extends FormRequest
     {
         return [
             'label' => 'required',
+            'tahun' => '',
+            'bulan' => '',
             'file' => 'required|mimes:csv,xls,xlsx',
         ];
     }
