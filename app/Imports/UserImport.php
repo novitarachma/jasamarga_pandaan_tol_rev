@@ -4,15 +4,14 @@ namespace App\Imports;
 
 use App\Models\User;
 use App\Models\Karyawan;
- development
-
 use App\Models\UserDetail;
- development
+use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class UserImport implements ToCollection
+class UserImport implements ToCollection, WithHeadingRow
 {
     /**
     * @param array $row
@@ -24,22 +23,21 @@ class UserImport implements ToCollection
         foreach ($rows as $row)
         {
             $user = User::create([
-                'name' => $row[1],
-                'username' => $row[2],
-                'email' => $row[3],
-                'password' => Hash::make($row[4]),
+                'name' => $row['name'],
+                'username' => $row['username'],
+                'email' => $row['email'],
+                'password' => Hash::make($row['password']),
             ]);
-
+            $user->assignRole('user');
+            
             Karyawan::create([
                 'user_id' => $user->id,
+                'nip' => $row['username'],
             ]);
-
-
 
             UserDetail::create([
                 'user_id' => $user->id,
-            ])
-
+            ]);
         }
     }
 }

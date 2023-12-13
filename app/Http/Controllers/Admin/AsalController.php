@@ -93,9 +93,9 @@ class AsalController extends Controller
 
     public function deleteAllPermanent(TrashService $trashService)
     {
-        $asal = AsalTol::withTrashed();
-        $root = '-tarif';
-        return $trashService->delete($asal, $root);
+        $asal = AsalTol::onlyTrashed();
+        $asal->forceDelete();
+        return redirect()->route('trash-tarif')->with('status', 'Data all asal permanently deleted!');
     }
 
 }

@@ -46,7 +46,7 @@ class DokumenController extends Controller
     public function store(Dokumen $dokumen, Divisi $divisi, KategoriDokumen $kategori, StoreDokumenRequest $request,
     FileUploadService $fileUploadService)
     {
-        if ($request->hasFile('file')) {
+        if ($request->file('file')) {
             $file = $request->file('file');
             $filePath = $fileUploadService->uploadFile($file);
         } else{
@@ -54,22 +54,17 @@ class DokumenController extends Controller
         }
         
         $input = $request->all();
+        $input['file'] = $filePath;
         
-        $dokumen['judul'] = $input['judul'];
-        $dokumen['tanggal'] = $input['tanggal'];
-        $dokumen['file'] = $filePath;
-        $dokumen->save();
+        $divisi['id'] = $input['divisi_id'];
+        $kategori['id'] = $input['kategori_id'];
         
-        $divisi['id'] = $input['divisi'];
+        $dokumen->create($input);
         $dokumen->divisi()->associate($divisi);
-        $dokumen->save();
-
-        $kategori['id'] = $input['kategori'];
         $dokumen->kategori()->associate($kategori);
-        $dokumen->save();
-
+        
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('dokumen.index')->with('success', 'Dokumen Berhasil Ditambahkan');
+        return redirect()->route('dokument.index')->with('success', 'Dokumen Berhasil Ditambahkan');
     }
 
     /**
@@ -84,46 +79,44 @@ class DokumenController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id, Dokumen $dokumen)
+    public function edit(string $id)
     {
-        $dokumen->where('id', $id)->first();
-        return view('admin.dokumen.edit', compact('dokumen'));
+        $dokumen = Dokumen::where('id', $id)->first();
+        $divisi = Divisi::all();
+        $kategori = KategoriDokumen::all();
+        return view('admin.dokumen.edit', compact('dokumen', 'divisi', 'kategori'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Dokumen $dokumen, Divisi $divisi, KategoriDokumen $kategori, StoreDokumenRequest $request,
+    public function update($id, Divisi $divisi, KategoriDokumen $kategori, StoreDokumenRequest $request,
     FileUploadService $fileUploadService)
     {
-        if($dokumen->file && file_exists(storage_path('./app/public/'. $dokumen->file))){
-            Storage::delete(['public/', $dokumen->file]);
-        }
+        $dokumen = Dokumen::find($id);
         
-        if ($request->hasFile('file')) {
+        if($request->file && file_exists(storage_path('./app/public/'. $dokumen->file))){
+            if($dokumen->file){
+                Storage::disk('public')->delete($dokumen->file);
+            }
             $file = $request->file('file');
             $filePath = $fileUploadService->uploadFile($file);
-        } else{
-            $filePath = null;
+        }else{
+            $filePath = $dokumen->file;
         }
         
         $input = $request->all();
+        $input['file'] = $filePath;
         
-        $dokumen['judul'] = $input['judul'];
-        $dokumen['tanggal'] = $input['tanggal'];
-        $dokumen['file'] = $filePath;
-        $dokumen->save();
+        $divisi['id'] = $input['divisi_id'];
+        $kategori['id'] = $input['kategori_id'];
         
-        $divisi['id'] = $input['divisi'];
+        $dokumen->update($input);
         $dokumen->divisi()->associate($divisi);
-        $dokumen->save();
-
-        $kategori['id'] = $input['kategori'];
         $dokumen->kategori()->associate($kategori);
-        $dokumen->save();
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('dokumen.index')->with('success', 'Dokumen Berhasil Ditambahkan');
+        return redirect()->route('dokument.index')->with('success', 'Dokumen Berhasil Ditambahkan');
     }
 
     /**
@@ -133,7 +126,7 @@ class DokumenController extends Controller
     {
         $dokumen->delete();
         
-        return redirect()->route('dokumen.index')->with('success', 'Dokumen Berhasil Dihapus');
+        return redirect()->route('dokument.index')->with('success', 'Dokumen Berhasil Dihapus');
     }
 
     public function trash()
@@ -160,8 +153,8 @@ class DokumenController extends Controller
 
     public function deleteAllPermanent(TrashService $trashService)
     {
-        $dokumen = Dokumen::withTrashed();
-        $root = '-dokumen';
-        return $trashService->delete($dokumen, $root);
+        $dokumen = Dokumen::onlyTrashed();
+        $dokumen->forceDelete();
+        return redirect()->route('trash-dokumen')->with('status', 'Data all dokumen permanently deleted!');
     }
 }

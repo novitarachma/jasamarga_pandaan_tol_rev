@@ -10,7 +10,7 @@ use App\Http\Requests\StoreBeritaRequest;
 use App\Services\TrashService;
 use Illuminate\Support\Facades\Storage;
 
-class BeritaController extends Controller
+class NewsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,7 +37,7 @@ class BeritaController extends Controller
      
     public function store(Berita $berita, StoreBeritaRequest $request, FileUploadService $fileUploadService)
     {
-        if ($request->hasFile('foto')) {
+        if ($request->file('foto')) {
             $foto = $request->file('foto');
             $fotoPath = $fileUploadService->uploadImage($foto);
         } else{
@@ -49,7 +49,7 @@ class BeritaController extends Controller
         $berita->create($input);
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('berita.index')->with('success', 'Berita Berhasil Ditambahkan');
+        return redirect()->route('news.index')->with('success', 'Berita Berhasil Ditambahkan');
     }
 
     /**
@@ -64,44 +64,46 @@ class BeritaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id, Berita $berita)
+    public function edit($id)
     {
-        $berita->where('id', $id)->first();
+        $berita = Berita::where('id', $id)->first();
         return view('admin.berita.edit', compact('berita'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Berita $berita, StoreBeritaRequest $request, FileUploadService $fileUploadService)
+    public function update($id, StoreBeritaRequest $request, FileUploadService $fileUploadService)
     {
-        if($berita->foto && file_exists(storage_path('./app/public/'. $berita->foto))){
-            Storage::delete(['public/', $berita->foto]);
-        }
+        $berita = Berita::find($id);
         
-        if ($request->hasFile('foto')) {
+        if($request->foto && file_exists(storage_path('./app/public/'. $berita->foto))){
+            if($berita->foto){
+                Storage::disk('public')->delete($berita->foto);
+            }
             $foto = $request->file('foto');
             $fotoPath = $fileUploadService->uploadImage($foto);
-        } else{
-            $fotoPath = null;
+        }else{
+            $fotoPath = $berita->foto;
         }
         
         $input = $request->all();
         $input['foto'] = $fotoPath;
-        $berita->create($input);
+        $berita->update($input);
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('berita.index')->with('success', 'Berita Berhasil Ditambahkan');
+        return redirect()->route('news.index')->with('success', 'Berita Berhasil Ditambahkan');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Berita $berita)
+    public function destroy($id)
     {
+        $berita = Berita::where('id', $id)->first();
         $berita->delete();
         
-        return redirect()->route('berita.index')->with('success', 'Berita Berhasil Dihapus');
+        return redirect()->route('news.index')->with('success', 'Berita Berhasil Dihapus');
     }
 
     public function trash()
@@ -126,8 +128,8 @@ class BeritaController extends Controller
 
     public function deleteAllPermanent(TrashService $trashService)
     {
-        $berita = Berita::withTrashed();
-        $root = '-berita';
-        return $trashService->delete($berita, $root);
+        $berita = Berita::onlyTrashed();
+        $berita->forceDelete();
+        return redirect()->route('trash-berita')->with('status', 'Data all berita permanently deleted!');
     }
 }

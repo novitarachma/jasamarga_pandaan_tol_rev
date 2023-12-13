@@ -35,7 +35,7 @@ class KategoriDocController extends Controller
         $kategori->create($request->all());
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect(route('dokumen.index'))->with('success', 'Kategori Dokumen Berhasil Ditambahkan');
+        return redirect(route('dokument.index'))->with('success', 'Kategori Dokumen Berhasil Ditambahkan');
     }
 
     /**
@@ -64,7 +64,7 @@ class KategoriDocController extends Controller
         $kategori->update($request->all());
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('dokumen.index')->with('success', 'Kategori Dokumen Berhasil Ditambahkan');
+        return redirect()->route('dokument.index')->with('success', 'Kategori Dokumen Berhasil Ditambahkan');
     }
 
     /**
@@ -74,7 +74,7 @@ class KategoriDocController extends Controller
     {
         $kategori->delete();
 
-        return redirect()->route('dokumen.index')->with('success', 'Kategori Dokumen Berhasil Dihapus');
+        return redirect()->route('dokument.index')->with('success', 'Kategori Dokumen Berhasil Dihapus');
     }
 
     public function restore($id, TrashService $trashService)
@@ -93,9 +93,9 @@ class KategoriDocController extends Controller
 
     public function deleteAllPermanent(TrashService $trashService)
     {
-        $kategori = KategoriDokumen::withTrashed();
-        $root = '-dokumen';
-        return $trashService->delete($kategori, $root);
+        $kategori = KategoriDokumen::onlyTrashed();
+        $kategori->forceDelete();
+        return redirect()->route('trash-dokumen')->with('status', 'Data all kategori permanently deleted!');
     }
 
 }

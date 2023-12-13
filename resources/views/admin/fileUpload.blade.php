@@ -30,14 +30,13 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            @if ($errors->any())
-            <div class="alert alert-danger">
-                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+            @if (session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+            @elseif (session('error'))
+            <div class="alert alert-danger" role="alert">
+                {{ session('error') }}
             </div>
             @endif
             <form method="post" action="{{ route('fileUpload') }}" id="myForm" enctype="multipart/form-data">
@@ -45,15 +44,31 @@
                 <div class="row">
                     <div class="col-md">
                         <div class="form-group">
-                            <label for="roles">Tujuan Table</label>
-                            <select class="form-control custom-select" style="width: 100%;" id="roles" name="roles">
+                            <label for="label">Tujuan Table</label>
+                            <select class="form-control custom-select" style="width: 100%;" id="label" name="label">
                                 @foreach($label as $v)
-                                <option value="{{ $v }}" selected="selected">{{ $v }}</option>
+                                <option value="{{ $v }}">{{ $v }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group" id="tahun" hidden>
+                            <label for="tahun">Tahun Table</label>
+                            <select class="form-control custom-select" style="width: 100%;" id="tahun" name="tahun">
+                                @foreach($tahun as $v)
+                                <option value="{{ $v->id }}" selected="selected">{{ $v->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="col-md">
+                        <div class="form-group" id="bulan" hidden>
+                            <label for="bulan">Bulan Table</label>
+                            <select class="form-control custom-select" style="width: 100%;" id="bulan" name="bulan">
+                                @foreach($bulan as $v)
+                                <option value="{{ $v->id }}" selected="selected">{{ $v->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label for="file">File input</label>
                             <div class="input-group">
@@ -87,6 +102,21 @@
 <script>
 $(function() {
     bsCustomFileInput.init();
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type='text/javascript'>
+$(window).load(function() {
+    $("#label").change(function() {
+        console.log($("#label option:selected").val());
+        if ($("#label option:selected").val() == 'Gaji') {
+            $('#bulan').prop('hidden', false);
+            $('#tahun').prop('hidden', false);
+        } else {
+            $('#bulan').prop('hidden', 'true');
+            $('#tahun').prop('hidden', 'true');
+        }
+    });
 });
 </script>
 @endsection

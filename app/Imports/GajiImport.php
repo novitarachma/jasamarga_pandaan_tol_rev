@@ -14,18 +14,29 @@ class GajiImport implements ToModel, WithHeadingRow
     use Importable;
     
     protected $users;
-    public function __construct()
+    private $tahun;
+    private $bulan;
+    
+    public function __construct(int $tahun, int $bulan)
     {
         //QUERY UNTUK MENGAMBIL SELURUH DATA USER
-        $this->users = User::select('id', 'nip')->get();
+        $this->users = User::select('id', 'username')->get();
+        $this->tahun = $tahun;
+        $this->bulan = $bulan;
     }
     
     public function model(array $row)
     {
-        $user = $this->users->where('nip', $row['nip'])->first();
-        return new Gaji([
+        $user = $this->users->where('username', $row['nip'])->first();
+        $gaji = Gaji::create([
             'user_id' => $user->id ?? null,
+            'tahun_id' => $this->tahun,
+            'bulan_id' => $this->bulan,
             'link' => $row['link'],
         ]);
+
+        $gaji->user()->associate($user->id);
+        $gaji->tahun()->associate($this->tahun);
+        $gaji->bulan()->associate($this->bulan);
     }
 }

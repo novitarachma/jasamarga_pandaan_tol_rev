@@ -22,10 +22,10 @@ class StoreDokumenRequest extends FormRequest
     public function rules()
     {
         return [
-            'divisi' => 'required',
-            'kategori' => 'required',
+            'divisi_id' => 'required',
+            'kategori_id' => 'required',
             'judul' => 'required',
-            'file' => 'required|max:10000',
+            'file' => 'max:10000',
             'tanggal' => 'required',
         ];
     }

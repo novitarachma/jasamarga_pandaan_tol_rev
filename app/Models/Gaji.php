@@ -16,8 +16,24 @@ class Gaji extends Model
     protected $table = "gajis";
 
     protected $fillable = [
-        '',
-        'email',
-        'pesan'
+        'user_id',
+        'tahun_id',
+        'bulan_id',
+        'link'
     ];
+
+    public function tahun()
+    {
+    	return $this->belongsTo(Tahun::class);
+    }
+
+    public function bulan()
+    {
+    	return $this->belongsTo(Bulan::class);
+    }
+
+    public function user()
+    {
+    	return $this->belongsTo(User::class);
+    }
 }

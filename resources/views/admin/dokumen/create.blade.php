@@ -11,7 +11,7 @@
 <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('admin.page') }}">Home</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('dokumen.index') }}">Dokumen</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('dokument.index') }}">Dokumen</a></li>
         <li class="breadcrumb-item active">Create Dokumen</li>
     </ol>
 </div>
@@ -31,7 +31,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <form method="post" action="{{ route('dokumen.store') }}" id="myForm" enctype="multipart/form-data">
+            <form method="post" action="{{ route('dokument.store') }}" id="myForm" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-md-6">
@@ -68,7 +68,8 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="divisi">Divisi</label>
-                            <select class="form-control custom-select" style="width: 100%;" id="divisi" name="divisi">
+                            <select class="form-control custom-select" style="width: 100%;" id="divisi"
+                                name="divisi_id">
                                 @foreach($divisi as $dv)
                                 <option value="{{ $dv->id }}" selected="selected">{{ $dv->name }}</option>
                                 @endforeach
@@ -77,7 +78,7 @@
                         <div class="form-group">
                             <label for="kategori">Kategori</label>
                             <select class="form-control custom-select" style="width: 100%;" id="kategori"
-                                name="kategori">
+                                name="kategori_id">
                                 @foreach($kategori as $kt)
                                 <option value="{{ $kt->id }}" selected="selected">{{ $kt->name }}</option>
                                 @endforeach
@@ -88,7 +89,7 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-12">
-                        <a href="{{ route('dokumen.index') }}" class="btn btn-secondary">Cancel</a>
+                        <a href="{{ route('dokument.index') }}" class="btn btn-secondary">Cancel</a>
                         <button type="submit" class="btn btn-success float-right">Submit</button>
                     </div>
                 </div>

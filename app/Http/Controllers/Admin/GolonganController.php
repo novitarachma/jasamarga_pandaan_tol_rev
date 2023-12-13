@@ -91,11 +91,11 @@ class GolonganController extends Controller
         return $trashService->delete($golongan, $root);
     }
 
-    public function deleteAllPermanent(TrashService $trashService)
+    public function deleteAllPermanent()
     {
-        $golongan = GolonganTol::withTrashed();
-        $root = '-tarif';
-        return $trashService->delete($golongan, $root);
+        $golongan = GolonganTol::onlyTrashed();
+        $golongan->forceDelete();
+        return redirect()->route('trash-tarif')->with('status', 'Data all golongan permanently deleted!');
     }
 
 }

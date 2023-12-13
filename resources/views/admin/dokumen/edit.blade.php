@@ -11,7 +11,7 @@
 <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('admin.page') }}">Home</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('dokumen.index') }}">Dokumen</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('dokument.index') }}">Dokumen</a></li>
         <li class="breadcrumb-item active">Update Dokumen</li>
     </ol>
 </div>
@@ -31,7 +31,8 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <form method="post" action="{{ route('dokumen.update') }}" id="myForm" enctype="multipart/form-data">
+            <form method="post" action="{{ route('dokument.update', $dokumen->id) }}" id="myForm"
+                enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="row">
@@ -54,9 +55,9 @@
                         </div>
                         <div class="form-group">
                             <label for="file">File Dokumen</label>
-                            <a href="{{ asset('./storage/'. $dokumen->file) }}"><span
-                                    class="glyphicon glyphicon-file"></span></a>
-                            <p>{{ $dokumen->file }}</p>
+                            <a href="{{ asset('./storage/'. $dokumen->file) }}" class="nav-link">
+                                <i class="nav-icon fas fa-folder"></i>
+                            </a>
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" name="file"
@@ -73,19 +74,19 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="divisi">Divisi</label>
-                            <select class="form-control custom-select" style="width: 100%;" id="divisi" name="divisi"
+                            <select class="form-control custom-select" style="width: 100%;" id="divisi" name="divisi_id"
                                 value="{{ $dokumen->divisi->name }}">
                                 @foreach($divisi as $dv)
-                                <option value="{{ $dv->id }}" selected="selected">{{ $dv->name }}</option>
+                                <option value="{{ $dv->id }}">{{ $dv->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="kategori">Kategori</label>
                             <select class="form-control custom-select" style="width: 100%;" id="kategori"
-                                name="kategori" value="{{ $dokumen->kategori->name }}">
+                                name="kategori_id" value="{{ $dokumen->kategori->name }}">
                                 @foreach($kategori as $kt)
-                                <option value="{{ $kt->id }}" selected="selected">{{ $kt->name }}</option>
+                                <option value="{{ $kt->id }}">{{ $kt->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -94,7 +95,7 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-12">
-                        <a href="{{ route('dokumen.index') }}" class="btn btn-secondary">Cancel</a>
+                        <a href="{{ route('dokument.index') }}" class="btn btn-secondary">Cancel</a>
                         <button type="submit" class="btn btn-success float-right">Submit</button>
                     </div>
                 </div>

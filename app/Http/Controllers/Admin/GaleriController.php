@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Galeri;
 use App\Models\Tahun;
+use App\Models\Bulan;
 use App\Services\FileUploadService;
 use App\Http\Requests\StoreGaleriRequest;
 use App\Services\TrashService;
@@ -20,8 +21,9 @@ class GaleriController extends Controller
     {
         $datas = Galeri::all();
         $tahun = Tahun::all();
+        $bulan = Bulan::all();
         return view('admin.galeri.index', compact(
-            'datas', 'tahun'
+            'datas', 'tahun', 'bulan'
         ));
     }
 
@@ -40,25 +42,24 @@ class GaleriController extends Controller
      * Store a newly created resource in storage.
      */
      
-    public function store(Galeri $galeri, Tahun $tahun, StoreGaleriRequest $request,
-    FileUploadService $fileUploadService)
+    public function store(Galeri $galeri, StoreGaleriRequest $request, FileUploadService $fileUploadService)
     {
-        if ($request->hasFile('foto')) {
+        if($request->file('foto')){
             $foto = $request->file('foto');
             $fotoPath = $fileUploadService->uploadImage($foto);
-        } else{
+        }else{
             $fotoPath = null;
         }
         
         $input = $request->all();
+        $input['foto'] = $fotoPath;
         
-        $galeri['judul'] = $input['judul'];
-        $galeri['foto'] = $fotoPath;
-        $galeri->save();
+        $tahun = new Tahun;
+        $tahun['id'] = $input['tahun_id'];
         
-        $tahun['id'] = $input['tahun'];
+        $galeri->create($input);
         $galeri->tahun()->associate($tahun);
-        $galeri->save();
+        
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect()->route('galeri.index')->with('success', 'Galeri Berhasil Ditambahkan');
@@ -67,7 +68,7 @@ class GaleriController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id, Galeri $galeri)
+    public function show($id, Galeri $galeri)
     {
         $galeri->where('id', $id)->first();
         return view('admin.galeri.detail', compact('galeri'));
@@ -76,41 +77,40 @@ class GaleriController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id, Galeri $galeri)
+    public function edit($id)
     {
-        $galeri->where('id', $id)->first();
-        return view('admin.galeri.edit', compact('galeri'));
+        $galeri = Galeri::where('id', $id)->first();
+        $tahun = Tahun::all();
+        return view('admin.galeri.edit', compact('galeri', 'tahun'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Galeri $galeri, Tahun $tahun, StoreGaleriRequest $request,
-    FileUploadService $fileUploadService)
+    public function update(Galeri $galeri, StoreGaleriRequest $request, FileUploadService $fileUploadService)
     {
-        if($galeri->foto && file_exists(storage_path('./app/public/'. $galeri->foto))){
-            Storage::delete(['public/', $galeri->foto]);
-        }
-        
-        if ($request->hasFile('foto')) {
+        if($request->foto && file_exists(storage_path('./app/public/'. $galeri->foto))){
+            if($galeri->foto){
+                Storage::disk('public')->delete($galeri->foto);
+            }
             $foto = $request->file('foto');
             $fotoPath = $fileUploadService->uploadImage($foto);
-        } else{
-            $fotoPath = null;
+        }else{
+            $fotoPath = $galeri->foto;
         }
         
         $input = $request->all();
+        $input['foto'] = $fotoPath;
         
-        $galeri['judul'] = $input['judul'];
-        $galeri['foto'] = $fotoPath;
-        $galeri->save();
+        $tahun = new Tahun;
+        $tahun['id'] = $input['tahun_id'];
         
-        $tahun['id'] = $input['tahun'];
+        $galeri->update($input);
         $galeri->tahun()->associate($tahun);
-        $galeri->save();
+        
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('galeri.index')->with('success', 'Galeri Berhasil Ditambahkan');
+        return redirect()->route('galeri.index')->with('success', 'Galeri Berhasil Dirubah');
     }
 
     /**
@@ -127,7 +127,8 @@ class GaleriController extends Controller
     {
         $galeri = Galeri::onlyTrashed()->paginate();
         $tahun = Tahun::onlyTrashed()->paginate();
-        return view('admin.galeri.trash', compact('galeri', 'tahun'));
+        $bulan = Bulan::onlyTrashed()->paginate();
+        return view('admin.galeri.trash', compact('galeri', 'tahun', 'bulan'));
     }
     
     public function restore($id, TrashService $trashService)
@@ -146,8 +147,8 @@ class GaleriController extends Controller
 
     public function deleteAllPermanent(TrashService $trashService)
     {
-        $galeri = Galeri::withTrashed();
-        $root = '-galeri';
-        return $trashService->delete($galeri, $root);
+        $galeri = Galeri::onlyTrashed();
+        $galeri->forceDelete();
+        return redirect()->route('trash-galeri')->with('status', 'Data all galeri permanently deleted!');
     }
 }
