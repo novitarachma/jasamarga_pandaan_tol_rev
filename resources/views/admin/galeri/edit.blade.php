@@ -31,7 +31,8 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <form method="post" action="{{ route('galeri.update') }}" id="myForm" enctype="multipart/form-data">
+            <form method="post" action="{{ route('galeri.update', $galeri->id) }}" id="myForm"
+                enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="row">
@@ -45,33 +46,29 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="foto">File Foto</label>
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" name="foto"
-                                        class="custom-file-input @error('foto') is-invalid @enderror" id="foto"
-                                        value="{{ $galeri->foto }}">
-                                    <label class="custom-file-label" for="foto">Choose file</label>
-                                    @error('foto')
-                                    <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <img style="width: 100px" src="{{ asset('./storage/'. $galeri->foto) }}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
                             <label for="tahun">Tahun</label>
-                            <select class="form-control custom-select" style="width: 100%;" id="tahun" name="tahun"
+                            <select class="form-control custom-select" style="width: 100%;" id="tahun" name="tahun_id"
                                 value="{{ $galeri->tahun->name }}">
                                 @foreach($tahun as $th)
-                                <option value="{{ $th->id }}" selected="selected">{{ $th->name }}</option>
+                                <option value="{{ $th->id }}">{{ $th->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="foto">File Foto</label>
+                        <input type="file" name="foto" class="form-control @error('foto') is-invalid @enderror"
+                            id="foto" value="{{ $galeri->foto }}">
+                        @error('foto')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
+
+                        <img style="width: 100px" src="{{ asset('./storage/'. $galeri->foto) }}" alt="">
+                    </div>
+                </div>
+
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-12">

@@ -24,7 +24,8 @@
     <!-- tambahan code untk css -->
     @yield('css')
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -80,7 +81,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dist/img/user1-128x128.jpg" alt="User Avatar"
+                                <img src="{{ asset('theme/adminlte') }}dist/img/user1-128x128.jpg" alt="User Avatar"
                                     class="img-size-50 mr-3 img-circle">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -97,7 +98,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dist/img/user8-128x128.jpg" alt="User Avatar"
+                                <img src="{{ asset('theme/adminlte') }}dist/img/user8-128x128.jpg" alt="User Avatar"
                                     class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -114,7 +115,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dist/img/user3-128x128.jpg" alt="User Avatar"
+                                <img src="{{ asset('theme/adminlte') }}dist/img/user3-128x128.jpg" alt="User Avatar"
                                     class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -200,7 +201,7 @@
                         <!-- menu ini hanya akan muncul ketika pengguna sudah melakukan login -->
                         @if(auth()->check())
                         <li class="nav-item">
-                            <a href="{{ route('admin.page') }}" class="nav-link">
+                            <a href="{{ route('index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>Dashboard</p>
                             </a>
@@ -214,14 +215,14 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('dokumen.index') }}" class="nav-link">
+                            <a href="{{ route('dokument.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>Dokumen</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('berita.index') }}" class="nav-link">
+                            <a href="{{ route('news.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-newspaper"> </i>
                                 <p>Berita</p>
                             </a>

@@ -37,7 +37,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="asal">Asal</label>
-                            <select class="form-control custom-select" style="width: 100%;" id="asal" name="asal">
+                            <select class="form-control custom-select" style="width: 100%;" id="asal" name="asal_id">
                                 @foreach($asal as $as)
                                 <option value="{{ $as->id }}" selected="selected">{{ $as->name }}</option>
                                 @endforeach
@@ -45,7 +45,8 @@
                         </div>
                         <div class="form-group">
                             <label for="tujuan">Tujuan</label>
-                            <select class="form-control custom-select" style="width: 100%;" id="tujuan" name="tujuan">
+                            <select class="form-control custom-select" style="width: 100%;" id="tujuan"
+                                name="tujuan_id">
                                 @foreach($tujuan as $tj)
                                 <option value="{{ $tj->id }}" selected="selected">{{ $tj->name }}</option>
                                 @endforeach
@@ -56,7 +57,7 @@
                         <div class="form-group">
                             <label for="golongan">Golongan</label>
                             <select class="form-control custom-select" style="width: 100%;" id="golongan"
-                                name="golongan">
+                                name="golongan_id">
                                 @foreach($golongan as $gl)
                                 <option value="{{ $gl->id }}" selected="selected">{{ $gl->name }}</option>
                                 @endforeach

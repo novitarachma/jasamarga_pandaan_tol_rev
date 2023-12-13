@@ -35,7 +35,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <a class="btn btn-success" href="{{ route('dokumen.create') }}">Add Dokumen</a>
+                    <a class="btn btn-success" href="{{ route('dokument.create') }}">Add Dokumen</a>
                     <a class="btn btn-danger" href="{{ route('trash-dokumen') }}">Trash</a>
                     <br><br>
 
@@ -51,8 +51,8 @@
 
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
-                            <tr>
-                                <th>No</th>
+                            <tr style="text-align: center;">
+                                <th style="width: 50px;">No</th>
                                 <th>Divisi</th>
                                 <th>Kategori</th>
                                 <th>Judul</th>
@@ -69,14 +69,16 @@
                                 <td>{{ $value->divisi->name }}</td>
                                 <td>{{ $value->kategori->name }}</td>
                                 <td>{{ $value->judul }}</td>
-                                <td><a href="{{ asset('./storage/'. $value->file) }}"><span
-                                            class="glyphicon glyphicon-file"></span></a></td>
+                                <td><a href="{{ asset('./storage/'. $value->file) }}" class="nav-link">
+                                        <i class="nav-icon fas fa-folder"></i>
+                                    </a>
+                                </td>
                                 <td>{{ $value->tanggal }}</td>
                                 <td>
                                     <form onsubmit="return confirm('Move data to trash?')"
-                                        action="{{ route('dokumen.destroy',['dokumen'=>$value->id]) }}" method="POST">
+                                        action="{{ route('dokument.destroy',['dokument'=>$value->id]) }}" method="POST">
                                         <a class="btn btn-primary"
-                                            href="{{ route('dokumen.edit',$value->id) }}">Edit</a>
+                                            href="{{ route('dokument.edit',$value->id) }}">Edit</a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
@@ -106,22 +108,13 @@
                 <div class="card-body">
                     <a class="btn btn-success" href="{{ route('divisi.create') }}">Add Divisi</a>
                     <br><br>
-                    @if (session('success'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('success') }}
-                    </div>
-                    @elseif (session('error'))
-                    <div class="alert alert-danger" role="alert">
-                        {{ session('error') }}
-                    </div>
-                    @endif
 
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
-                            <tr>
+                            <tr style="text-align: center;">
                                 <th style="width: 50px;">No</th>
                                 <th>Nama</th>
-                                <th style="width: 220px;">Action</th>
+                                <th style="width: 100px;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -133,7 +126,6 @@
                                 <td>
                                     <form onsubmit="return confirm('Move data to trash?')"
                                         action="{{ route('divisi.destroy',['divisi'=>$value->id]) }}" method="POST">
-                                        <a class="btn btn-primary" href="{{ route('divisi.edit',$value->id) }}">Edit</a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
@@ -164,22 +156,12 @@
                     <a class="btn btn-success" href="{{ route('kategori.create') }}">Add Kategori Dokumen</a>
                     <br><br>
 
-                    @if (session('success'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('success') }}
-                    </div>
-                    @elseif (session('error'))
-                    <div class="alert alert-danger" role="alert">
-                        {{ session('error') }}
-                    </div>
-                    @endif
-
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
-                            <tr>
+                            <tr style="text-align: center;">
                                 <th style="width: 50px;">No</th>
                                 <th>Nama</th>
-                                <th style="width: 220px;">Action</th>
+                                <th style="width: 100px;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -191,8 +173,6 @@
                                 <td>
                                     <form onsubmit="return confirm('Move data to trash?')"
                                         action="{{ route('kategori.destroy',['kategori'=>$value->id]) }}" method="POST">
-                                        <a class="btn btn-primary"
-                                            href="{{ route('kategori.edit',$value->id) }}">Edit</a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
