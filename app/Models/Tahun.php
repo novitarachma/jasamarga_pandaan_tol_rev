@@ -23,4 +23,9 @@ class Tahun extends Model
     {
     	return $this->hasMany(Galeri::class);
     }
+
+    public function gaji()
+    {
+    	return $this->hasMany(Gaji::class);
+    }
 }
