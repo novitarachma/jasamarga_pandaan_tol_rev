@@ -12,8 +12,7 @@
             <h2>   </h2>
             <h2>   </h2>
             <p>     </p>
-            <h2>Tarif Tol Pandaan</h2>
-            <hr></hr>
+            <h2>Profile</h2>
         </div>
         <div class="col-md-7 col-xl-8">
             <div class="card-body">
@@ -97,10 +96,6 @@
                 </div>
             </div>
         </div>
-        <div id="map"></div>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_qHKYFum4g_Y8e7sgqS3T26Fjz1IxBpg&libraries=places"></script>
-        <script src="maps.js"></script>
     </div>
-</div>
 </section>
 @endsection
