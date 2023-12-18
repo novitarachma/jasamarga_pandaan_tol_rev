@@ -1,10 +1,12 @@
 @extends('layouts.user')
+
 @section('css')
 <link href="{{ asset('assets/css/tarif.css') }}" rel="stylesheet" />
 @endsection
+
 @section('content')
 <section id="portfolio-details" class="portfolio-details">
-<div class="container p-0">
+    <div class="container p-0">
 
     <div class="row">
         <div class="section-title">
@@ -12,12 +14,16 @@
             <h2>   </h2>
             <h2>   </h2>
             <p>     </p>
-            <h2>Profile</h2>
+            <h2>Tarif Tol Pandaan</h2>
+            <hr></hr>
         </div>
         <div class="col-md-7 col-xl-8">
             <div class="card-body">
             </div>
-        </div>
+            <!-- <div class="col-md-7 col-xl-8">
+                <div class="card-body">
+                </div>
+            </div> -->
             <div class="card">
                 <div class="card-header">
                     <div class="card-actions float-right">
@@ -50,7 +56,7 @@
                             </div>
                             <div class="buttons-container">
                                 <button class="button-arounder">Tambah Tarif</button>
-                                    &nbsp;
+                                &nbsp;
                                 <button class="button-arounder">Bersihkan Tarif</button>
                             </div>
                         </div>
@@ -58,22 +64,25 @@
                             <div class="cardC-body">
                                 <div class="sectiont-titlet">
                                     <h2><strong> Total Tarif </strong></h2>
-                                    <strong> <p>Rp.0</p> </strong>
+                                    <strong>
+                                        <p>Rp.0</p>
+                                    </strong>
                                 </div>
                             </div>
                         </div>
-                        <hr></hr>
+                        <hr>
+                        </hr>
                         <div class="cardt">
                             <div class="cardt-body">
                                 <div class="sectionc-titlec">
                                     <h2><strong> Tarif yang Tersimpan </strong></h2>
                                     <div class="cardS">
-                                    <div class="cardS-body">
-                                        <div class="sectionS-titleS">
-                                            <h3><strong> AsalGerbang+TujuanGerbang </strong></h3>
-                                            <p><strong>Golongan  = Rp.0</strong></p>
+                                        <div class="cardS-body">
+                                            <div class="sectionS-titleS">
+                                                <h3><strong> AsalGerbang+TujuanGerbang </strong></h3>
+                                                <p><strong>Golongan = Rp.0</strong></p>
+                                            </div>
                                         </div>
-                                    </div>
                                     </div>
                                     &nbsp;
                                     <br>
@@ -82,13 +91,18 @@
                                     <br>
                                     &ensp;
                                     <div class="cardS">
-                                    <div class="cardS-body">
-                                        <div class="sectionS-titleS">
-                                            <h3><strong> AsalGerbang+TujuanGerbang </strong></h3>
-                                            <p><strong>Golongan  = Rp.0</strong></p>
+                                        <div class="cardS-body">
+                                            <div class="sectionS-titleS">
+                                                <h3><strong> AsalGerbang+TujuanGerbang </strong></h3>
+                                                <p><strong>Golongan = Rp.0</strong></p>
+                                            </div>
                                         </div>
                                     </div>
+
                                     </div>
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -96,6 +110,10 @@
                 </div>
             </div>
         </div>
+        <div id="map"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_qHKYFum4g_Y8e7sgqS3T26Fjz1IxBpg&libraries=places"></script>
+        <script src="maps.js"></script>
     </div>
+</div>
 </section>
 @endsection

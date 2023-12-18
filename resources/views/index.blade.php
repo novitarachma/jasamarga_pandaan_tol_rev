@@ -97,7 +97,7 @@
                             Gempol - Pandaan aman &amp; lancar | Info Tol (0343) 5650729</marquee>
                     </strong></div>
                 <div class="readMore">
-                    <a style="text-decoration:none" href="/tarif" title="Tarif Tol Gempol - Pandaan"
+                    <a style="text-decoration:none" href="{{ route('tarif') }}" title="Tarif Tol Gempol - Pandaan"
                         class="btn-get-started animate__animated animate__fadeInUp scrollto"><strong>
                             <p class="bold-900">Tarif Tol Gempol - Pandaan</p>
                         </strong></a>
@@ -178,15 +178,11 @@
                         src="https://ptjpt.co.id/wp-content/uploads/2018/01/multiphibetaaa.png" class="img-fluid"
                         alt=""></a>
             </div>
-
             <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
                 <a href="https://jmtm.co.id/" target="_blank"><img
                         src="https://ptjpt.co.id/wp-content/uploads/2017/01/logo-default-Copy.jpg" class="img-fluid"
                         alt=""></a>
             </div>
-
-
-
         </div>
 
     </div>
@@ -231,66 +227,32 @@
 <!-- ======= Portfolio Section ======= -->
 <section id="portfolio" class="portfolio">
     <div class="container">
-
         <div class="section-title">
-
             <h2>Berita</h2>
-            <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
-        </div>
-        <div class="row portfolio-container">
         </div>
         <div class="konten" id="artikel">
             <div class="content-container">
+                @foreach ($ber as $item)
                 <div class="card">
-                    <img src="https://ptjpt.co.id/wp-content/uploads/2019/05/052319_Site-Visit-Bank-Sindikasi.png"
-                        alt="artikel1">
+                    <img src="{{ asset('./storage/'.$item->foto) }}" alt="artikel">
                     <div class="card-body">
-                        <h3>Site Visit (Kunjungan) Bank Sindikasi ke Proyek Jalan Tol Gempol – Pandaan Tahap II.</h3>
-                        <p>Pandaan (25/05/2019) – Proyek Jalan Tol Gempol – Pandaan Tahap II
-                            merupakan proyek pembangunan akhir dari PT Jasamarga Pandaan Tol. …</p>
+                        <h3>{{ $item->judul }}</h3>
+                        <p>{{ substr($item['paragraf1'], 0, 200) }}...</p>
                     </div>
                     <div class="card-footer">
-                        <p>Mei 25th 2019</p>
-                        <a>
-                            <p class="font-weight-bold">Read more</p>
+                        <p>{{ $item->tanggal }}</p>
+                        <a href="{{ route('detail-berita',$item->id) }}">
+                            <p>Read more</p>
                         </a>
+
                     </div>
                 </div>
-                <div class="card">
-                    <img src="https://ptjpt.co.id/wp-content/uploads/2019/09/outbond1.png" alt="artikel2">
-                    <div class="card-body">
-                        <h3>Menjalin Kebersamaan Antar Karyawan Melalui Outbound “One Day Spirit”</h3>
-                        <p>Trawas (18/07/2019) – Untuk menjalin kebersamaan dan menjaga kekompakan karyawan,
-                            PT Jasamarga Pandaan Tol mengadakan kegiatan outbond yang diikuti oleh …</p>
-                    </div>
-                    <div class="card-footer">
-                        <p>July 18th 2019</p>
-                        <a>
-                            <p class="font-weight-bold">Read more</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://ptjpt.co.id/wp-content/uploads/2019/09/062019_Investor-Gathering-Penawaran-Terbatas-Sukuk-Ijarah-JPT-370x290.png"
-                        alt="artikel3">
-                    <div class="card-body">
-                        <h3>Investor Gathering Penawaran Terbatas Sukuk Ijarah</h3>
-                        <p>Jakarta (21/06/2019) – Bertempat di ballroom The Ritz Carlton Pacific Place Jakarta hari
-                            Kamis (20/06/2019),
-                            PT Jasa Marga (Persero) Tbk melalui anak perusahaannya yaitu PT Jasamarga Pandaan Tol (JPT)
-                            menyelenggarakan Investor Gathering Penawaran Terbatas Sukuk Ijarah Tahun 2019.</p>
-                    </div>
-                    <div class="card-footer">
-                        <p>June 21th 2019</p>
-                        <a>
-                            <p class="font-weight-bold">Read more</p>
-                        </a>
-                    </div>
-                </div>
-                <a href="/detail"><button>Artikel Lainnya</button></a>
+                @endforeach
+                <a href="{{route('berita')}}"><button>Artikel Lainnya</button></a>
             </div>
+        </div>
+    </div>
 </section>
-<!-- End Portfolio Sectio -->
 
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact">

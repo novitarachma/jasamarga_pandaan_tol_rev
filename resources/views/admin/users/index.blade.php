@@ -13,9 +13,8 @@
 </div>
 <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">User</a></li>
-        <li class="breadcrumb-item active">Create User</li>
+        <li class="breadcrumb-item"><a href="{{ route('admin.page') }}">Home</a></li>
+        <li class="breadcrumb-item active">Data User</li>
     </ol>
 </div>
 @endsection
@@ -32,12 +31,12 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                     <a class="btn btn-success" href="{{ route('user.create') }}">Add User</a>
-                    <a class="btn btn-danger" href="{{ route('trash') }}">Trash</a>
+                    <a class="btn btn-danger" href="{{ route('trash-user') }}">Trash</a>
                     <br><br>
 
-                    @if (session('status'))
+                    @if (session('success'))
                     <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
+                        {{ session('success') }}
                     </div>
                     @elseif (session('error'))
                     <div class="alert alert-danger" role="alert">
@@ -48,11 +47,11 @@
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>No</th>
+                                <th style="width: 20px;">No</th>
                                 <th>Name</th>
-                                <th>NIP</th>
+                                <th>Username</th>
                                 <th>Role</th>
-                                <th style="width: 220px;">Action</th>
+                                <th style="width: 300px;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -69,8 +68,8 @@
                                 <td>
                                     <form onsubmit="return confirm('Move data to trash?')"
                                         action="{{ route('user.destroy',['user'=>$value->id]) }}" method="POST">
-                                        <a class="btn btn-info"
-                                            href="{{ route('change-password',$value->id) }}">Password</a>
+                                        <a class="btn btn-info" href="{{ route('change-password',$value->id) }}">Change
+                                            Password</a>
                                         <a class="btn btn-primary" href="{{ route('user.edit',$value->id) }}">Edit</a>
                                         @csrf
                                         @method('DELETE')
