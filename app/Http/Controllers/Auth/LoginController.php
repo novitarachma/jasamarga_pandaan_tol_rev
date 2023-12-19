@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use App\Models\Berita;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -49,7 +49,7 @@ class LoginController extends Controller
     if ($user->hasRole('admin')) {
         return redirect()->route('index');
     }
-
-    return redirect()->route('user.page');
+    $ber = Berita::all();
+    return redirect()->route('home');
 }
 }

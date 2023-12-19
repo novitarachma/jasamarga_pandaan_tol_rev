@@ -43,6 +43,20 @@ Route::get('/detail', function () {
 
 Route::get('/SetProfile', function () {
     return view('user/user-profile');
+
+});
+
+Route::get('/pass', function () {
+    return view('user/password');
+});
+
+Route::get('/up', function () {
+    return view('user/upload');
+});
+
+Route::get('/slip', function () {
+    return view('user/slipgaji');
+
 });
 
 Route::get('/profile', function () {
@@ -120,6 +134,7 @@ function () {
         Route::get('upload', 'upload')->name('upload');
         Route::post('file-upload', 'fileUpload')->name('fileUpload');
     });
+
     Route::controller(TarifTolController::class)->group( function () {
         Route::get('trash-tarif', 'trash')->name('trash-tarif');
         Route::post('{id}/restore-tarif', 'restore')->name('restore-tarif');
