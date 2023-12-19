@@ -65,129 +65,17 @@
 
     <header id="header" class="fixed-top">
         <nav id=" navbar" class="navbar">
-            <h1 class="logo"><img src="assets/img/LogoJPT.png" alt="" class="img-fluid"></h1>
-            <ul>
-                <li><a class="nav-link scrollto" href="{{ route('home') }}">Home</a></li>
-                <li><a class="nav-link scrollto" href="/about">About</a></li>
-                <li class="dropdown"><a href="#"><span>Dokumen </span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li class="dropdown"><a href="#"><span>Dokumen Perusahaan</span> <i
-                                    class="bi bi-chevron-down"></i></a>
-                            <ul>
-                                <li class="dropdown"><a href="#"><span>FINANCE</span> <i
-                                            class="bi bi-chevron-right"></i></a>
-                                    <ul>
-                                        <li><a href="#">Surat Keputusan Direksi</a></li>
-                                        <li><a href="#">Prosedur</a></li>
-                                        <li><a href="#">Formulir</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#"><span>GA & Business Development</span> <i
-                                            class="bi bi-chevron-right"></i></a>
-                                    <ul>
-                                        <li><a href="#">Surat Keputusan Direksi</a></li>
-                                        <li><a href="#">Prosedur</a></li>
-                                        <li><a href="#">Formulir</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#"><span>HR & Legal</span> <i
-                                            class="bi bi-chevron-right"></i></a>
-                                    <ul>
-                                        <li><a href="#">Surat Keputusan Direksi</a></li>
-                                        <li><a href="#">Prosedur</a></li>
-                                        <li><a href="#">Formulir</a></li>
-                                        <li><a href="#">Pakta Integritas</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#"><span>Maintenance</span> <i
-                                            class="bi bi-chevron-right"></i></a>
-                                    <ul>
-                                        <li><a href="#">Surat Keputusan Direksi</a></li>
-                                        <li><a href="#">Prosedur</a></li>
-                                        <li><a href="#">Formulir</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#"><span>Toll Collection Management</span> <i
-                                            class="bi bi-chevron-right"></i></a>
-                                    <ul>
-                                        <li><a href="#">Surat Keputusan Direksi</a></li>
-                                        <li><a href="#">Prosedur</a></li>
-                                        <li><a href="#">Instruksi Kerja</a></li>
-                                        <li><a href="#">Formulir</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#"><span>Traffic Management</span> <i
-                                            class="bi bi-chevron-right"></i></a>
-                                    <ul>
-                                        <li><a href="#">Surat Keputusan Direksi</a></li>
-                                        <li><a href="#">Prosedur</a></li>
-                                        <li><a href="#">Instruksi Kerja</a></li>
-                                        <li><a href="#">Formulir</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown"><a href="#"><span>Dokumen Karyawan</span> <i
-                                    class="bi bi-chevron-down"></i></a>
-                            <ul>
-                                <li><a href="#">DIREKSI</a></li>
-                                <li><a href="#">HC & GA</a></li>
-                                <li><a href="#">MAINTENANCE</a></li>
-                                <li><a href="#">FINANCE</a></li>
-                                <li><a href="#">TOLL COLLECTION MANAGEMENT</a></li>
-                                <li><a href="#">TRAFFIC MANAGEMENT</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#"><span>Profil Perusahaan</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="/visimisi">Visi, Misi dan Tata Nilai</a></li>
-                        <li><a href="/struktur-organisasi">Struktur Organisasi</a></li>
-                        <li><a href="/susunan-dewan-komisaris">Susunan Dewan Komisaris</a></li>
-                        <li><a href="/susunan-direksi">Susunan Direksi</a></li>
-                        <li><a href="/pustaka">Pustaka</a></li>
-                        <li><a href="/link">Link</a></li>
-                    </ul>
-                </li>
-                <li><a class="nav-link scrollto" href="/service">Services</a></li>
-                <li><a class="nav-link scrollto" href="/detail">Berita</a></li>
-                <li><a class="nav-link scrollto" href="/galeri">Galeri</a></li>
-                <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
-                <!-- <a class="getstarted scrollto" href="#about">Get Started</a> -->
-                <li>
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                        @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link scrollto" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @endif
-
-                        @else
-                        <li class="dropdown">
-                            <a id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <i class="bi bi-chevron-down"></i>
-                            </a>
-                            <ul>
-                                <li><a href="/profile">Profil Anda</a></li>
-                                <li><a href="#">Anggota</a></li>
-                                <li><a href="#">Reset Password</a></li>
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
 
     <!-- <header> -->
     <nav id="navbar" class="navbar">
         <h1 class="logo"><img src="assets/img/LogoJPT.png" alt="" class="img-fluid"></h1>
         <ul>
             <li><a class="nav-link scrollto" href="{{ route('home') }}">Home</a></li>
-            <li><a class="nav-link scrollto" href="/about">About</a></li>
-            <li><a class="nav-link scrollto" href="/service">Services</a></li>
+            <li><a class="nav-link scrollto" href="{{ route('about') }}">About</a></li>
+            <li><a class="nav-link scrollto" href="{{ route('service') }}">Services</a></li>
             <li><a class="nav-link scrollto" href="{{ route('berita') }}">Berita</a></li>
             <li><a class="nav-link scrollto" href="{{ route('galeri') }}">Galeri</a></li>
-            <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+            <li><a class="nav-link scrollto" href="{{ route('contact') }}">Contact</a></li>
             @hasanyrole('user')
             <li class="dropdown"><a href="#"><span>Dokumen </span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
