@@ -45,11 +45,11 @@
   }
 
 /* Card Kolom */
-body{
+/* body{
     margin-top: 50px;
     text-align:center;
     background:#F0F8FF;
-}
+} */
 .cardC {
     margin-bottom: 10px;
     width: 35%;
@@ -103,11 +103,11 @@ body{
   }
 
 /* tersimpan */
-body{
+/* body{
     margin-top: 50px;
     text-align:left;
-    background:#F0F8FF;
-}
+    background:#ffffff;
+} */
 .cardt {
     margin-bottom: 15px;
     width: 100%;
@@ -181,12 +181,12 @@ body{
   }
 
 /* card tarif tersimpan */
-body{
+/* body{
     margin-top: 60px;
     text-align:center;
     box-sizing: border-box;
     background:#2e90e658;
-}
+} */
 .cardS {
     margin-bottom: 80px;
     width: 95%;
