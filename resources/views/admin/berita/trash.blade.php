@@ -14,7 +14,7 @@
 <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('admin.page') }}">Home</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('berita.index') }}">Berita</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('news.index') }}">Berita</a></li>
         <li class="breadcrumb-item active">Trash Berita</li>
     </ol>
 </div>
@@ -36,8 +36,13 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <a class="btn btn-danger" href="{{ route('delete-permanent-all-berita') }}">Delete All Berita</a>
-                    <br><br>
+                    <form method="POST" action="{{ route('delete-permanent-all-berita') }}"
+                        onsubmit="return confirm('Delete all this data permanently ?')">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Delete All Berita" class="btn btn-danger">
+                    </form>
+                    <br>
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
@@ -86,7 +91,7 @@
                     </table>
                     <div class="row">
                         <div class="col-12">
-                            <a href="{{ route('berita.index') }}" class="btn btn-secondary">Cancel</a>
+                            <a href="{{ route('news.index') }}" class="btn btn-secondary">Cancel</a>
                         </div>
                     </div>
                 </div>

@@ -43,6 +43,7 @@ Route::get('/detail', function () {
 
 Route::get('/SetProfile', function () {
     return view('user/user-profile');
+
 });
 
 Route::get('/pass', function () {
@@ -55,6 +56,7 @@ Route::get('/up', function () {
 
 Route::get('/slip', function () {
     return view('user/slipgaji');
+
 });
 
 Route::get('/profile', function () {
@@ -106,14 +108,19 @@ function () {
     Route::resource('user', UserController::class);
     Route::resource('galeri', GaleriController::class);
     Route::resource('tahun', TahunController::class);
-    Route::resource('berita', BeritaController::class);
-    Route::resource('dokumen', DokumenController::class);
+    Route::resource('bulan', BulanController::class);
+    Route::resource('news', NewsController::class);
+    Route::resource('dokument', DokumenController::class);
     Route::resource('divisi', DivisiController::class);
     Route::resource('kategori', KategoriDocController::class);
     Route::resource('tarif', TarifTolController::class);
     Route::resource('asal', AsalController::class);
     Route::resource('tujuan', TujuanController::class);
     Route::resource('golongan', GolonganController::class);
+    Route::resource('pesan', PesanController::class);
+    Route::controller(HomeController::class)->group(function () {
+        Route::get('index', 'index')->name('index');
+    });
     Route::controller(UserController::class)->group(function () {
         Route::get('trash-user', 'trash')->name('trash-user');
         Route::post('{id}/restore-user', 'restore')->name('restore-user');
@@ -121,6 +128,7 @@ function () {
         Route::delete('delete-permanent-all-user', 'deleteAllPermanent')->name('delete-permanent-all-user');
         Route::get('{id}/change-password', 'changePassword')->name('change-password');
         Route::put('{id}/update-password', 'updatePassword')->name('update-password');
+        Route::get('{id}/gaji', 'gaji')->name('gaji');
     });
     Route::controller(UploadController::class)->group(function () {
         Route::get('upload', 'upload')->name('upload');
@@ -170,6 +178,12 @@ function () {
         Route::delete('{id}/delete-permanent-tahun', 'deletePermanent')->name('delete-permanent-tahun');
         Route::delete('delete-permanent-all-tahun', 'deleteAllPermanent')->name('delete-permanent-all-tahun');
     });
+    Route::controller(BulanController::class)->group( function () {
+        Route::get('trash-bulan', 'trash')->name('trash-bulan');
+        Route::post('{id}/restore-bulan', 'restore')->name('restore-bulan');
+        Route::delete('{id}/delete-permanent-bulan', 'deletePermanent')->name('delete-permanent-bulan');
+        Route::delete('delete-permanent-all-bulan', 'deleteAllPermanent')->name('delete-permanent-all-bulan');
+    });
     Route::controller(DivisiController::class)->group( function () {
         Route::get('trash-divisi', 'trash')->name('trash-divisi');
         Route::post('{id}/restore-divisi', 'restore')->name('restore-divisi');
@@ -182,11 +196,10 @@ function () {
         Route::delete('{id}/delete-permanent-kategori', 'deletePermanent')->name('delete-permanent-kategori');
         Route::delete('delete-permanent-all-kategori', 'deleteAllPermanent')->name('delete-permanent-all-kategori');
     });
-    Route::controller(BeritaController::class)->group( function () {
+    Route::controller(NewsController::class)->group( function () {
         Route::get('trash-berita', 'trash')->name('trash-berita');
         Route::post('{id}/restore-berita', 'restore')->name('restore-berita');
         Route::delete('{id}/delete-permanent-berita', 'deletePermanent')->name('delete-permanent-berita');
         Route::delete('delete-permanent-all-berita', 'deleteAllPermanent')->name('delete-permanent-all-berita');
     });
 });
-

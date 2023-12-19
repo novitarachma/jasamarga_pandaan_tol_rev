@@ -11,7 +11,7 @@
 <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('admin.page') }}">Home</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('berita.index') }}">Berita</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('news.index') }}">Berita</a></li>
         <li class="breadcrumb-item active">Create Berita</li>
     </ol>
 </div>
@@ -31,7 +31,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <form method="post" action="{{ route('berita.store') }}" id="myForm" enctype="multipart/form-data">
+            <form method="post" action="{{ route('news.store') }}" id="myForm" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-md-4">
@@ -97,7 +97,7 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-12">
-                        <a href="{{ route('berita.index') }}" class="btn btn-secondary">Cancel</a>
+                        <a href="{{ route('news.index') }}" class="btn btn-secondary">Cancel</a>
                         <button type="submit" class="btn btn-success float-right">Submit</button>
                     </div>
                 </div>

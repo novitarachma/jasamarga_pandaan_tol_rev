@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Tahun;
+use App\Models\Bulan;
 use Session;
 use App\Services\TrashService;
 use App\Http\Requests\StoreDataRequest;
 
-class TahunController extends Controller
+class BulanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,77 +24,77 @@ class TahunController extends Controller
      */
     public function create()
     {
-        return view('admin.galeri.tahun.create');
+        return view('admin.galeri.bulan.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Tahun $tahun, StoreDataRequest $request)
+    public function store(Bulan $bulan, StoreDataRequest $request)
     {
-        $tahun->create($request->all());
+        $bulan->create($request->all());
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect(route('galeri.index'))->with('success', 'Tahun Berhasil Ditambahkan');
+        return redirect(route('galeri.index'))->with('success', 'Bulan Berhasil Ditambahkan');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id, Tahun $tahun)
+    public function show(string $id, Bulan $bulan)
     {
-        $tahun->where('id', $id)->first();
-        return view('admin.galeri.tahun.detail', compact('tahun'));
+        $bulan->where('id', $id)->first();
+        return view('admin.galeri.bulan.detail', compact('bulan'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id, Tahun $tahun)
+    public function edit(string $id, Bulan $bulan)
     {
-        $tahun->find($id);
-        return view('admin.galeri.tahun.edit', compact('tahun'));
+        $bulan->find($id);
+        return view('admin.galeri.bulan.edit', compact('bulan'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreDataRequest $request, Tahun $tahun)
+    public function update(StoreDataRequest $request, Bulan $bulan)
     {
-        $tahun->update($request->all());
+        $bulan->update($request->all());
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('galeri.index')->with('success', 'Tahun Berhasil Ditambahkan');
+        return redirect()->route('galeri.index')->with('success', 'Bulan Berhasil Ditambahkan');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tahun $tahun)
+    public function destroy(Bulan $bulan)
     {
-        $tahun->delete();
+        $bulan->delete();
 
-        return redirect()->route('galeri.index')->with('success', 'Tahun Berhasil Dihapus');
+        return redirect()->route('galeri.index')->with('success', 'Bulan Berhasil Dihapus');
     }
 
     public function restore($id, TrashService $trashService)
     {
-        $tahun = Tahun::withTrashed()->findOrFail($id);
+        $bulan = Bulan::withTrashed()->findOrFail($id);
         $root = '-galeri';
-        return $trashService->restore($tahun, $root);
+        return $trashService->restore($bulan, $root);
     }
     
     public function deletePermanent($id, TrashService $trashService)
     {
-        $tahun = Tahun::withTrashed()->findOrFail($id);
+        $bulan = Bulan::withTrashed()->findOrFail($id);
         $root = '-galeri';
-        return $trashService->delete($tahun, $root);
+        return $trashService->delete($bulan, $root);
     }
 
     public function deleteAllPermanent(TrashService $trashService)
     {
-        $tahun = Tahun::onlyTrashed();
-        $tahun->forceDelete();
+        $bulan = Bulan::onlyTrashed();
+        $bulan->forceDelete();
         return redirect()->route('trash-galeri')->with('status', 'Data permanently deleted!');
     }
 

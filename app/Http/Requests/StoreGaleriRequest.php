@@ -22,9 +22,9 @@ class StoreGaleriRequest extends FormRequest
     public function rules()
     {
         return [
-            'tahun' => 'required',
+            'tahun_id' => 'required',
             'judul' => 'required',
-            'foto' => 'required|image|mimes:png,jpg,jpeg,svg|max:2048',
+            'foto' => 'image|mimes:png,jpg,jpeg,svg|max:2048',
         ];
     }
 }

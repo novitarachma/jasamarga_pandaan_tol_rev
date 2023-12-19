@@ -11,7 +11,7 @@
 <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('admin.page') }}">Home</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('berita.index') }}">Berita</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('news.index') }}">Berita</a></li>
         <li class="breadcrumb-item active">Update Berita</li>
     </ol>
 </div>
@@ -31,7 +31,8 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <form method="post" action="{{ route('berita.update') }}" id="myForm" enctype="multipart/form-data">
+            <form method="post" action="{{ route('news.update', $berita->id) }}" id="myForm"
+                enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="row">
@@ -46,9 +47,9 @@
                         </div>
                         <div class="form-group">
                             <label for="paragraf1">Paragraf 1</label>
-                            <textarea class="form-control @error('paragraf1') is-invalid @enderror" rows="3"
-                                id="paragraf1" name="paragraf1" value="{{ $berita->paragraf1 }}"
-                                placeholder="Enter Paragraph 1"></textarea>
+                            <textarea type="text" class="form-control @error('paragraf1') is-invalid @enderror" rows="3"
+                                id="paragraf1" name="paragraf1"
+                                placeholder="Enter Paragraph 1"><?php echo $berita['paragraf1']; ?></textarea>
                             @error('paragraf1')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -65,9 +66,9 @@
                         </div>
                         <div class="form-group">
                             <label for="paragraf2">Paragraf 2</label>
-                            <textarea class="form-control @error('paragraf2') is-invalid @enderror" rows="3"
-                                id="paragraf2" name="paragraf2" value="{{ $berita->paragraf2 }}"
-                                placeholder="Enter Paragraph 2"></textarea>
+                            <textarea type="text" class="form-control @error('paragraf2') is-invalid @enderror" rows="3"
+                                id="paragraf2" name="paragraf2"
+                                placeholder="Enter Paragraph 2"><?php echo $berita->paragraf2 ?></textarea>
                             @error('paragraf2')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -86,14 +87,14 @@
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <img style="width: 100px" src="{{ asset('./storage/'. $galeri->foto) }}" alt="">
+                                <img style="width: 100px" src="{{ asset('./storage/'. $berita->foto) }}" alt="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="paragraf3">Paragraf 3</label>
-                            <textarea class="form-control @error('paragraf3') is-invalid @enderror" rows="3"
-                                id="paragraf3" name="paragraf3" value="{{ $berita->paragraf3 }}"
-                                placeholder="Enter Paragraph 3"></textarea>
+                            <textarea type="text" class="form-control @error('paragraf3') is-invalid @enderror" rows="3"
+                                id="paragraf3" name="paragraf3"
+                                placeholder="Enter Paragraph 3"><?php echo $berita->paragraf3 ?></textarea>
                             @error('paragraf3')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -103,7 +104,7 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-12">
-                        <a href="{{ route('berita.index') }}" class="btn btn-secondary">Cancel</a>
+                        <a href="{{ route('news.index') }}" class="btn btn-secondary">Cancel</a>
                         <button type="submit" class="btn btn-success float-right">Submit</button>
                     </div>
                 </div>

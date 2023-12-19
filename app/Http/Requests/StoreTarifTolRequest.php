@@ -22,9 +22,9 @@ class StoreTarifTolRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'asal' => 'required',
-            'tujuan' => 'required',
-            'golongan' => 'required',
+            'asal_id' => 'required',
+            'tujuan_id' => 'required',
+            'golongan_id' => 'required',
             'harga' => 'required',
         ];
     }

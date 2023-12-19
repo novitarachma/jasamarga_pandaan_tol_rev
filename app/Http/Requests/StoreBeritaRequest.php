@@ -23,7 +23,7 @@ class StoreBeritaRequest extends FormRequest
     {
         return [
             'judul' => 'required',
-            'foto' => 'required|image|mimes:png,jpg,jpeg,svg|max:2048',
+            'foto' => 'image|mimes:png,jpg,jpeg,svg|max:2048',
             'tanggal' => 'required',
             'paragraf1' => 'required',
             'paragraf2' => 'required',
