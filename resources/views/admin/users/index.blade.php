@@ -46,12 +46,12 @@
 
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
-                            <tr>
+                            <tr style="text-align: center;">
                                 <th style="width: 20px;">No</th>
                                 <th>Name</th>
                                 <th>Username</th>
-                                <th>Role</th>
-                                <th style="width: 300px;">Action</th>
+                                <th style="width: 100px;">Role</th>
+                                <th style="width: 350px;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,6 +70,7 @@
                                         action="{{ route('user.destroy',['user'=>$value->id]) }}" method="POST">
                                         <a class="btn btn-info" href="{{ route('change-password',$value->id) }}">Change
                                             Password</a>
+                                        <a class="btn bg-navy margin" href="{{ route('gaji',$value->id) }}">Gaji</a>
                                         <a class="btn btn-primary" href="{{ route('user.edit',$value->id) }}">Edit</a>
                                         @csrf
                                         @method('DELETE')

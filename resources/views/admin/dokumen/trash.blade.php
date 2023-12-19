@@ -14,7 +14,7 @@
 <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('admin.page') }}">Home</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('dokumen.index') }}">Dokumen</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('dokument.index') }}">Dokumen</a></li>
         <li class="breadcrumb-item active">Trash Dokumen</li>
     </ol>
 </div>
@@ -36,8 +36,13 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <a class="btn btn-danger" href="{{ route('delete-permanent-all-dokumen') }}">Delete All Dokumen</a>
-                    <br><br>
+                    <form method="POST" action="{{ route('delete-permanent-all-dokumen') }}"
+                        onsubmit="return confirm('Delete all this data permanently ?')">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Delete All Dokumen" class="btn btn-danger">
+                    </form>
+                    <br>
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
@@ -88,7 +93,7 @@
                     </table>
                     <div class="row">
                         <div class="col-12">
-                            <a href="{{ route('dokumen.index') }}" class="btn btn-secondary">Cancel</a>
+                            <a href="{{ route('dokument.index') }}" class="btn btn-secondary">Cancel</a>
                         </div>
                     </div>
                 </div>
@@ -109,23 +114,19 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <a class="btn btn-danger" href="{{ route('delete-permanent-all-divisi') }}">Delete All Divisi</a>
-                    <br><br>
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @elseif (session('error'))
-                    <div class="alert alert-danger" role="alert">
-                        {{ session('error') }}
-                    </div>
-                    @endif
+                    <form method="POST" action="{{ route('delete-permanent-all-divisi') }}"
+                        onsubmit="return confirm('Delete all this data permanently ?')">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Delete All Divisi" class="btn btn-danger">
+                    </form>
+                    <br>
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th style="width: 50px;">No</th>
                                 <th>Nama</th>
-                                <th style="width: 220px;">Action</th>
+                                <th style="width: 180px;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -168,24 +169,19 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <a class="btn btn-danger" href="{{ route('delete-permanent-all-kategori') }}">Delete All
-                        Kategori</a>
-                    <br><br>
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @elseif (session('error'))
-                    <div class="alert alert-danger" role="alert">
-                        {{ session('error') }}
-                    </div>
-                    @endif
+                    <form method="POST" action="{{ route('delete-permanent-all-kategori') }}"
+                        onsubmit="return confirm('Delete all this data permanently ?')">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Delete All Kategori" class="btn btn-danger">
+                    </form>
+                    <br>
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th style="width: 50px;">No</th>
                                 <th>Nama</th>
-                                <th style="width: 220px;">Action</th>
+                                <th style="width: 180px;">Action</th>
                             </tr>
                         </thead>
                         <tbody>

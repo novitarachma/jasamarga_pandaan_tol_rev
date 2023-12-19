@@ -9,12 +9,12 @@
 
 @section('title')
 <div class="col-sm-6">
-    <h1>Data Berita</h1>
+    <h1>Data Gaji</h1>
 </div>
 <div class="col-sm-6">
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="{{ route('admin.page') }}">Home</a></li>
-        <li class="breadcrumb-item active">Berita</li>
+        <li class="breadcrumb-item active">Data Gaji</li>
     </ol>
 </div>
 @endsection
@@ -26,61 +26,30 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Berita Table</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                    </div>
+                    <h3 class="card-title">{{$user->name}}</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <a class="btn btn-success" href="{{ route('news.create') }}">Add Berita</a>
-                    <a class="btn btn-danger" href="{{ route('trash-berita') }}">Trash</a>
-                    <br><br>
-
-                    @if (session('success'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('success') }}
-                    </div>
-                    @elseif (session('error'))
-                    <div class="alert alert-danger" role="alert">
-                        {{ session('error') }}
-                    </div>
-                    @endif
-
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr style="text-align: center;">
-                                <th style="width: 50px;">No</th>
-                                <th>Judul</th>
-                                <th>Foto</th>
-                                <th>Tanggal</th>
-                                <th style="width: 220px;">Action</th>
+                                <th style="width: 20px;">No</th>
+                                <th>Tahun</th>
+                                <th>Bulan</th>
+                                <th style="width: 300px;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-
-                            @foreach($datas as $key=>$value)
+                            @foreach($gaji as $key=>$value)
                             <tr>
                                 <td>{{ $key+1 }}</td>
-                                <td>{{ $value->judul }}</td>
+                                <td>{{ $value->tahun->name }}</td>
+                                <td>{{ $value->bulan->name }}</td>
                                 <td>
-                                    <img style="width: 50px; overflow: hidden" class="rounded"
-                                        src="{{ asset('./storage/'. $value->foto) }}" alt="">
-                                </td>
-                                <td>{{ $value->tanggal }}</td>
-                                <td>
-                                    <form onsubmit="return confirm('Move data to trash?')"
-                                        action="{{ route('news.destroy',['news'=>$value->id]) }}" method="POST">
-                                        <a class="btn btn-primary" href="{{ route('news.edit',$value->id) }}">Edit</a>
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
+                                    <a class="btn btn-info" href="{{ $value->link }}">Cetak Gaji</a>
                                 </td>
                             </tr>
-                            @endforeach()
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

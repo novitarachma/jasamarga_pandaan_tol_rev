@@ -7,22 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Tahun extends Model
+class Bulan extends Model
 {
     use HasFactory;
     use SoftDeletes;
     use Notifiable;
 
-    public $table = 'tahuns';
+    public $table = 'bulans';
 
     protected $fillable = [
         'name',
     ];
-
-    public function galeri()
-    {
-    	return $this->hasMany(Galeri::class);
-    }
 
     public function gaji()
     {

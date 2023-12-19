@@ -52,23 +52,17 @@ class TarifTolController extends Controller
     {
         $input = $request->all();
 
-        $tarif['harga'] = $input['harga'];
-        $tarif->save();
-
-        $asal['id'] = $input['asal'];
-        $tarif->asal()->associate($asal);
-        $tarif->save();
+        $asal['id'] = $input['asal_id'];
+        $tujuan['id'] = $input['tujuan_id'];
+        $golongan['id'] = $input['golongan_id'];
         
-        $tujuan['id'] = $input['tujuan'];
+        $tarif->create($input);
+        $tarif->asal()->associate($asal);
         $tarif->tujuan()->associate($tujuan);
-        $tarif->save();
-
-        $golongan['id'] = $input['golongan'];
         $tarif->golongan()->associate($golongan);
-        $tarif->save();
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('admin.tarif.index')->with('success', 'Tarif Berhasil Ditambahkan');
+        return redirect()->route('tarif.index')->with('success', 'Tarif Berhasil Ditambahkan');
     }
 
     /**
@@ -83,9 +77,9 @@ class TarifTolController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id, TarifTol $tarif)
+    public function edit($id)
     {
-        $tarif->where('id', $id)->first();
+        $tarif = TarifTol::where('id', $id)->first();
         return view('admin.tarif.edit', compact('tarif'));
     }
 
@@ -97,7 +91,7 @@ class TarifTolController extends Controller
         $tarif->update($request->all());
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('admin.tarif.index')->with('success', 'Tarif Berhasil Ditambahkan');
+        return redirect()->route('tarif.index')->with('success', 'Tarif Berhasil Ditambahkan');
     }
 
     /**
@@ -107,7 +101,7 @@ class TarifTolController extends Controller
     {
         $tarif->delete();
         
-        return redirect()->route('admin.tarif.index')->with('success', 'Tarif Berhasil Dihapus');
+        return redirect()->route('tarif.index')->with('success', 'Tarif Berhasil Dihapus');
     }
 
     public function trash()
@@ -137,8 +131,8 @@ class TarifTolController extends Controller
 
     public function deleteAllPermanent(TrashService $trashService)
     {
-        $tarif = TarifTol::withTrashed();
-        $root = '-tarif';
-        return $trashService->delete($tarif, $root);
+        $tarif = TarifTol::onlyTrashed();
+        $tarif->forceDelete();
+        return redirect()->route('trash-tarif')->with('status', 'Data all tarif permanently deleted!');
     }
 }

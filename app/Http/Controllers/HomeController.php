@@ -24,6 +24,6 @@ class HomeController extends Controller
     public function index()
     {
         $ber = Berita::all();
-        return view('index')->with('ber', $ber);
+        return view('index')->with('berita', $ber);
     }
 }

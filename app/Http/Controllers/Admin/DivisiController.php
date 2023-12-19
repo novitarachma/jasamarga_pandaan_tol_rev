@@ -35,7 +35,7 @@ class DivisiController extends Controller
         $divisi->create($request->all());
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect(route('dokumen.index'))->with('success', 'Divisi Berhasil Ditambahkan');
+        return redirect(route('dokument.index'))->with('success', 'Divisi Berhasil Ditambahkan');
     }
 
     /**
@@ -64,7 +64,7 @@ class DivisiController extends Controller
         $divisi->update($request->all());
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('dokumen.index')->with('success', 'Divisi Berhasil Ditambahkan');
+        return redirect()->route('dokument.index')->with('success', 'Divisi Berhasil Ditambahkan');
     }
 
     /**
@@ -74,7 +74,7 @@ class DivisiController extends Controller
     {
         $divisi->delete();
 
-        return redirect()->route('dokumen.index')->with('success', 'Divisi Berhasil Dihapus');
+        return redirect()->route('dokument.index')->with('success', 'Divisi Berhasil Dihapus');
     }
 
     public function restore($id, TrashService $trashService)
@@ -93,9 +93,9 @@ class DivisiController extends Controller
 
     public function deleteAllPermanent(TrashService $trashService)
     {
-        $divisi = Divisi::withTrashed();
-        $root = '-dokumen';
-        return $trashService->delete($divisi, $root);
+        $divisi = Divisi::onlyTrashed();
+        $divisi->forceDelete();
+        return redirect()->route('trash-dokumen')->with('status', 'Data all divisi permanently deleted!');
     }
 
 }

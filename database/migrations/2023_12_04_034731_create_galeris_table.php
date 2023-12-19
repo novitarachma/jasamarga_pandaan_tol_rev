@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('tahun_id');
             $table->string('judul');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('tahun_id')->references('id')->on('tahuns')->onDelete('cascade');

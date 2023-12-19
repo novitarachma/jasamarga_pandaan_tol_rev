@@ -4,18 +4,15 @@
 @endsection
 @section('content')
 <section id="portfolio-details" class="portfolio-details">
-<div class="container p-0">
 
-    <div class="row">
-        <div class="section-title">
-            <h2>   </h2>
-            <h2>   </h2>
-            <h2>   </h2>
-            <p>     </p>
-            <h2>Tarif Tol</h2>
-        </div>
-        <div class="col-md-7 col-xl-8">
-            <div class="card-body">
+    <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2>Tarif Tol Pandaan</h2>
+                <hr>
+                </hr>
+
             </div>
         </div>
             <div class="card">
@@ -88,14 +85,22 @@
                                             <p><strong>Golongan  = Rp.0</strong></p>
                                         </div>
                                     </div>
-                                    </div>
+
                                 </div>
+
                             </div>
                         </div>
-                    </form>
                 </div>
+                </form>
             </div>
         </div>
+
+    </div>
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_qHKYFum4g_Y8e7sgqS3T26Fjz1IxBpg&libraries=places">
+    </script>
+    <script src="maps.js"></script>
+
     </div>
 </section>
 @endsection

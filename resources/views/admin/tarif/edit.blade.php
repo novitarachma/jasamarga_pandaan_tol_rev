@@ -31,39 +31,28 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <form method="post" action="{{ route('tarif.update') }}" id="myForm" enctype="multipart/form-data">
+            <form method="post" action="{{ route('tarif.update', $tarif->id) }}" id="myForm"
+                enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="asal">Asal</label>
-                            <select class="form-control custom-select" style="width: 100%;" id="asal" name="asal"
+                            <input type="text" class="form-control" id="asal" name="asal" disabled="disabled"
                                 value="{{ $tarif->asal->name }}">
-                                @foreach($asal as $as)
-                                <option value="{{ $as->id }}" selected="selected">{{ $as->name }}</option>
-                                @endforeach
-                            </select>
                         </div>
                         <div class="form-group">
                             <label for="tujuan">Tujuan</label>
-                            <select class="form-control custom-select" style="width: 100%;" id="tujuan" name="tujuan"
+                            <input type="text" class="form-control" id="tujuan" name="tujuan" disabled="disabled"
                                 value="{{ $tarif->tujuan->name }}">
-                                @foreach($tujuan as $tj)
-                                <option value="{{ $tj->id }}" selected="selected">{{ $tj->name }}</option>
-                                @endforeach
-                            </select>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="golongan">Golongan</label>
-                            <select class="form-control custom-select" style="width: 100%;" id="golongan"
-                                name="golongan" value="{{ $tarif->golongan->name }}">
-                                @foreach($golongan as $gl)
-                                <option value="{{ $gl->id }}" selected="selected">{{ $gl->name }}</option>
-                                @endforeach
-                            </select>
+                            <input type="text" class="form-control" id="golongan" name="golongan" disabled="disabled"
+                                value="{{ $tarif->golongan->name }}">
                         </div>
                         <div class="form-group">
                             <label for="harga">Tarif Tol</label>

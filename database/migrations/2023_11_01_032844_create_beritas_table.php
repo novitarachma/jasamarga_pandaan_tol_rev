@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('judul');
             $table->date('tanggal');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->text('paragraf1');
             $table->text('paragraf2');
             $table->text('paragraf3');

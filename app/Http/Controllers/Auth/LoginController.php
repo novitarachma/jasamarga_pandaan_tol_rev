@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use App\Models\Berita;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -45,11 +45,10 @@ class LoginController extends Controller
     }
 
     public function authenticated(Request $request, $user)
-{
-    if ($user->hasRole('admin')) {
-        return redirect()->route('admin.page');
+    {
+        if ($user->hasRole('admin')) {
+            return redirect()->route('index');
+        }
+        return redirect()->route('index.user');
     }
-
-    return redirect()->route('user.page');
-}
 }

@@ -31,7 +31,8 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <form method="post" action="{{ route('tahun.update') }}" id="myForm" enctype="multipart/form-data">
+            <form method="post" action="{{ route('tahun.update', $tahun->id) }}" id="myForm"
+                enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="row">

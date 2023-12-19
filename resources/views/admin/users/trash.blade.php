@@ -31,7 +31,12 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <a class="btn btn-danger" href="{{ route('delete-permanent-all-user') }}">Trash</a>
+                    <form method="POST" action="{{ route('delete-permanent-all-user') }}"
+                        onsubmit="return confirm('Delete all this data permanently ?')">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Delete All User" class="btn btn-danger">
+                    </form>
                     <br>
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">

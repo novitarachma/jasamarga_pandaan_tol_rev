@@ -36,7 +36,12 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <a class="btn btn-danger" href="{{ route('delete-permanent-all-tarif') }}">Delete All Tarif</a>
+                    <form method="POST" action="{{ route('delete-permanent-all-tarif') }}"
+                        onsubmit="return confirm('Delete all this data permanently ?')">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Delete All Tarif" class="btn btn-danger">
+                    </form>
                     <br>
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
@@ -94,7 +99,7 @@
             <!-- /.card -->
         </div>
         <!-- /.col -->
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Trash Asal Gerbang Table</h3>
@@ -106,23 +111,19 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <a class="btn btn-danger" href="{{ route('delete-permanent-all-asal') }}">Delete All Asal</a>
-                    <br><br>
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @elseif (session('error'))
-                    <div class="alert alert-danger" role="alert">
-                        {{ session('error') }}
-                    </div>
-                    @endif
+                    <form method="POST" action="{{ route('delete-permanent-all-asal') }}"
+                        onsubmit="return confirm('Delete all this data permanently ?')">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Delete All Asal" class="btn btn-danger">
+                    </form>
+                    <br>
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th style="width: 50px;">No</th>
                                 <th>Nama</th>
-                                <th style="width: 220px;">Action</th>
+                                <th style="width: 180px;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -151,9 +152,12 @@
                 <!-- /.card-body -->
             </div>
             <!-- /.card -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-4">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Trash Golongan Kendaraan Table</h3>
+                    <h3 class="card-title">Trash Tujuan Gerbang Table</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                             <i class="fas fa-minus"></i>
@@ -162,38 +166,33 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <a class="btn btn-danger" href="{{ route('delete-permanent-all-golongan') }}">Delete All
-                        Golongan</a>
-                    <br><br>
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @elseif (session('error'))
-                    <div class="alert alert-danger" role="alert">
-                        {{ session('error') }}
-                    </div>
-                    @endif
+                    <form method="POST" action="{{ route('delete-permanent-all-tujuan') }}"
+                        onsubmit="return confirm('Delete all this data permanently ?')">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Delete All Tujuan" class="btn btn-danger">
+                    </form>
+                    <br>
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th style="width: 50px;">No</th>
                                 <th>Nama</th>
-                                <th style="width: 220px;">Action</th>
+                                <th style="width: 180px;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($golongan as $key=>$value)
+                            @foreach($tujuan as $key=>$value)
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $value->name }}</td>
                                 <td>
-                                    <form method="POST" action="{{route('restore-golongan', [$value->id])}}"
+                                    <form method="POST" action="{{route('restore-tujuan', [$value->id])}}"
                                         class="d-inline">
                                         @csrf
                                         <input type="submit" value="Restore" class="btn btn-success" />
                                     </form>
-                                    <form method="POST" action="{{route('delete-permanent-golongan', [$value->id])}}"
+                                    <form method="POST" action="{{route('delete-permanent-tujuan', [$value->id])}}"
                                         class="d-inline" onsubmit="return confirm('Delete this data permanently ?')">
                                         @csrf
                                         @method('DELETE')
@@ -210,10 +209,10 @@
             <!-- /.card -->
         </div>
         <!-- /.col -->
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Trash Tujuan Gerbang Table</h3>
+                    <h3 class="card-title">Trash Golongan Kendaraan Table</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                             <i class="fas fa-minus"></i>
@@ -222,37 +221,33 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <a class="btn btn-danger" href="{{ route('delete-permanent-all-tujuan') }}">Delete All Tujuan</a>
-                    <br><br>
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @elseif (session('error'))
-                    <div class="alert alert-danger" role="alert">
-                        {{ session('error') }}
-                    </div>
-                    @endif
+                    <form method="POST" action="{{ route('delete-permanent-all-golongan') }}"
+                        onsubmit="return confirm('Delete all this data permanently ?')">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Delete All Golongan" class="btn btn-danger">
+                    </form>
+                    <br>
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th style="width: 50px;">No</th>
                                 <th>Nama</th>
-                                <th style="width: 220px;">Action</th>
+                                <th style="width: 180px;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($tujuan as $key=>$value)
+                            @foreach($golongan as $key=>$value)
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td>{{ $value->name }}</td>
                                 <td>
-                                    <form method="POST" action="{{route('restore-tujuan', [$value->id])}}"
+                                    <form method="POST" action="{{route('restore-golongan', [$value->id])}}"
                                         class="d-inline">
                                         @csrf
                                         <input type="submit" value="Restore" class="btn btn-success" />
                                     </form>
-                                    <form method="POST" action="{{route('delete-permanent-tujuan', [$value->id])}}"
+                                    <form method="POST" action="{{route('delete-permanent-golongan', [$value->id])}}"
                                         class="d-inline" onsubmit="return confirm('Delete this data permanently ?')">
                                         @csrf
                                         @method('DELETE')

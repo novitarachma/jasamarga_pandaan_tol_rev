@@ -93,9 +93,9 @@ class TujuanController extends Controller
 
     public function deleteAllPermanent(TrashService $trashService)
     {
-        $tujuan = TujuanTol::withTrashed();
-        $root = '-tarif';
-        return $trashService->delete($tujuan, $root);
+        $tujuan = TujuanTol::onlyTrashed();
+        $tujuan->forceDelete();
+        return redirect()->route('trash-tarif')->with('status', 'Data all tujuan permanently deleted!');
     }
 
 }

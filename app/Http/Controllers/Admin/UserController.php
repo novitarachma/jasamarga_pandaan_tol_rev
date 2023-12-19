@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Gaji;
 use Illuminate\Support\Facades\Auth;
 use Session;
 use App\Http\Controllers\Controller;
@@ -123,14 +124,14 @@ class UserController extends Controller
     
     public function deleteAllPermanent(TrashService $trashService)
     {
-        $user = User::withTrashed();
-        $root = '-user';
-        return $trashService->delete($user, $root);
+        $user = User::onlyTrashed();
+        $user->forceDelete();
+        return redirect()->route('trash-user')->with('status', 'Data all user permanently deleted!');
     }
 
-    public function changePassword($id, User $user)
+    public function changePassword($id)
     {
-        $user->where('id', $id)->first();
+        $user = User::where('id', $id)->first();
         return view('admin.users.change-password', compact('user'));
     }
 
@@ -145,5 +146,12 @@ class UserController extends Controller
         ]);
 
         return redirect()->route('user.index')->with("status", "Password changed successfully!");
+    }
+
+    public function gaji(string $id)
+    {
+        $gaji = Gaji::where('user_id', $id)->get();
+        $user = User::where('id', $id)->first();
+        return view('admin.users.gaji', compact('gaji', 'user'));
     }
 }
