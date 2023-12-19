@@ -57,143 +57,167 @@
     }
     </style>
 
-
-
 </head>
 
 <body>
-    <!-- <header> -->
-    <nav id="navbar" class="navbar">
-        <h1 class="logo"><img src="assets/img/LogoJPT.png" alt="" class="img-fluid"></h1>
-        <ul>
-            <li><a class="nav-link scrollto" href="{{ route('home') }}">Home</a></li>
-            <li><a class="nav-link scrollto" href="/about">About</a></li>
-            <li><a class="nav-link scrollto" href="/service">Services</a></li>
-            <li><a class="nav-link scrollto" href="{{ route('berita') }}">Berita</a></li>
-            <li><a class="nav-link scrollto" href="{{ route('galeri') }}">Galeri</a></li>
-            <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
-            @hasanyrole('user')
-            <li class="dropdown"><a href="#"><span>Dokumen </span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                    <li class="dropdown"><a href="{{ route('perusahaan') }}"><span>Dokumen Perusahaan</span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li class="dropdown"><a href="#"><span>FINANCE</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="{{ route('perusahaan') }}">Surat Keputusan Direksi</a></li>
-                                    <li><a href="{{ route('perusahaan') }}">Prosedur</a></li>
-                                    <li><a href="{{ route('perusahaan') }}">Formulir</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#"><span>GA & Business Development</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="{{ route('perusahaan') }}">Surat Keputusan Direksi</a></li>
-                                    <li><a href="{{ route('perusahaan') }}#">Prosedur</a></li>
-                                    <li><a href="{{ route('perusahaan') }}">Formulir</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#"><span>HR & Legal</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="{{ route('perusahaan') }}">Surat Keputusan Direksi</a></li>
-                                    <li><a href="{{ route('perusahaan') }}#">Prosedur</a></li>
-                                    <li><a href="{{ route('perusahaan') }}">Formulir</a></li>
-                                    <li><a href="{{ route('perusahaan') }}">Pakta Integritas</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#"><span>Maintenance</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="{{ route('perusahaan') }}">Surat Keputusan Direksi</a></li>
-                                    <li><a href="{{ route('perusahaan') }}">Prosedur</a></li>
-                                    <li><a href="{{ route('perusahaan') }}">Formulir</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#"><span>Toll Collection Management</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="{{ route('perusahaan') }}">Surat Keputusan Direksi</a></li>
-                                    <li><a href="{{ route('perusahaan') }}">Prosedur</a></li>
-                                    <li><a href="{{ route('perusahaan') }}">Instruksi Kerja</a></li>
-                                    <li><a href="{{ route('perusahaan') }}">Formulir</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#"><span>Traffic Management</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="{{ route('perusahaan') }}">Surat Keputusan Direksi</a></li>
-                                    <li><a href="{{ route('perusahaan') }}">Prosedur</a></li>
-                                    <li><a href="{{ route('perusahaan') }}">Instruksi Kerja</a></li>
-                                    <li><a href="{{ route('perusahaan') }}">Formulir</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a href="{{ route('karyawan') }}"><span>Dokumen Karyawan</span> <i
-                                class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="{{ route('karyawan') }}">HC & GA</a></li>
-                            <li><a href="{{ route('karyawan') }}">MAINTENANCE</a></li>
-                            <li><a href="{{ route('karyawan') }}">FINANCE</a></li>
-                            <li><a href="{{ route('karyawan') }}">TOLL COLLECTION MANAGEMENT</a></li>
-                            <li><a href="{{ route('karyawan') }}">TRAFFIC MANAGEMENT</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            @endhasanyrole
-            <li class="dropdown"><a href="#"><span>Profil Perusahaan</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                    <li><a href="/visimisi">Visi, Misi dan Tata Nilai</a></li>
-                    <li><a href="/struktur-organisasi">Struktur Organisasi</a></li>
-                    <li><a href="/susunan-dewan-komisaris">Susunan Dewan Komisaris</a></li>
-                    <li><a href="/susunan-direksi">Susunan Direksi</a></li>
-                    <li><a href="/pustaka">Pustaka</a></li>
-                    <li><a href="/link">Link</a></li>
-                </ul>
-            </li>
-            <!-- <a class="getstarted scrollto" href="#about">Get Started</a> -->
-            <li>
-                <ul class="navbar-nav ms-auto">
-                    <!-- Authentication Links -->
-                    @guest
-                    @if (Route::has('login'))
-                    <li class="nav-item">
-                        <a class="nav-link scrollto" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                    @endif
+    <header id="header" class="fixed-top">
+        <nav id=" navbar" class="navbar">
+            <h1 class="logo"><img src="assets/img/LogoJPT.png" alt="" class="img-fluid">
+            </h1>
+            <ul>
+                <li><a class="nav-link scrollto" href="{{ route('home') }}">Home</a></li>
+                <li><a class="nav-link scrollto" href="/about">About</a></li>
+                <li><a class="nav-link scrollto" href="/service">Services</a></li>
+                <li><a class="nav-link scrollto" href="{{ route('berita') }}">Berita</a>
+                </li>
+                <li><a class="nav-link scrollto" href="{{ route('galeri') }}">Galeri</a>
+                </li>
+                <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+                @hasanyrole('user')
+                <li class="dropdown"><a href="#"><span>Dokumen </span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li class="dropdown"><a href="{{ route('perusahaan') }}"><span>Dokumen
+                                    Perusahaan</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li class="dropdown"><a href="#"><span>FINANCE</span> <i
+                                            class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="{{ route('perusahaan') }}">Surat
+                                                Keputusan Direksi</a></li>
+                                        <li><a href="{{ route('perusahaan') }}">Prosedur</a>
+                                        </li>
+                                        <li><a href="{{ route('perusahaan') }}">Formulir</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#"><span>GA & Business
+                                            Development</span> <i class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="{{ route('perusahaan') }}">Surat
+                                                Keputusan Direksi</a></li>
+                                        <li><a href="{{ route('perusahaan') }}#">Prosedur</a>
+                                        </li>
+                                        <li><a href="{{ route('perusahaan') }}">Formulir</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#"><span>HR & Legal</span> <i
+                                            class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="{{ route('perusahaan') }}">Surat
+                                                Keputusan Direksi</a></li>
+                                        <li><a href="{{ route('perusahaan') }}#">Prosedur</a>
+                                        </li>
+                                        <li><a href="{{ route('perusahaan') }}">Formulir</a>
+                                        </li>
+                                        <li><a href="{{ route('perusahaan') }}">Pakta
+                                                Integritas</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#"><span>Maintenance</span> <i
+                                            class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="{{ route('perusahaan') }}">Surat
+                                                Keputusan Direksi</a></li>
+                                        <li><a href="{{ route('perusahaan') }}">Prosedur</a>
+                                        </li>
+                                        <li><a href="{{ route('perusahaan') }}">Formulir</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#"><span>Toll Collection
+                                            Management</span> <i class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="{{ route('perusahaan') }}">Surat
+                                                Keputusan Direksi</a></li>
+                                        <li><a href="{{ route('perusahaan') }}">Prosedur</a>
+                                        </li>
+                                        <li><a href="{{ route('perusahaan') }}">Instruksi
+                                                Kerja</a></li>
+                                        <li><a href="{{ route('perusahaan') }}">Formulir</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#"><span>Traffic
+                                            Management</span> <i class="bi bi-chevron-right"></i></a>
+                                    <ul>
+                                        <li><a href="{{ route('perusahaan') }}">Surat
+                                                Keputusan Direksi</a></li>
+                                        <li><a href="{{ route('perusahaan') }}">Prosedur</a>
+                                        </li>
+                                        <li><a href="{{ route('perusahaan') }}">Instruksi
+                                                Kerja</a></li>
+                                        <li><a href="{{ route('perusahaan') }}">Formulir</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="{{ route('karyawan') }}"><span>Dokumen
+                                    Karyawan</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="{{ route('karyawan') }}">HC & GA</a></li>
+                                <li><a href="{{ route('karyawan') }}">MAINTENANCE</a></li>
+                                <li><a href="{{ route('karyawan') }}">FINANCE</a></li>
+                                <li><a href="{{ route('karyawan') }}">TOLL COLLECTION
+                                        MANAGEMENT</a></li>
+                                <li><a href="{{ route('karyawan') }}">TRAFFIC MANAGEMENT</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                @endhasanyrole
+                <li class="dropdown"><a href="#"><span>Profil Perusahaan</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="/visimisi">Visi, Misi dan Tata Nilai</a></li>
+                        <li><a href="/struktur-organisasi">Struktur Organisasi</a></li>
+                        <li><a href="/susunan-dewan-komisaris">Susunan Dewan Komisaris</a>
+                        </li>
+                        <li><a href="/susunan-direksi">Susunan Direksi</a></li>
+                        <li><a href="/pustaka">Pustaka</a></li>
+                        <li><a href="/link">Link</a></li>
+                    </ul>
+                </li>
+                <!-- <a class="getstarted scrollto" href="#about">Get Started</a> -->
+                <li>
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                        @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link scrollto" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @endif
 
-                    @else
-                    <li class="dropdown">
-                        <a id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <i class="bi bi-chevron-down"></i>
-                        </a>
-                        <ul>
-                            <li><a href="/profile">Profil Anda</a></li>
-                            <li><a href="#">Anggota</a></li>
-                            <li><a href="#">Reset Password</a></li>
-                            <li>
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-
-                                            document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                    @endguest
-                </ul>
-            </li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav><!-- .navbar -->
-    <!-- </header> -->
+                        @else
+                        <li class="dropdown">
+                            <a id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul>
+                                <li><a href="/profile">Profil Anda</a></li>
+                                <li><a href="#">Anggota</a></li>
+                                <li><a href="#">Reset Password</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); 
+                                        document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                        @endguest
+                    </ul>
+                </li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+    </header>
     <main>
         @yield('content')
     </main>
@@ -290,10 +314,6 @@
                 Reserved</br>
             </div>
             <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/groovin-free-bootstrap-theme/ -->
                 Designed by <strong>IT PT Jasamarga Pandaan Tol</strong></a>
             </div>
         </div>
@@ -303,16 +323,20 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- <div>
-  <input type="checkbox" id="check"> <label class="chat-btn" for="check">
+        <input type="checkbox" id="check"> <label class="chat-btn" for="check">
             <i class="fa fa-commenting-o comment"></i> <i class="fa fa-close close">
-            </i> </label> <div class="wrapper"> <div class="header"> <h6>Let's Chat - Online</h6>
-        </div> <div class="text-center p-2"> <span>Please fill out the form to start chat!</span>
-        </div> <div class="chat-form"> <input type="text" class="form-control" placeholder="Name">
-    <input type="text" class="form-control" placeholder="Email">
-        <textarea class="form-control" placeholder="Your Text Message">
+            </i> </label>
+        <div class="wrapper">
+            <div class="header">
+                <h6>Let's Chat - Online</h6>
+            </div>
+            <div class="text-center p-2"> <span>Please fill out the form to start chat!</span>
+            </div>
+            <div class="chat-form"> <input type="text" class="form-control" placeholder="Name">
+                <input type="text" class="form-control" placeholder="Email">
+                <textarea class="form-control" placeholder="Your Text Message">
         </textarea> <button class="btn btn-success btn-block">Submit</button>
-  </div> -->
-
+            </div> -->
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>

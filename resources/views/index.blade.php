@@ -232,7 +232,7 @@
         </div>
         <div class="konten" id="artikel">
             <div class="content-container">
-                @foreach ($ber as $item)
+                @foreach ($berita as $item)
                 <div class="card">
                     <img src="{{ asset('./storage/'.$item->foto) }}" alt="artikel">
                     <div class="card-body">
