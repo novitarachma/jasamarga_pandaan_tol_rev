@@ -5,6 +5,10 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\TarifTol;
+use App\Models\TarifRecord;
+use App\Models\AsalTol;
+use App\Models\TujuanTol;
+use App\Models\GolonganTol;
 use Illuminate\Http\Request;
 
 class TarifTolController extends Controller
@@ -12,22 +16,51 @@ class TarifTolController extends Controller
     public function index()
     {
         $datas = TarifTol::all();
+        $asal = AsalTol::all();
+        $tujuan = TujuanTol::all();
+        $golongan = GolonganTol::all();
+        $record = TarifRecord::all();
+        $total = 0;
+
+        foreach ($record as $rc) {
+            $total += $rc->tarif['harga'];
+        }
+        
         return view('user.tariftol', compact(
-            'datas'
+            'datas', 'asal', 'tujuan', 'golongan', 'record', 'total'
         ));
     }
 
-    public function tarif(Request $request){
-        $input = $request->all();
+    public function tarif(Request $request)
+    {
+        $request->validate([
+            'asal_id' => 'required',
+            'tujuan_id' => 'required',
+            'golongan_id' => 'required',
+        ]);
         
-        $tarif = TarifTol::where(
-            ['asal_id', $input['asal']],
-            ['tujuan_id', $input['tujuan']],
-            ['golongan_id', $input['golongan']],
-        )->get();
+        $asal = $request->get('asal_id');
+        $tujuan = $request->get('tujuan_id');
+        $golongan = $request->get('golongan_id');
+        
+        $tarif = TarifTol::where([
+            'asal_id' => $asal,
+            'tujuan_id' => $tujuan,
+            'golongan_id' => $golongan
+        ])->first();
 
-        return view('user.tariftol', compact(
-            'tarif'
-        ));
+        $record = new TarifRecord;
+        $record['tarif_id'] = $tarif['id'];
+        $record->tarif()->associate($tarif);
+        $record->save();
+        
+        return redirect()->route('tarif');
+    }
+
+    public function deleteRecord()
+    {
+        TarifRecord::truncate();
+        
+        return redirect()->route('tarif');
     }
 }

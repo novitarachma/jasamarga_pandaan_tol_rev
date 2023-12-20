@@ -36,4 +36,9 @@ class TarifTol extends Model
     {
     	return $this->belongsTo(GolonganTol::class);
     }
+
+    public function tarifRecord()
+    {
+    	return $this->hasMany(TarifRecord::class);
+    }
 }

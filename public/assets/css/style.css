@@ -1693,10 +1693,10 @@ section {
     height: 100%;
 }
 
-.card {
+/* .card {
     box-shadow: 0 4px 8px 0 rgba(1, 1, 1, 0.1);
     transform: 0.3s;
-}
+} */
 
 .card:hover {
     box-shadow: 0 4px 8px 0 rgba(1, 1, 1, 0.2);
