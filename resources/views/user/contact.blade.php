@@ -53,6 +53,37 @@
                     <p><a href="https://www.instagram.com/official.jpt/">Jasamarga Pandaan Tol</a></p>
                 </div>
             </div>
+            <br></br>
+        <div class="container">
+            <div class="section-title">
+                <h2> </h2>
+                <h2>Massage Us</h2>
+            </div>
+              <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <textarea class="form-control" name="message" id="message" cols="30" rows="2" placeholder="Write your message"></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                  <input type="checkbox" name="send" id="send" />
+                  <label for="send" class="send">
+                    <div class="rotate">
+                        <div class="move">
+                            <div class="part left"></div>
+                            <div class="part right"></div>
+                        </div>
+                    </div>
+                </label>
         </div>
     </div>
 </section>
