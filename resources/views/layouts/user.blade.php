@@ -62,6 +62,7 @@
 <body>
     <header id="header" class="fixed-top">
         <nav id=" navbar" class="navbar">
+
             <h1 class="logo"><img src="assets/img/LogoJPT.png" alt="" class="img-fluid">
             </h1>
             <ul>
