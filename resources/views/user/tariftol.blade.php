@@ -54,48 +54,47 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
-                </div>
-                <div class="cardC">
-                    <div class="cardC-body">
-                        <div class="sectiont-titlet">
-                            <h2><strong> Total Tarif </strong></h2>
-                            <strong>
-                                <p>Rp. {{$total}}</p>
-                            </strong>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                </hr>
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title"><b> Tarif yang Tersimpan</b></h3>
-                            <div class="card-tools">
-                                <form method="POST" action="{{ route('record.delete') }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <input type="submit" value="Bersihkan Tarif" class="btn btn-danger">
-                                </form>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            @foreach($record as $rc)
-                            <div class="col-12">
-                                <div class="card" style="background-color:#F0F8FF;">
-                                    <div class="card-body">
-                                        <div class="sectionS-titleS">
-                                            <h3><strong>{{$rc->tarif->asal->name}} -
-                                                    {{$rc->tarif->tujuan->name}}
-                                                </strong></h3>
-                                            <h7><strong>{{$rc->tarif->golongan->name}} = Rp.
-                                                    {{$rc->tarif->harga}}</strong></h7>
-                                        </div>
-                                    </div>
+                        <div class="cardC">
+                            <div class="cardC-body">
+                                <div class="sectiont-titlet">
+                                    <h2><strong> Total Tarif </strong></h2>
+                                    <strong>
+                                        <p>Rp. {{$total}}</p>
+                                    </strong>
                                 </div>
                             </div>
-                            @endforeach
+                        </div>
+                        <br>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title"><b> Tarif yang Tersimpan</b></h3>
+                                    <div class="card-tools">
+                                        <form method="POST" action="{{ route('record.delete') }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="button-arounder">Bersihkan Tarif</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    @foreach($record as $rc)
+                                    <div class="col-12">
+                                        <div class="card" style="background-color:#F0F8FF;">
+                                            <div class="card-body">
+                                                <div class="sectionS-titleS">
+                                                    <h3><strong>{{$rc->tarif->asal->name}} -
+                                                            {{$rc->tarif->tujuan->name}}
+                                                        </strong></h3>
+                                                    <h7><strong>{{$rc->tarif->golongan->name}} = Rp.
+                                                            {{$rc->tarif->harga}}</strong></h7>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

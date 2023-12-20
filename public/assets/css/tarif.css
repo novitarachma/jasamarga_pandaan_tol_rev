@@ -59,14 +59,15 @@
     text-align:left;
     margin:0 auto;
     box-shadow: 0 0px 10px 8px rgba(52,40,104,.08);
+    border-radius: 16px;
 }
-.cardC {
+/* .cardC {
     position:relative;
     min-width: 50;
     background-color: #fff;
     border: 1px solid #e5e9f2;
     border-radius: 16px;
-}
+} */
 
 /* card total */
 .sectiont {
@@ -93,7 +94,7 @@
     text-transform: capitalize;
     margin-top: 35px;
     padding-top: 0;
-    color: #ffffff;
+    color: #3a7c98;
   }
 
   .sectiont-titlet p {
