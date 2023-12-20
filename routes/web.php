@@ -37,38 +37,38 @@ Route::group(['namespace' => 'App\Http\Controllers\User'], function () {
         Route::controller(UserController::class)->group(function () {
             Route::get('profil', 'index')->name('profil');
             Route::get('update-account', 'editAccount')->name('edit.account');
-            Route::post('update-account', 'updateAccount')->name('update.account');
+            Route::put('update-account', 'updateAccount')->name('update.account');
             Route::get('update-profile', 'editProfile')->name('edit.profile');
-            Route::post('update-profile', 'updateProfile')->name('update.profile');
+            Route::put('update-profile', 'updateProfile')->name('update.profile');
             Route::get('change-password', 'changePassword')->name('change.password');
-            Route::post('change-password', 'updatePassword')->name('update.password');
-            Route::get('gaji', 'gaji')->name('gaji');
+            Route::put('change-password', 'updatePassword')->name('update.password');
+            Route::get('gaji-user', 'gaji')->name('gaji-user');
             Route::get('gaji', 'cetakGaji')->name('cetak.gaji');
         });
     });
 });
 
-Route::get('/SetProfile', function () {
-    return view('user/user-profile');
+// Route::get('/SetProfile', function () {
+//     return view('user/user-profile');
 
-});
+// });
 
-Route::get('/pass', function () {
-    return view('user/password');
-});
+// Route::get('/pass', function () {
+//     return view('user/password');
+// });
 
-Route::get('/up', function () {
-    return view('user/upload');
-});
+// Route::get('/up', function () {
+//     return view('user/upload');
+// });
 
-Route::get('/slip', function () {
-    return view('user/slipgaji');
+// Route::get('/slip', function () {
+//     return view('user/slipgaji');
 
-});
+// });
 
-Route::get('/profile', function () {
-    return view('user/Profile-page');
-});
+// Route::get('/profile', function () {
+//     return view('user/Profile-page');
+// });
 
 Route::get('/visimisi', function () {
     return view('profil_perusahaan/visimisi');
