@@ -43,7 +43,7 @@ Route::group(['namespace' => 'App\Http\Controllers\User'], function () {
             Route::get('change-password', 'changePassword')->name('change.password');
             Route::put('change-password', 'updatePassword')->name('update.password');
             Route::get('gaji-user', 'gaji')->name('gaji-user');
-            Route::get('gaji', 'cetakGaji')->name('cetak.gaji');
+            Route::post('gaji', 'cetakGaji')->name('cetak.gaji');
         });
     });
 });
