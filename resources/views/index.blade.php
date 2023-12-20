@@ -236,7 +236,7 @@
                 <div class="card">
                     <img src="{{ asset('./storage/'.$item->foto) }}" alt="artikel">
                     <div class="card-body">
-                        <h3>{{ $item->judul }}</h3>
+                        <h5>{{ $item->judul }}</h5>
                         <p>{{ substr($item['paragraf1'], 0, 200) }}...</p>
                     </div>
                     <div class="card-footer">
@@ -248,7 +248,7 @@
                     </div>
                 </div>
                 @endforeach
-                <a href="{{route('berita')}}"><button>Artikel Lainnya</button></a>
+                <a href="{{route('berita')}}"><button>Berita Lainnya</button></a>
             </div>
         </div>
     </div>

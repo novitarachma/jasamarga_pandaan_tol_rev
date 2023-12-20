@@ -17,8 +17,7 @@
                     <div class="swiper-wrapper align-items-center">
 
                         <div class="img">
-                            <img src="https://ptjpt.co.id/wp-content/uploads/2019/05/052319_Site-Visit-Bank-Sindikasi.png"
-                                alt="artikel">
+                            <img src="{{ asset('./storage/'.$data->foto) }}" alt="artikel">
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
