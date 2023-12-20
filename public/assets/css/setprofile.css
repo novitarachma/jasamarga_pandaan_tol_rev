@@ -1321,12 +1321,9 @@ body {
   }
   
   .bg-gradient-default {
-    background: linear-gradient(87deg, #172b4d 0, #1a174d 100%) !important;
+    background: linear-gradient(87deg, #fdfdff 0, #b4afaf 50%) !important;
   }
   
-  .bg-gradient-default {
-    background: linear-gradient(87deg, #172b4d 0, #1a174d 100%) !important;
-  }
   
   @keyframes floating-lg {
     0% {
@@ -1396,7 +1393,7 @@ body {
   }
   
   .text-white {
-    color: #fff !important;
+    color: rgb(0, 0, 0) !important;
   }
   
   a.text-white:hover,
