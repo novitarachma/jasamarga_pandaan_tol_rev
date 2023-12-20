@@ -6,72 +6,92 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Gaji;
+use App\Models\Karyawan;
 use App\Models\UserDetail;
+use App\Http\Requests\UpdateUserRequest;
+use App\Http\Requests\StoreProfileRequest;
+use App\Services\FileUploadService;
+use Illuminate\Support\Facades\Storage;
+use Hash;
 
 class UserController extends Controller
 {
     public function index()
     {
-        $user = User::whereId(auth()->user()->id);
-        $detail = UserDetail::where('user_id', auth()->user()->id);
-        return view('user.profil.index', compact('user', 'detail'));
+        $user = User::whereId(auth()->user()->id)->first();
+        $detail = UserDetail::where('user_id', auth()->user()->id)->first();
+        $karyawan = Karyawan::where('user_id', auth()->user()->id)->first();
+        return view('user.profil.Profile-page', compact('user', 'detail', 'karyawan'));
     }
     
     public function editAccount()
     {
-        $user = User::whereId(auth()->user()->id);
-        return view('user.profil.account', compact('user'));
+        $user = User::whereId(auth()->user()->id)->first();
+        return view('user.profil.user-profile', compact('user'));
     }
     
-    public function updateAccount(UpdateUserRequest $request, User $user)
+    public function updateAccount(Request $request)
     {
-        $user->update($request->all());
+        $request->validate([
+            'name' => 'required',
+            'username' => 'required',
+            'email' => 'required|email|unique:users,email,'. auth()->user()->id,
+        ]);
+
+        $user = User::find(auth()->user()->id);
+        $user->name = $request->get('name');
+        $user->username = $request->get('username');
+        $user->email = $request->get('email');
+        $user->save();
         
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('profil.index')->with('success', 'User Berhasil Ditambahkan');
+        return redirect()->route('profil')->with('success', 'User Berhasil Ditambahkan');
     }
     
     public function editProfile()
     {
         $user = UserDetail::where('user_id', auth()->user()->id)->first();
-        return view('user.profil.setProfile', compact('user'));
+        return view('user.profil.upload', compact('user'));
     }
     
-    public function updateProfile(StoreProfileRequest $request, FileUploadService $fileUploadService, User $user)
+    public function updateProfile(StoreProfileRequest $request, FileUploadService $fileUploadService)
     {
-        if($request->photo && file_exists(storage_path('./app/public/'. $user->photo))){
-            if($user->photo){
-                Storage::disk('public')->delete($user->photo);
+        $detail = UserDetail::where('user_id', auth()->user()->id)->first();
+
+        if($request->foto && file_exists(storage_path('./app/public/'. $detail->foto))){
+            if($detail->foto){
+                Storage::disk('public')->delete($detail->foto);
             }
-            $photo = $request->file('photo');
-            $photoPath = $fileUploadService->uploadImage($photo);
+            $foto = $request->file('foto');
+            $photoPath = $fileUploadService->uploadImage($foto);
         }else{
-            $photoPath = $user->photo;
+            $photoPath = $detail->foto;
         }
 
-        if($request->photo_cover && file_exists(storage_path('./app/public/'. $user->photo_cover))){
-            if($user->photo_cover){
-                Storage::disk('public')->delete($user->photo_cover);
+        if($request->foto_cover && file_exists(storage_path('./app/public/'. $detail->foto_cover))){
+            if($detail->foto_cover){
+                Storage::disk('public')->delete($detail->foto_cover);
             }
-            $photo_cover = $request->file('photo_cover');
-            $photoCoverPath = $fileUploadService->uploadImage($photo_cover);
+            $foto_cover = $request->file('foto_cover');
+            $photoCoverPath = $fileUploadService->uploadImage($foto_cover);
         }else{
-            $photoCoverPath = $user->photo_cover;
+            $photoCoverPath = $detail->foto_cover;
         }
         
         $input = $request->all();
-        $input['photo'] = $photoPath;
-        $input['photo_cover'] = $photoCoverPath;
-        
-        $user->update($input);
+
+        $detail->description = $input['description'];
+        $detail->foto = $photoPath;
+        $detail->foto_cover = $photoCoverPath;
+        $detail->save();
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('profil.index')->with('success', 'User Berhasil Ditambahkan');
+        return redirect()->route('profil')->with('success', 'User Berhasil Ditambahkan');
     }
     
     public function changePassword()
     {
-        return view('user.profil.change-password');
+        return view('user.profil.password');
     }
 
     public function updatePassword(Request $request)
@@ -92,14 +112,14 @@ class UserController extends Controller
             'password' => Hash::make($request->new_password)
         ]);
 
-        return back()->with("status", "Password changed successfully!");
+        return redirect()->route('profil')->with('success', 'Password Succesfully');
     }
 
     public function gaji()
     {
         $gaji = Gaji::where('user_id', auth()->user()->id)->get();
         $user = User::whereId(auth()->user()->id);
-        return view('user.profil.gaji', compact('gaji', 'user'));
+        return view('user.profil.slipgaji', compact('gaji', 'user'));
     }
 
     public function cetakGaji(Request $request)

@@ -198,9 +198,8 @@
                                 {{ Auth::user()->name }} <i class="bi bi-chevron-down"></i>
                             </a>
                             <ul>
-                                <li><a href="/profile">Profil Anda</a></li>
-                                <li><a href="#">Anggota</a></li>
-                                <li><a href="#">Reset Password</a></li>
+                                <li><a href="{{route('profil')}}">Profil Anda</a></li>
+                                
                                 <li>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); 
                                         document.getElementById('logout-form').submit();">

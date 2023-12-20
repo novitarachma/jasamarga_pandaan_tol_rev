@@ -3,14 +3,11 @@
 @section('content')
 
 <section class="our-webcoderskull padding-lg">
+<br><br>
 <div class="container p-0">
 
 <div class="row">
     <div class="section-title">
-        <h2>   </h2>
-        <h2>   </h2>
-        <h2>   </h2>
-        <p>     </p>
         <h2>Slip Gaji Karyawan</h2>
     </div>
 
@@ -19,20 +16,6 @@
       <tr>
         <td colspan="3" podition="center">
           <h3>Form Slip Gaji Karyawan</h3>
-        </td>
-      </tr>
-      <tr>
-        <td width="200">Nama Karyawan</td>
-        <td>:</td>
-        <td>
-          <input type="text" name="nama" required>
-        </td>
-      </tr>
-      <tr>
-        <td width="200">Nomor Induk Karyawan</td>
-        <td>:</td>
-        <td>
-          <input type="text" name="nik" required>
         </td>
       </tr>
       <tr>
@@ -71,21 +54,10 @@
                 </select>
         </td>
       </tr>
-      <tr>
-        <td width="200">Jabatan</td>
-        <td>:</td>
-        <td>
-          <select name="jabatan" required>
-                    <option value="Direktur">Direktur</option>
-                    <option value="Manager">Manager</option>
-                    <option value="Staff">Staff</option>
-                </select>
-        </td>
-      <tr>
         <td></td>
         <td></td>
         <td>
-        <a href="profile" class="btn btn-sm btn-primary">RESET</a>
+        <a href="profile" class="btn btn-sm btn-primary">CANCEL</a>
         <a href="profile" class="btn btn-sm btn-primary">CETAK</a>
         </td>
       </tr>
