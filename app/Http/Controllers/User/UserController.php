@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Gaji;
+use App\Models\Bulan;
+use App\Models\Tahun;
 use App\Models\Karyawan;
 use App\Models\UserDetail;
 use App\Http\Requests\UpdateUserRequest;
@@ -119,22 +121,30 @@ class UserController extends Controller
     {
         $gaji = Gaji::where('user_id', auth()->user()->id)->get();
         $user = User::whereId(auth()->user()->id);
-        return view('user.profil.slipgaji', compact('gaji', 'user'));
+        $bulan = Bulan::all();
+        $tahun = Tahun::all();
+        return view('user.profil.slipgaji', compact('gaji', 'user', 'bulan', 'tahun'));
     }
 
     public function cetakGaji(Request $request)
     {
         $request->validate([
-            'tahun' => 'required',
-            'bulan' => 'required',
+            'tahun_id' => 'required',
+            'bulan_id' => 'required',
         ]);
         
-        $gaji = Gaji::where(
-            ['user_id', auth()->user()->id],
-            ['tahun_id', $request->tahun],
-            ['bulan_id', $request->bulan],
-        )->get();
+        $tahun = $request->get('tahun_id');
+        $bulan = $request->get('bulan_id');
+        $user = auth()->user()->id;
+        
+        $gaji = Gaji::where([
+            'user_id' => $user,
+            'tahun_id' => $tahun,
+            'bulan_id' => $bulan
+        ])->first();
 
-        return $gaji->link;
+        $url = $gaji->link;
+        
+        return redirect()->away($url);
     }
 }

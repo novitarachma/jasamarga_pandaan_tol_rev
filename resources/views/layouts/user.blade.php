@@ -62,6 +62,7 @@
 <body>
     <header id="header" class="fixed-top">
         <nav id=" navbar" class="navbar">
+
             <h1 class="logo"><img src="assets/img/LogoJPT.png" alt="" class="img-fluid">
             </h1>
             <ul>
@@ -74,7 +75,7 @@
                 </li>
                 <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
                 @hasanyrole('user')
-                <li class="dropdown"><a href="#"><span>Dokumen </span> <i class="bi bi-chevron-down"></i></a>
+                <!-- <li class="dropdown"><a href="#"><span>Dokumen </span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li class="dropdown"><a href="{{ route('perusahaan') }}"><span>Dokumen
                                     Perusahaan</span> <i class="bi bi-chevron-down"></i></a>
@@ -166,7 +167,7 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 @endhasanyrole
                 <li class="dropdown"><a href="#"><span>Profil Perusahaan</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
@@ -198,7 +199,7 @@
                             </a>
                             <ul>
                                 <li><a href="{{route('profil')}}">Profil Anda</a></li>
-                                
+
                                 <li>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); 
                                         document.getElementById('logout-form').submit();">
