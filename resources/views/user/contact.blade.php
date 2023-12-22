@@ -61,7 +61,8 @@
             <h2> </h2>
             <h2>Massage Us</h2>
         </div>
-        <form class="mb-5" method="post" id="contactForm" name="contactForm">
+        <form class="mb-5" method="post" action="{{ route('add.message')}}" id="myForm" enctype="multipart/form-data">
+            @csrf
             <div class="row">
                 <div class="col-md-6 form-group">
                     <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
@@ -72,21 +73,13 @@
             </div>
             <div class="row">
                 <div class="col-md-12 form-group">
-                    <textarea class="form-control" name="message" id="message" cols="30" rows="2"
+                    <textarea class="form-control" name="pesan" id="pesan" cols="30" rows="2"
                         placeholder="Write your message"></textarea>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <input type="checkbox" name="send" id="send" />
-                    <label for="send" class="send">
-                        <div class="rotate">
-                            <div class="move">
-                                <div class="part left"></div>
-                                <div class="part right"></div>
-                            </div>
-                        </div>
-                    </label>
+                    <button type="submit" class="btn btn-success float-right">Send</button>
                 </div>
             </div>
         </form>

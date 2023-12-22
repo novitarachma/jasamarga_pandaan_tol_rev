@@ -243,7 +243,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ url('penerbangan') }}" class="nav-link">
+                            <a href="{{ route('message.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-envelope"></i>
                                 <p>Pesan</p>
                             </a>

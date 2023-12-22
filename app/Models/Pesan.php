@@ -16,7 +16,7 @@ class Pesan extends Model
     protected $table = "pesans";
 
     protected $fillable = [
-        'nama',
+        'name',
         'email',
         'pesan'
     ];

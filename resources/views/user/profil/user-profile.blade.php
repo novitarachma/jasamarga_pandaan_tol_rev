@@ -47,7 +47,7 @@
                                             <label class="form-control-label" for="input-username">Username</label>
                                             <input type="text" id="input-username" name="username"
                                                 class="form-control @error('username') is-invalid @enderror"
-                                                placeholder="Username" value="{{ $user->username }}">
+                                                placeholder="Username" value="{{ $user->username }}" disabled>
                                             @error('username')
                                             <span class="text-danger">{{ $message }}</span>
                                             @enderror
