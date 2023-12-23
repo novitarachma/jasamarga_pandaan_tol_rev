@@ -30,6 +30,10 @@ Route::group(['namespace' => 'App\Http\Controllers\User'], function () {
         Route::post('cek-tarif', 'tarif')->name('cek-tarif');
         Route::delete('record-delete', 'deleteRecord')->name('record.delete');
     });
+    Route::controller(PesanController::class)->group(function () {
+        Route::get('contact', 'index')->name('contact');
+        Route::post('contact', 'addMessage')->name('add.message');
+    });
     Route::group(['middleware' => ['role:user']],function () {
         Route::controller(DasboardController::class)->group(function () {
             Route::get('index', 'index')->name('index.user');
@@ -47,28 +51,6 @@ Route::group(['namespace' => 'App\Http\Controllers\User'], function () {
         });
     });
 });
-
-// Route::get('/SetProfile', function () {
-//     return view('user/user-profile');
-
-// });
-
-// Route::get('/pass', function () {
-//     return view('user/password');
-// });
-
-// Route::get('/up', function () {
-//     return view('user/upload');
-// });
-
-// Route::get('/slip', function () {
-//     return view('user/slipgaji');
-
-// });
-
-// Route::get('/profile', function () {
-//     return view('user/Profile-page');
-// });
 
 Route::get('/visimisi', function () {
     return view('profil_perusahaan/visimisi');
@@ -100,10 +82,6 @@ Route::get('/about', function () {
 
 Route::get('/service', function () {
     return view('user/service');
-});
-
-Route::get('/contact', function () {
-    return view('user/contact');
 });
 
 Route::get('/database', function () {
@@ -140,6 +118,8 @@ function () {
     
     Route::controller(MessageController::class)->group(function () {
         Route::get('message', 'index')->name('message.index');
+        Route::delete('{id}/delete-message', 'delete')->name('delete-message');
+        Route::delete('delete-all-message', 'deleteAll')->name('delete-all-message');
     });
     
     Route::controller(UploadController::class)->group(function () {

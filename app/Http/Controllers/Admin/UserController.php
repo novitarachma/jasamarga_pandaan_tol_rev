@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Gaji;
+use App\Models\Karyawan;
+use App\Models\UserDetail;
 use Illuminate\Support\Facades\Auth;
 use Session;
 use App\Http\Controllers\Controller;
@@ -45,14 +47,29 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      */
      
-    public function store(User $user, StoreUserRequest $request)
+    public function store(StoreUserRequest $request)
     {
         $input = $request->all();
-        $input['password'] = Hash::make($input['password']);
         
-        $user->create($input);
-        $user->assignRole($request->input('roles'));
-        
+        $user = User::create([
+            'name' => $input['name'],
+            'email' => $input['email'],
+            'username' => $input['username'],
+            'password' => Hash::make($input['password']),
+        ]);
+    
+        $user->syncRoles($request->input('roles'));
+
+        $detail = new UserDetail;
+        $detail->user_id = $user['id'];
+        $detail->user()->associate($user);
+        $detail->save();
+
+        $karyawan = new Karyawan;
+        $karyawan->user_id = $user['id'];
+        $karyawan->nip = $input['username'];
+        $karyawan->user()->associate($user);
+        $karyawan->save();
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect(route('user.index'))->with('success', 'User Berhasil Ditambahkan');
@@ -84,7 +101,6 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
-        
         $user->update($request->all());
         $user->syncRoles($request->input('roles'));
 

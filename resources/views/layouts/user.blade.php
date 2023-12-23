@@ -73,7 +73,7 @@
                 </li>
                 <li><a class="nav-link scrollto" href="{{ route('galeri') }}">Galeri</a>
                 </li>
-                <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+                <li><a class="nav-link scrollto" href="{{ route('contact') }}">Contact</a></li>
                 @hasanyrole('user')
                 <!-- <li class="dropdown"><a href="#"><span>Dokumen </span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
