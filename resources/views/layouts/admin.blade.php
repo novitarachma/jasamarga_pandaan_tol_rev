@@ -255,6 +255,13 @@
                                 <p>Upload File</p>
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('settings') }}" class="nav-link">
+                                <i class="nav-icon fas ion-settings"></i>
+                                <p>Settings</p>
+                            </a>
+                        </li>
                         @endif
 
                         @if(auth()->check())

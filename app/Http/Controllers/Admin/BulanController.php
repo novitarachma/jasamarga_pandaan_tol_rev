@@ -35,7 +35,7 @@ class BulanController extends Controller
         $bulan->create($request->all());
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect(route('galeri.index'))->with('success', 'Bulan Berhasil Ditambahkan');
+        return redirect(route('settings'))->with('success', 'Bulan Berhasil Ditambahkan');
     }
 
     /**
@@ -64,7 +64,7 @@ class BulanController extends Controller
         $bulan->update($request->all());
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('galeri.index')->with('success', 'Bulan Berhasil Ditambahkan');
+        return redirect()->route('settings')->with('success', 'Bulan Berhasil Ditambahkan');
     }
 
     /**
@@ -74,7 +74,7 @@ class BulanController extends Controller
     {
         $bulan->delete();
 
-        return redirect()->route('galeri.index')->with('success', 'Bulan Berhasil Dihapus');
+        return redirect()->route('settings')->with('success', 'Bulan Berhasil Dihapus');
     }
 
     public function restore($id, TrashService $trashService)
