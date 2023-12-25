@@ -16,10 +16,23 @@ class TarifTolController extends Controller
     public function index()
     {
         $datas = TarifTol::all();
-        $asal = AsalTol::all();
         $tujuan = TujuanTol::all();
         $golongan = GolonganTol::all();
         $record = TarifRecord::all();
+        
+        $batas = '';
+        if($record != null){
+            foreach ($record as $rc) {
+                    $batas = $rc->tarif->tujuan['name'];
+            }
+        }
+            
+        if($batas == null){
+            $asal = AsalTol::all();
+        }else{
+            $asal = AsalTol::where('name', $batas)->first();
+        }
+        
         $total = 0;
 
         foreach ($record as $rc) {
@@ -27,7 +40,7 @@ class TarifTolController extends Controller
         }
         
         return view('user.tariftol', compact(
-            'datas', 'asal', 'tujuan', 'golongan', 'record', 'total'
+            'datas', 'asal', 'tujuan', 'golongan', 'record', 'total', 'batas'
         ));
     }
 
