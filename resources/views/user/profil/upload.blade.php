@@ -33,20 +33,35 @@
                             <div class="pl-lg-4">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <div class="form-group file-area">
-                                            <p><label for="images">Upload Image Profil</label>
-                                                <input type="file" name="foto" id="images" multiple="multiple" />
-                                            </p>
-                                            <p><label for="images">Upload Image Cover</label>
-                                                <input type="file" name="foto_cover" id="images" multiple="multiple" />
-                                            </p>
-                                            <div class="file-dummy">
-                                                <div class="success">Great, your files are selected. Keep on.</div>
-                                                <div class="default">Please select some files</div>
+                                        <div class="form-group focused">
+                                            <label for="file">Upload Image Profil</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" name="foto"
+                                                        class="custom-file-input @error('foto') is-invalid @enderror" id="images">
+                                                    <label class="custom-file-label" for="images">Choose file</label>
+                                                    @error('foto')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <hr class="my-4">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="file">Upload Image Cover</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" name="foto_cover"
+                                                        class="custom-file-input @error('foto_cover') is-invalid @enderror" id="images">
+                                                    <label class="custom-file-label" for="images">Choose file</label>
+                                                    @error('foto_cover')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                   
                                     <h6 class="heading-small text-muted mb-4">About me</h6>
                                     <div class="pl-lg-4">
                                         <div class="form-group focused">
@@ -59,6 +74,8 @@
                                             <button type="submit" class="btn btn-sm btn-default center">Save</button>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -66,4 +83,13 @@
         </div>
     </div>
 </section>
+@endsection
+
+@section('script')
+<script src="{{ asset('theme/adminlte') }}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script>
+$(function() {
+    bsCustomFileInput.init();
+});
+</script>
 @endsection
