@@ -92,10 +92,11 @@
             <div class="request-quote clearfix">
 
                 <div class="description"><strong>
-                        <marquee align="”center”" direction="”right”" height="”100″" scrollamount="”3″" width="”10%”">
+                        <marquee align="”center”" direction="”right”" height="”100″" scrollamount="”3″" width="”90%”" bgcolor="grey" >
                             Top Up E-Money bisa dilakukan di Exit Gerbang Tol Pandaan dan Gempol | Arus lalu lintas
                             Gempol - Pandaan aman &amp; lancar | Info Tol (0343) 5650729</marquee>
                     </strong></div>
+                    <br>
                 <div class="readMore">
                     <a style="text-decoration:none" href="{{ route('tarif') }}" title="Tarif Tol Gempol - Pandaan"
                         class="btn-get-started animate__animated animate__fadeInUp scrollto"><strong>
@@ -108,6 +109,36 @@
                 <!-- </div>   -->
             </div>
         </div>
+</section>
+
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="section-title">
+            <h2>Berita</h2>
+        </div>
+        <div class="konten" id="artikel">
+            <div class="content-container">
+                @foreach ($berita as $item)
+                <div class="card">
+                    <img src="{{ asset('./storage/'.$item->foto) }}" alt="artikel">
+                    <div class="card-body">
+                        <h5>{{ $item->judul }}</h5>
+                        <p>{{ substr($item['paragraf1'], 0, 200) }}...</p>
+                    </div>
+                    <div class="card-footer">
+                        <p>{{ $item->tanggal }}</p>
+                        <a href="{{ route('detail-berita',$item->id) }}">
+                            <p>Read more</p>
+                        </a>
+
+                    </div>
+                </div>
+                @endforeach
+                <a href="{{route('berita')}}"><button>Berita Lainnya</button></a>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- ======= About Section ======= -->
@@ -223,36 +254,6 @@
     </div>
 </section>
 <!-- End Services Section -->
-
-<!-- ======= Portfolio Section ======= -->
-<section id="portfolio" class="portfolio">
-    <div class="container">
-        <div class="section-title">
-            <h2>Berita</h2>
-        </div>
-        <div class="konten" id="artikel">
-            <div class="content-container">
-                @foreach ($berita as $item)
-                <div class="card">
-                    <img src="{{ asset('./storage/'.$item->foto) }}" alt="artikel">
-                    <div class="card-body">
-                        <h5>{{ $item->judul }}</h5>
-                        <p>{{ substr($item['paragraf1'], 0, 200) }}...</p>
-                    </div>
-                    <div class="card-footer">
-                        <p>{{ $item->tanggal }}</p>
-                        <a href="{{ route('detail-berita',$item->id) }}">
-                            <p>Read more</p>
-                        </a>
-
-                    </div>
-                </div>
-                @endforeach
-                <a href="{{route('berita')}}"><button>Berita Lainnya</button></a>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact">
