@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Dokumen;
-use App\Models\Divisi;
 use App\Models\KategoriDokumen;
 use App\Services\FileUploadService;
 use App\Http\Requests\StoreDokumenRequest;
@@ -20,10 +19,9 @@ class DokumenController extends Controller
     public function index()
     {
         $datas = Dokumen::all();
-        $divisi = Divisi::all();
         $kategori = KategoriDokumen::all();
         return view('admin.dokumen.index', compact(
-            'datas', 'divisi', 'kategori'
+            'datas', 'kategori'
         ));
     }
 

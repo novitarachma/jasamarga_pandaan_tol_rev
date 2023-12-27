@@ -35,7 +35,7 @@ class DivisiController extends Controller
         $divisi->create($request->all());
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect(route('dokument.index'))->with('success', 'Divisi Berhasil Ditambahkan');
+        return redirect(route('settings'))->with('success', 'Divisi Berhasil Ditambahkan');
     }
 
     /**
@@ -64,7 +64,7 @@ class DivisiController extends Controller
         $divisi->update($request->all());
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('dokument.index')->with('success', 'Divisi Berhasil Ditambahkan');
+        return redirect()->route('settings')->with('success', 'Divisi Berhasil Ditambahkan');
     }
 
     /**
@@ -74,7 +74,7 @@ class DivisiController extends Controller
     {
         $divisi->delete();
 
-        return redirect()->route('dokument.index')->with('success', 'Divisi Berhasil Dihapus');
+        return redirect()->route('settings')->with('success', 'Divisi Berhasil Dihapus');
     }
 
     public function restore($id, TrashService $trashService)

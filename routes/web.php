@@ -127,6 +127,11 @@ function () {
         Route::post('file-upload', 'fileUpload')->name('fileUpload');
     });
 
+    Route::controller(SettingsController::class)->group(function () {
+        Route::get('settings', 'index')->name('settings');
+        Route::get('trash-settings', 'trash')->name('trash-settings');
+    });
+
     Route::controller(TarifTolController::class)->group( function () {
         Route::get('trash-tarif', 'trash')->name('trash-tarif');
         Route::post('{id}/restore-tarif', 'restore')->name('restore-tarif');
