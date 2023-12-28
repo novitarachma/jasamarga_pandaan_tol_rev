@@ -35,9 +35,14 @@
                                     <h2><label for="inputState">Gerbang Asal</label></h2>
                                     <select class="form-control" style="width: 100%;" id="asal" name="asal_id">
                                         <option selected="">-</option>
+
+                                        @if ($batas == null){
                                         @foreach($asal as $as)
                                         <option value="{{ $as->id }}">{{ $as->name }}</option>
                                         @endforeach
+                                        }@else{
+                                        <option value="{{ $asal->id }}">{{ $asal->name }}</option>
+                                        }@endif
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">

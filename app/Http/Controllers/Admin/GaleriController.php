@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Galeri;
-use App\Models\Tahun;
-use App\Models\Bulan;
 use App\Services\FileUploadService;
 use App\Http\Requests\StoreGaleriRequest;
 use App\Services\TrashService;
@@ -20,10 +18,8 @@ class GaleriController extends Controller
     public function index()
     {
         $datas = Galeri::all();
-        $tahun = Tahun::all();
-        $bulan = Bulan::all();
         return view('admin.galeri.index', compact(
-            'datas', 'tahun', 'bulan'
+            'datas'
         ));
     }
 
@@ -126,9 +122,7 @@ class GaleriController extends Controller
     public function trash()
     {
         $galeri = Galeri::onlyTrashed()->paginate();
-        $tahun = Tahun::onlyTrashed()->paginate();
-        $bulan = Bulan::onlyTrashed()->paginate();
-        return view('admin.galeri.trash', compact('galeri', 'tahun', 'bulan'));
+        return view('admin.galeri.trash', compact('galeri'));
     }
     
     public function restore($id, TrashService $trashService)

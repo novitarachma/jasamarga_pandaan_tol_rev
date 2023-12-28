@@ -4,14 +4,14 @@
 @endsection
 @section('content')
 <section id="susunan-dewan-komisaris" class="susunan-dewan-komisaris">
+    <br><br><br>
     <div class="container">
         <div class="section-title">
-            <h2>   </h2>
             <h2>Susunan Dewan Komisaris</h2>
         </div>
     </div>
 
-    <div class="container">
+    <div class="row">
 		
 		<div class="thumbanail left">
 			<img src="https://ptjpt.co.id/wp-content/uploads/2022/12/yudi-tria1.jpg" alt="" width="30%" height="30%"/>
@@ -27,7 +27,7 @@
         </div>
     </div>
 		
-    <div class="container">
+    <div class="row">
 		<div class="thumbanail left">
 			<img src="https://ptjpt.co.id/wp-content/uploads/2022/12/Sarmanto1.jpg" alt="" width="30%" height="30%"/>
 		</div>
@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="row">
         <div class="thumbanail left">
 			<img src="https://ptjpt.co.id/wp-content/uploads/2022/12/Bahrul1.jpg" alt="" width="30%" height="30%"/>
 		</div>

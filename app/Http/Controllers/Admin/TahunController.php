@@ -35,7 +35,7 @@ class TahunController extends Controller
         $tahun->create($request->all());
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect(route('galeri.index'))->with('success', 'Tahun Berhasil Ditambahkan');
+        return redirect(route('settings'))->with('success', 'Tahun Berhasil Ditambahkan');
     }
 
     /**
@@ -64,7 +64,7 @@ class TahunController extends Controller
         $tahun->update($request->all());
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('galeri.index')->with('success', 'Tahun Berhasil Ditambahkan');
+        return redirect()->route('settings')->with('success', 'Tahun Berhasil Ditambahkan');
     }
 
     /**
@@ -74,7 +74,7 @@ class TahunController extends Controller
     {
         $tahun->delete();
 
-        return redirect()->route('galeri.index')->with('success', 'Tahun Berhasil Dihapus');
+        return redirect()->route('settings')->with('success', 'Tahun Berhasil Dihapus');
     }
 
     public function restore($id, TrashService $trashService)
