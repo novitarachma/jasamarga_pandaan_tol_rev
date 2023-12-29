@@ -87,12 +87,12 @@
 </section><!-- End Hero -->
 
 <section id="tarif" class="tarif section-bg">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row no-gutters">
             <div class="request-quote clearfix">
 
                 <div class="description"><strong>
-                        <marquee align="”center”" direction="”right”" height="”100″" scrollamount="”3″" width="”90%”" bgcolor="grey" >
+                        <marquee align="”center”" direction="”right”" height="”100″" scrollamount="”3″" width="”90%”" bgcolor="#e5e220" >
                             Top Up E-Money bisa dilakukan di Exit Gerbang Tol Pandaan dan Gempol | Arus lalu lintas
                             Gempol - Pandaan aman &amp; lancar | Info Tol (0343) 5650729</marquee>
                     </strong></div>
