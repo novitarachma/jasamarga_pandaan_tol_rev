@@ -26,16 +26,20 @@
                                     <h2><label for="inputState">Golongan Kendaraan</label></h2>
                                     <select class="form-control" style="width: 100%;" id="golongan" name="golongan_id">
                                         <option selected="">-</option>
+                                        @if ($gol == null){
                                         @foreach($golongan as $gl)
                                         <option value="{{ $gl->id }}">{{ $gl->name }}</option>
                                         @endforeach
+                                        }@else{
+                                        <option value="{{ $golongan->id }}">{{ $golongan->name }}</option>
+                                        }@endif
+
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">
                                     <h2><label for="inputState">Gerbang Asal</label></h2>
                                     <select class="form-control" style="width: 100%;" id="asal" name="asal_id">
                                         <option selected="">-</option>
-
                                         @if ($batas == null){
                                         @foreach($asal as $as)
                                         <option value="{{ $as->id }}">{{ $as->name }}</option>

@@ -62,18 +62,11 @@
 <body>
     <header id="header" class="fixed-top">
         <nav id=" navbar" class="navbar">
-
-            <h1 class="logo"><img src="assets/img/LogoJPT.png" alt="" class="img-fluid">
-            </h1>
+            <h1 class="logo"><img src="assets/img/LogoJPT.png" alt="" class="img-fluid"></h1>
             <ul>
-                <li><a class="nav-link scrollto" href="{{ route('home') }}">Home</a></li>
-                <li><a class="nav-link scrollto" href="/about">About</a></li>
-                <li><a class="nav-link scrollto" href="/service">Services</a></li>
-                <li><a class="nav-link scrollto" href="{{ route('berita') }}">Berita</a>
-                </li>
-                <li><a class="nav-link scrollto" href="{{ route('galeri') }}">Galeri</a>
-                </li>
-                <li><a class="nav-link scrollto" href="{{ route('contact') }}">Contact</a></li>
+                <li><a class="nav-link scrollto" href="{{ route('index') }}">Home</a></li>
+                <li><a class="nav-link scrollto" href="{{ route('berita') }}">Berita</a></li>
+                <li><a class="nav-link scrollto" href="{{ route('galeri') }}">Galeri</a></li>
                 @hasanyrole('user')
                 <!-- <li class="dropdown"><a href="#"><span>Dokumen </span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
@@ -180,7 +173,9 @@
                         <li><a href="/link">Link</a></li>
                     </ul>
                 </li>
-                <!-- <a class="getstarted scrollto" href="#about">Get Started</a> -->
+                <li><a class="nav-link scrollto" href="/about">About</a></li>
+                <li><a class="nav-link scrollto" href="/service">Services</a></li>
+                <li><a class="nav-link scrollto" href="{{ route('contact') }}">Contact</a></li>
                 <li>
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
@@ -224,7 +219,7 @@
     </div>
     <!-- ======= Footer ======= -->
     <footer id="footer">
-        <div class="footer-top">
+        <!-- <div class="footer-top">
             <div class="container">
                 <div class="row">
 
@@ -279,10 +274,10 @@
                         </form>
                     </div>
                     <i class="bi bi-list mobile-nav-toggle"></i>
-                    </nav><!-- .navbar -->
+                    </nav>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="container">
             <div class="copyright">

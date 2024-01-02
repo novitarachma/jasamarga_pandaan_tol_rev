@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\User\DasboardController::class, 'index'])->name('index');
 
 Route::group(['namespace' => 'App\Http\Controllers\User'], function () {
     Route::get('{id}/detail-berita', 'BeritaController@show')->name('detail-berita');
