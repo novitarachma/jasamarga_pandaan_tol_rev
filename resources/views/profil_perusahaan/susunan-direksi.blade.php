@@ -4,14 +4,14 @@
 @endsection
 @section('content')
 <section id="susunan-dewan-komisaris" class="susunan-dewan-komisaris">
+    <br><br><br>
     <div class="container">
         <div class="section-title">
-            <h2>   </h2>
             <h2>Susunan Direksi</h2>
         </div>
     </div>
 
-    <div class="container">
+    <div class="row">
 		
 		<div class="thum left">
 			<img src="https://ptjpt.co.id/wp-content/uploads/2022/12/Netty1-768x1311.jpg" alt="" width="30%" height="30%"/>
@@ -27,8 +27,9 @@
         Kunciran Cengkareng (2016-2018).
 		</p>
         </div>
+    </div>
 
-        <div class="container">
+    <div class="row">
 
 		<div class="thum left">
 			<img src="https://ptjpt.co.id/wp-content/uploads/2022/12/Indarani1.jpg" alt="" width="30%" height="30%"/>
@@ -41,6 +42,7 @@
         Tanggal 28 April 2022.  Meraih gelar S1 Ekonomi dari Fakultas Ekonomi Universitas Indonesia.
 		</p>		
         </div>
+    </div>
 
 </section>
 @endsection

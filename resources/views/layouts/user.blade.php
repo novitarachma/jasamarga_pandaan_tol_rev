@@ -11,7 +11,9 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="{{ asset('assets/img/logo-jpt.png') }}" rel="icon">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- Google Fonts -->
     <link
@@ -46,6 +48,7 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <!-- <link href="{{ asset('assets/css/slider.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/chatbox.css') }}" rel="stylesheet" />
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
@@ -196,7 +199,7 @@
                                 <li><a href="{{route('profil')}}">Profil Anda</a></li>
 
                                 <li>
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); 
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
@@ -209,6 +212,43 @@
                         @endguest
                     </ul>
                 </li>
+                <title>Chatbox</title>
+                <body>
+                    <div class="chatbox-wrapper">
+                        <div class="chatbox-toggle">
+                            <i class='bx bx-message-dots'></i>
+                        </div>
+                        <div class="chatbox-message-wrapper">
+                            <div class="chatbox-message-header">
+                                <div class="chatbox-message-profile">
+                                    <div>
+                                        <h4 class="chatbox-message-name">Admin</h4>
+                                        <p class="chatbox-message-status">online</p>
+                                    </div>
+                                </div>
+                                <div class="chatbox-message-dropdown">
+                                    <i class='bx bx-dots-vertical-rounded chatbox-message-dropdown-toggle'></i>
+                                    <ul class="chatbox-message-dropdown-menu">
+                                        <li>
+                                            <a href="#">Search</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Report</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="chatbox-message-content">
+                                <h4 class="chatbox-message-no-message">You don't have message yet!</h4>
+                            </div>
+                            <div class="chatbox-message-bottom">
+                                <form action="#" class="chatbox-message-form">
+                                    <textarea rows="1" placeholder="Type message..." class="chatbox-message-input"></textarea>
+                                    <button type="submit" class="chatbox-message-submit"><i class='bx bx-send' ></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -348,6 +388,7 @@
     <script src="assets/js/owl-carousel.js"></script>
 
     <!-- Global Init -->
+    <script src="assets/js/chatbox.js"></script>
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/setprofile.js"></script>
 
