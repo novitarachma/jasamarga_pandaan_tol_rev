@@ -179,12 +179,41 @@
 </section>
 <!-- End About Section -->
 
+<!-- ======= Berita Section ======= -->
+<section id="services" class="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>Berita</h2>
+        </div>
+        <div class="konten" id="artikel">
+            <div class="content-container">
+                @foreach ($berita as $item)
+                <div class="card">
+                    <img src="{{ asset('./storage/'.$item->foto) }}" alt="artikel">
+                    <div class="card-body">
+                        <h5>{{ $item->judul }}</h5>
+                        <p>{{ substr($item['paragraf1'], 0, 200) }}...</p>
+                    </div>
+                    <div class="card-footer">
+                        <p>{{ $item->tanggal }}</p>
+                        <a href="{{ route('detail-berita',$item->id) }}">
+                            <p>Read more</p>
+                        </a>
+
+                    </div>
+                </div>
+                @endforeach
+                <a href="{{route('berita')}}"><button>Berita Lainnya</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ======= Clients Section ======= -->
 <section id="clients" class="clients section-bg">
     <div class="container">
         <div class="section-title">
             <h2>Mitra Kerja</h2>
-            <p></p>
         </div>
         <div class="row">
 
@@ -226,7 +255,6 @@
 
         <div class="section-title">
             <h2>Services</h2>
-            <p></p>
         </div>
 
         <div class="row">
@@ -310,4 +338,21 @@
         </div>
     </div>
 </section><!-- End Contact Section -->
+<footer id="footer">
+    <div class="container">
+        <div class="credits">
+            <br><br>
+            <div class="icon-box">
+                <h4 class="title"><a href="">VISITORS</a></h4>
+                <div>
+                    <h3><i class="bi bi-bar-chart">
+                            {{ $visitor }}
+                        </i></h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</footer><!-- End Footer -->
 @endsection

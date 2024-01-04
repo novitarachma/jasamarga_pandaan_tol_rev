@@ -17,20 +17,24 @@ class TarifTolController extends Controller
     {
         $datas = TarifTol::all();
         $tujuan = TujuanTol::all();
-        $golongan = GolonganTol::all();
         $record = TarifRecord::all();
         
         $batas = '';
+        $gol = '';
+        
         if($record != null){
             foreach ($record as $rc) {
                     $batas = $rc->tarif->tujuan['name'];
+                    $gol = $rc->tarif->golongan['name'];
             }
         }
             
         if($batas == null){
             $asal = AsalTol::all();
+            $golongan = GolonganTol::all();
         }else{
             $asal = AsalTol::where('name', $batas)->first();
+            $golongan = GolonganTol::where('name', $gol)->first();
         }
         
         $total = 0;
@@ -40,7 +44,7 @@ class TarifTolController extends Controller
         }
         
         return view('user.tariftol', compact(
-            'datas', 'asal', 'tujuan', 'golongan', 'record', 'total', 'batas'
+            'datas', 'asal', 'tujuan', 'golongan', 'record', 'total', 'batas', 'gol'
         ));
     }
 

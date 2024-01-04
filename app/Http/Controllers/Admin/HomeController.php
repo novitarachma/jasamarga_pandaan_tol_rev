@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Berita;
 use App\Models\Pesan;
+use App\Models\Visitor;
 
 class HomeController extends Controller
 {
@@ -14,8 +15,9 @@ class HomeController extends Controller
         $user = User::all();
         $berita = Berita::all();
         $pesan = Pesan::all();
+        $visitor = Visitor::count();
         return view('admin.index', compact(
-            'user', 'berita', 'pesan'
+            'user', 'berita', 'pesan', 'visitor'
         ));
     }
 }
