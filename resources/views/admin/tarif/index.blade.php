@@ -54,7 +54,7 @@
                             <tr style="text-align: center;">
                                 <th style="width: 50px;">No</th>
                                 <th>Asal</th>
-                                <th>Tujual</th>
+                                <th>Tujuan</th>
                                 <th>Golongan</th>
                                 <th>Harga</th>
                                 <th style="width: 220px;">Action</th>
